@@ -3,6 +3,7 @@
 @import 'default';
 
 section {
-  width: 1080px;
-  height: 1920px;
+  width: 148mm;
+  height: 210mm;
+  padding: 20mm;
 }
