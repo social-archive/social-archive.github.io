@@ -1,3 +1,7 @@
+/* @theme vertical */
+
+@import 'turing';
+
 section {
   width: 419px;   /* 5.83in × 72dpi ≒ 419px */
   height: 595px;  /* 8.27in × 72dpi ≒ 595px */
