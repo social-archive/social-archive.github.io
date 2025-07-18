@@ -27,9 +27,9 @@
 /* ------------------- VERTICAL SECTION LAYOUT -------------------*/
 /* This rule defines the A5-like portrait slide dimensions. */
 section {
-  width: 419px;   /* 5.83in × 72dpi ≒ 419px */
-  height: 595px;  /* 8.27in × 72dpi ≒ 595px */
-  padding: 56px;  /* 20mm ≒ 0.79in × 72dpi ≒ 56px */
+  /* 	1748	2480  300 dpi A5 */
+  width: 1748px;   
+  height: 2480px;  
 }
 
 
