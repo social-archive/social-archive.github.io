@@ -1,11 +1,25 @@
 /* @theme vertical-ebook */
 
+@font-face {
+  font-family: 'BookkGothic-Bd';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/BookkGothic-Bd.woff2') format('woff2');
+  font-weight: 700;
+  font-style: bold;
+}
+
+@font-face {
+  font-family: 'BookkGothic';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.1/BookkGothic-Lt.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+}
+
 /* 기본 스타일 */
 section {
   width: 1748px;
   height: 2480px;
   padding: 100px;
-  font-family: 'Fira Sans', sans-serif;
+  font-family: 'BookkGothic', sans-serif;
   font-size: 16px;
   color: #333;
   position: relative;
