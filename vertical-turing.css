@@ -68,21 +68,15 @@ section {
   --cool-list-color           : rgb(0, 102, 255);
 }
 
-:root p {
-  font-size: 26px; /* Adjusted from 32px for vertical layout */
-  font-family: 'Open Sans';
-  letter-spacing: -0.8px;
-}
 
 :root ul, ol {
-  font-size: 22px; /* Adjusted from 27px for vertical layout */
+  font-size: 12px; /* Adjusted from 27px for vertical layout */
   font-family: "Fira Sans Light";
   letter-spacing: -0.5px;
 }
-
 :root h1 {
   --border-color: rgb(22, 112, 230);
-  
+  font-size: 1.5em;
   color: #2b2c2e;
   font-weight: 600;
   padding-top: 10pt;
@@ -91,9 +85,20 @@ section {
   letter-spacing: -0.5px;
 }
 
-:root h1 strong {
-  color: rgb(255, 52, 52);
+:root h2 {
+  font-size: 1.2em !important;
+  margin-bottom: 0.5em !important;
 }
+
+:root h3 {
+  font-size: 1em !important;
+}
+
+:root p {
+  font-size: 0.9em !important;
+  letter-spacing: -0.8px;
+}
+
 
 
 /* ------------------- TITLEPAGE -----------------------------*/
