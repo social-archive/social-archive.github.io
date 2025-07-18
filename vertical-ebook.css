@@ -1,0 +1,167 @@
+/* @theme vertical-ebook */
+
+/* -------------------------------------
+   Base Layout: A5 (300 DPI)
+---------------------------------------- */
+section {
+  width: 1748px;    /* A5 - 148mm @ 300dpi */
+  height: 2480px;   /* A5 - 210mm @ 300dpi */
+  padding: 100px;
+}
+
+/* -------------------------------------
+   Font Import (Fallback-safe)
+---------------------------------------- */
+@import url('https://fonts.cdnfonts.com/css/fira-sans?styles=20119');
+@import url('https://fonts.cdnfonts.com/css/segoe-pro');
+
+:root {
+  font-family: 'Fira Sans', 'Segoe Pro Display', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: -0.3px;
+  color: #333333;
+  background-color: #ffffff;
+
+  /* Theme colors */
+  --accent-color:        #CF4D11;   /* strong point */
+  --text-color:          #333333;
+  --heading-color:       #1A1A1A;
+  --italic-color:        #5C5C5C;
+  --italic-bg-color:     #e3f2f9;
+  --bold-color:          #2E66C7;
+  --link-color:          #0066cc;
+  --border-color:        #CCCCCC;
+  --table-header-color:  #F0F0F0;
+  --highlight-color:     #FFD700;
+}
+
+/* -------------------------------------
+   Typography
+---------------------------------------- */
+h1, h2, h3 {
+  font-weight: 700;
+  color: var(--heading-color);
+}
+h1 { font-size: 2em; margin-bottom: 0.5em; }
+h2 { font-size: 1.5em; margin-bottom: 0.5em; }
+h3 { font-size: 1.2em; margin-bottom: 0.3em; }
+
+p {
+  font-size: 1em;
+  margin-bottom: 1em;
+  line-height: 1.8;
+  color: var(--text-color);
+}
+
+strong {
+  color: var(--bold-color);
+  font-weight: bold;
+}
+em {
+  color: var(--italic-color);
+  background: var(--italic-bg-color);
+  font-style: italic;
+}
+
+/* -------------------------------------
+   Lists & Tables
+---------------------------------------- */
+ul, ol {
+  margin-left: 1.5em;
+  font-size: 0.95em;
+}
+
+ul li::marker {
+  color: var(--highlight-color);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1em;
+  font-size: 0.95em;
+}
+th {
+  background-color: var(--table-header-color);
+  color: var(--heading-color);
+  font-weight: bold;
+  border: 1px solid var(--border-color);
+  padding: 0.5em;
+}
+td {
+  border: 1px solid var(--border-color);
+  padding: 0.5em;
+}
+
+/* -------------------------------------
+   Title Page
+---------------------------------------- */
+section.titlepage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+section.titlepage .title {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: var(--accent-color);
+  border-bottom: 2px solid var(--accent-color);
+  margin-bottom: 0.5em;
+}
+section.titlepage .subtitle {
+  font-size: 1.5em;
+  font-weight: 300;
+  color: var(--text-color);
+}
+section.titlepage .author,
+section.titlepage .date,
+section.titlepage .organization {
+  font-size: 1em;
+  color: var(--italic-color);
+  margin-top: 0.5em;
+}
+
+/* -------------------------------------
+   Section Styles
+---------------------------------------- */
+section.transition {
+  background-color: #FF5202;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+
+section.transition strong {
+  color: #CFFF0A;
+}
+section.transition em {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+section.cite {
+  background-color: #797F85;
+  color: #f1ffe1;
+  font-style: italic;
+  padding: 2em;
+}
+section.cite strong {
+  color: #D9FF01;
+}
+
+/* -------------------------------------
+   EPUB/Dark mode compatibility
+---------------------------------------- */
+@media (prefers-color-scheme: dark) {
+  :root {
+    background-color: #1E1E1E;
+    color: #EAEAEA;
+    --heading-color: #FFFFFF;
+    --italic-bg-color: #333C4D;
+    --link-color: #66B2FF;
+    --border-color: #444444;
+    --table-header-color: #2C2C2C;
+  }
+}
