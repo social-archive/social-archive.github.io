@@ -86,16 +86,16 @@ section {
 }
 
 :root h2 {
-  font-size: 1.2em !important;
-  margin-bottom: 0.5em !important;
+  font-size: 1.2em;
+  margin-bottom: 0.5em;
 }
 
 :root h3 {
-  font-size: 1em !important;
+  font-size: 1em;
 }
 
 :root p {
-  font-size: 0.9em !important;
+  font-size: 0.9em;
   letter-spacing: -0.8px;
 }
 
