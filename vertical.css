@@ -1,9 +1,5 @@
-/* @theme vertical */
-
-@import 'default';
-
 section {
-  width: 148mm;
-  height: 210mm;
-  padding: 20mm;
+  width: 419px;   /* 5.83in × 72dpi ≒ 419px */
+  height: 595px;  /* 8.27in × 72dpi ≒ 595px */
+  padding: 56px;  /* 20mm ≒ 0.79in × 72dpi ≒ 56px */
 }
