@@ -1,68 +1,199 @@
 /* @theme vertical-ebook */
 
-@font-face {
-  font-family: 'BookkGothic-Bd';
-  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/BookkGothic-Bd.woff2') format('woff2');
-  font-weight: 700;
-  font-style: bold;
-}
-
+/* ------------------------------
+   1. Custom Font : BookkGothic
+------------------------------ */
 @font-face {
   font-family: 'BookkGothic';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.1/BookkGothic-Lt.woff2') format('woff2');
+  src: local('BookkGothic'),
+       url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.1/BookkGothic-Lt.woff2') format('woff2');
   font-weight: 300;
   font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'BookkGothic-Bd';
+  src: local('BookkGothic Bold'),
+       url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/BookkGothic-Bd.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
 }
 
-/* 기본 스타일 */
+/* ------------------------------
+   2. Imports (Marp 기본 테마)
+------------------------------ */
+@import "default";
+@import "schema";
+@import "structure";
+
+/* ------------------------------
+   3. Base Slide (A5 @300dpi)
+------------------------------ */
 section {
   width: 1748px;
   height: 2480px;
   padding: 100px;
-  font-family: 'BookkGothic', sans-serif;
-  font-size: 16px;
-  color: #333;
   position: relative;
-  background-color: white;
   overflow: hidden;
+  font-family: 'BookkGothic', sans-serif;
+  font-size: 32px;
+  color: #494545;
+  background-color: white;
 }
 
-/* 공통 배경 처리 방식 */
 section::before {
   content: "";
   position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+  inset: 0;
   background: white;
   z-index: -1;
 }
 
-/* 전환 슬라이드 배경색 */
-section.transition::before {
-  background: #ff5202;
+/* ------------------------------
+   4. Typography & Colors
+------------------------------ */
+h1 {
+  font-size: 2em;
+  font-weight: bold;
+  color: #2b2c2e;
+  letter-spacing: -0.5px;
+}
+h1 strong {
+  font-family: 'BookkGothic-Bd', serif;
+  color: rgb(207, 77, 17);
 }
 
-/* 전환 슬라이드 텍스트 색상 */
-section.transition {
+p {
+  font-size: 1em;
+  line-height: 1.8;
+  font-family: 'BookkGothic', sans-serif;
+  color: #494545;
+}
+
+strong {
+  font-family: 'BookkGothic-Bd', serif;
+  color: rgb(71, 107, 184);
+}
+em {
+  font-family: 'BookkGothic', serif;
+  color: rgb(96, 89, 89);
+  background: rgba(52, 170, 209, 0.172);
+}
+
+/* Lists */
+ul, ol {
+  font-size: 0.95em;
+  font-family: 'BookkGothic', sans-serif;
+  letter-spacing: -0.3px;
+}
+ul li::marker {
+  color: rgb(255, 212, 95);
+}
+
+/* ------------------------------
+   5. Table Styling
+------------------------------ */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th {
+  background-color: rgb(74, 96, 117);
   color: white;
+  border: 1px solid #014385;
+  padding: 0.5em;
+}
+td {
+  border: 1px solid #014385;
+  padding: 0.5em;
 }
 
-/* 제목 슬라이드 */
+/* ------------------------------
+   6. Slide Types
+------------------------------ */
+/* Title Page */
 section.titlepage .title {
   font-size: 2.5em;
-  font-weight: bold;
-  color: #cf4d11;
-  border-bottom: 2px solid #cf4d11;
-  padding-bottom: 0.2em;
+  font-family: 'BookkGothic-Bd', serif;
+  color: rgb(207, 77, 17);
+  border-bottom: 2px solid #014385;
+  padding-bottom: 0.3em;
 }
 section.titlepage .subtitle {
   font-size: 1.5em;
   font-weight: 300;
-  color: #666;
+  color: #494545;
 }
 section.titlepage .author,
-section.titlepage .date {
-  margin-top: 1em;
-  color: #888;
+section.titlepage .date,
+section.titlepage .organization {
   font-size: 1em;
+  color: #080a0a;
+  text-align: left;
+  margin-top: 0.5em;
+}
+
+/* Transition Slide */
+section.transition {
+  color: white;
+  font-family: 'BookkGothic-Bd', serif;
+}
+section.transition::before {
+  background: rgb(207, 77, 17);
+}
+section.transition strong {
+  color: rgb(0, 102, 255);
+}
+
+/* Transition2 Slide */
+section.transition2 {
+  color: white;
+  font-family: 'BookkGothic-Bd', serif;
+}
+section.transition2::before {
+  background: #246;
+}
+section.transition2 strong {
+  color: rgb(238, 234, 5);
+}
+
+/* Cite Slide */
+section.cite {
+  font-family: 'BookkGothic', serif;
+}
+section.cite::before {
+  background: rgb(71, 69, 69);
+}
+section.cite p {
+  font-size: 1.8em;
+  color: #ebf7e8;
+  font-family: 'BookkGothic', serif;
+}
+section.cite strong {
+  color: #d9ff01;
+}
+
+/* Biblio Slide */
+section.biblio {
+  font-family: 'BookkGothic', serif;
+  color: white;
+}
+section.biblio::before {
+  background: black;
+}
+section.biblio strong {
+  color: orange;
+}
+
+/* ------------------------------
+   7. Pagination
+------------------------------ */
+section::after {
+  content: attr(data-marpit-pagination) "/" attr(data-marpit-pagination-total);
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  font-size: 0.8em;
+  color: rgb(201, 198, 198);
 }
