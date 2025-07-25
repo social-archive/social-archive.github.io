@@ -1,6 +1,6 @@
 # n8n AI Agent 생성 가이드
 
-<iframe src="https://sarc.kr/static/01.pdf" width="600" height="800" style="border:none;"></iframe>
+<iframe src="https://sarc.kr/static/01.pdf" width="100%" style="border:none;"></iframe>
 
 ## 목차
 1. [AI Agent 개요](#ai-agent-개요)
