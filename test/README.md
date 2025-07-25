@@ -7,6 +7,8 @@
   </iframe>
 </div>
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/VlsgHC5xkPA?si=rzpF7hcrGwRxd5AF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## 목차
 1. [AI Agent 개요](#ai-agent-개요)
 2. [n8n AI Agent 기본 설정](#n8n-ai-agent-기본-설정)
