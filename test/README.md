@@ -1,6 +1,11 @@
 # n8n AI Agent 생성 가이드
 
-<iframe src="https://sarc.kr/static/01.pdf" width="100vh" height="100vh" style="border:none;"></iframe>
+<div style="position: relative; width: 100%; padding-top: 56.25%;">
+  <iframe 
+    src="https://sarc.kr/static/01.pdf"
+    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;">
+  </iframe>
+</div>
 
 ## 목차
 1. [AI Agent 개요](#ai-agent-개요)
