@@ -1,0 +1,276 @@
+/* @theme v2 */
+
+@import "default";
+
+/* Font imports */
+@import url("https://fonts.googleapis.com/css?family=JetBrains+Mono&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200..900&display=swap');
+
+/* Root settings */
+:root {
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+img {
+    display: inline-block;
+}
+
+/* Section defaults */
+section {
+    color: #444444;
+    font-size: 20px;
+    line-height: 1.7;
+    padding: 1rem;
+    justify-content: flex-start;
+    padding-bottom: 1em;
+}
+
+section:not(.lead) {
+    padding: 1rem;
+    justify-content: flex-start;
+}
+
+/* Title section styling */
+section.title {
+    background-color: #5e80ad;
+    color: white;
+}
+
+section.title h1,
+section.title h2,
+section.title h3,
+section.title h6 {
+    color: white;
+}
+
+section.title strong {
+    color: white;
+}
+
+section.title footer {
+    color: #5e80ad;
+    background-color: white;
+}
+
+/* Headings */
+h1 {
+    color: #224466;
+    font-weight: 800;
+}
+
+h2 {
+    color: #224466;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* Text emphasis */
+strong {
+    color: #4488cc;
+}
+
+em {
+    font-style: normal;
+    font-weight: bold;
+    background-color: #4488cc25;
+}
+
+/* Lists */
+ul ul {
+    font-size: 0.95em;
+}
+
+/* Code styling */
+code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    letter-spacing: -1px;
+}
+
+/* Math expressions */
+section mjx-container {
+    color: #5e80ad;
+}
+
+/* Tables */
+section table {
+    margin: 10px auto;
+}
+
+section table td {
+    text-align: center;
+}
+
+
+section table td img {
+    display: block;
+    margin: 0 auto;
+}
+
+section table th {
+    background-color: #5e80ad;
+    color: white;
+}
+
+.table_clean tr,
+.table_clean td,
+.table_clean th {
+    border: none !important;
+    background-color: white !important;
+}
+
+/* Header and Footer */
+header {
+    background-color: #5e80ad;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    top: 0;
+    left: 0;
+    font-size: 1.5em;
+    font-weight: bold;
+    border-bottom: 2px solid #4488cc;
+}
+
+footer {
+    background-color: #224466;
+    color: white;
+    padding: 5px;
+    text-align: center;
+    bottom: 0;
+    width: 50%;
+    left: 0;
+    font-size: 20px;
+}
+
+/* Pagination */
+section::after {
+    content: attr(data-marpit-pagination) ' / ' attr(data-marpit-pagination-total);
+    text-align: right;
+    top: 95.1%;
+    width: 100%;
+    left: -0.75em;
+    font-size: 20px;
+}
+
+/* Blockquote */
+blockquote {
+    border-top: 0.1em solid black;
+    border-left: none;
+    padding-top: 0.5rem;
+    padding-left: 1rem;
+    font-size: 60%;
+    position: absolute;
+    bottom: 50px;
+    color: #656d76;
+}
+
+/* Image alignment */
+img[alt~="center"] {
+    display: block;
+    margin: 0 auto;
+}
+
+img[alt~="left"] {
+    float: left;
+    margin-right: 1rem;
+}
+
+img[alt~="right"] {
+    float: right;
+    margin-left: 1rem;
+}
+
+/* Column layout */
+.columns {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+/* Three column layout */
+.columns-3 {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+/* Special sections */
+section.lead {
+    text-align: center;
+    background:  #282a36;
+    color: white;
+}
+
+section.lead h1,
+section.lead h2,
+section.lead h3 {
+    color: white;
+}
+
+/* Link styling */
+a {
+    color: #4488cc;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #5e80ad;
+    text-decoration: underline;
+}
+
+/* Custom utility classes */
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.highlight {
+    background-color: #4488cc25;
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+.accent {
+    color: #5e80ad;
+    font-weight: bold;
+}
+
+.list-container ul {
+    list-style-type: disc;
+}
+
+.list-container ol {
+    list-style-type: decimal;
+}
+
+section ul,
+section ol {
+    padding-left: 1rem;
+}
+
+.no-indent ol,
+.no-indent ul {
+    padding-left: 0.5rem;
+}
+
+.header-container {
+    position: fixed;
+    top: 5%;
+}
+
+section.p-5 {
+    padding: 5%;
+}
