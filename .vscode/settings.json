@@ -1,8 +1,0 @@
-{
-    "editor.fontSize": 14,
-    "terminal.integrated.fontSize": 14,
-    "chat.editor.fontSize": 14,
-    "markdown.marp.themes": [
-        "https://social-archive.github.io/v2.css"
-    ]
-}
