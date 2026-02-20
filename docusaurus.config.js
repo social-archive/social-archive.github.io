@@ -66,7 +66,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/social-archive/social-archive/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/social-archive/social-archive.github.io/tree/main/',
         },
         blog: {
           showReadingTime: true,
@@ -113,6 +113,11 @@ const config = {
           { to: '/docs/free/starter', label: '무료자료실', position: 'left' },
           { to: '/blog', label: '블로그', position: 'left' },
           {
+            href: 'https://inf.run/jiXTj',
+            label: '인프런 강의',
+            position: 'right',
+          },
+          {
             href: 'https://www.latpeed.com/stores/oVjgN',
             label: '멤버십스토어',
             position: 'right',
@@ -127,6 +132,10 @@ const config = {
             items: [
               { label: '무료자료실', to: '/docs/free/starter' },
               { label: '블로그', to: '/blog' },
+              {
+                label: '인프런 강의',
+                href: 'https://inf.run/jiXTj',
+              },
               {
                 label: '멤버십스토어',
                 href: 'https://www.latpeed.com/stores/oVjgN',

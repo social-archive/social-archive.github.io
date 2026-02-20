@@ -1,41 +1,29 @@
-# Website
+# 소셜아카이브 포털
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+[Docusaurus](https://docusaurus.io/)로 구축한 소셜아카이브 포털입니다.
 
-## Installation
-
-```bash
-yarn
-```
-
-## Local Development
+## 설치
 
 ```bash
-yarn start
+npm install
 ```
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
-
-## Build
+## 로컬 개발
 
 ```bash
-yarn build
+npm start
 ```
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+개발 서버가 실행되며, 대부분의 변경사항이 실시간으로 반영됩니다.
 
-## Deployment
-
-Using SSH:
+## 빌드
 
 ```bash
-USE_SSH=true yarn deploy
+npm run build
 ```
 
-Not using SSH:
+`build` 폴더에 정적 파일이 생성됩니다.
 
-```bash
-GIT_USER=<Your GitHub username> yarn deploy
-```
+## 배포
 
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+GitHub Actions로 `main` 브랜치 푸시 시 자동 배포됩니다. (`.github/workflows/deploy.yml`)

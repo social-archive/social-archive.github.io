@@ -54,6 +54,14 @@ const profiles = [
     icon: '✏️',
   },
   {
+    id: 'inflearn',
+    title: '인프런 강의',
+    description: 'AI 활용 100프롬프트 기초 입문 강의를 수강하세요.',
+    href: 'https://inf.run/jiXTj',
+    icon: '🎓',
+    external: true,
+  },
+  {
     id: 'store',
     title: '멤버십스토어',
     description: '자료팩, 멤버십 등 유료 콘텐츠를 구매하세요.',
@@ -116,7 +124,7 @@ export default function Home() {
               멀티프로필 허브
             </p>
             <p className={styles.heroDesc}>
-              인스타 · 카톡 · 유튜브 · 무료자료실 · 블로그 · 스토어를 한곳에서
+              인스타 · 카톡 · 유튜브 · 무료자료실 · 블로그 · 인프런 · 스토어를 한곳에서
             </p>
           </div>
         </section>
