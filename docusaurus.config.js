@@ -46,7 +46,7 @@ const config = {
   // Algolia 검색: DocSearch 신청 후 themeConfig.algolia에 appId, apiKey, indexName 추가
   // 참고: placeholder credentials 사용 시 SearchPage 에러 발생 가능
 
-  // sitemap은 classic preset에 기본 포함됨
+  // sitemap, gtag는 preset 옵션으로 설정됨
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
@@ -82,6 +82,14 @@ const config = {
         },
         theme: {
           customCss: './src/css/custom.css',
+        },
+        sitemap: {
+          changefreq: 'weekly',
+          priority: 0.5,
+        },
+        gtag: {
+          trackingID: 'G-QQBV4FLKC7',
+          anonymizeIP: true,
         },
       }),
     ],
