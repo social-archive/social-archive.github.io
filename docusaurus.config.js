@@ -33,15 +33,16 @@ const config = {
 
   onBrokenLinks: 'throw',
 
-  plugins: [
+  themes: [
     [
-      '@cmfcmf/docusaurus-search-local',
+      require.resolve('@easyops-cn/docusaurus-search-local'),
       {
+        hashed: true,
+        language: ['ko'],
         indexDocs: true,
         indexBlog: true,
         indexPages: false,
-        language: 'en', // ko 미지원, 한글 검색은 기본 토크나이저로 동작
-        maxSearchResults: 8,
+        searchResultLimits: 8,
       },
     ],
   ],
