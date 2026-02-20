@@ -120,17 +120,17 @@ export default function Home() {
             <Heading as="h1" className={styles.heroTitle}>
               {siteConfig.title}
             </Heading>
-            <p className={styles.heroSubtitle}>
+            {/* <p className={styles.heroSubtitle}>
               멀티프로필 허브
             </p>
             <p className={styles.heroDesc}>
               인스타 · 카톡 · 유튜브 · 무료자료실 · 블로그 · 인프런 · 스토어를 한곳에서
-            </p>
+            </p> */}
           </div>
         </section>
 
         <section className={styles.profiles} aria-label="멀티프로필">
-          <h2 className={styles.profilesHeading}>프로필 선택</h2>
+          {/* <h2 className={styles.profilesHeading}>프로필 선택</h2> */}
           <div className={styles.profilesGrid}>
             {profiles.map((profile) => (
               <ProfileCard key={profile.id} {...profile} />
