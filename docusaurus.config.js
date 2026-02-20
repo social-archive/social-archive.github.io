@@ -33,6 +33,9 @@ const config = {
 
   onBrokenLinks: 'throw',
 
+  // Algolia 검색: DocSearch 신청 후 themeConfig.algolia에 appId, apiKey, indexName 추가
+  // 참고: placeholder credentials 사용 시 SearchPage 에러 발생 가능
+
   // sitemap은 classic preset에 기본 포함됨
 
   // Even if you don't use internationalization, you can use this field to set
