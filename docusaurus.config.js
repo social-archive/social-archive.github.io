@@ -33,18 +33,18 @@ const config = {
 
   onBrokenLinks: 'throw',
 
-  headTags: [
-    {
-      tagName: 'meta',
-      attributes: {
-        name: 'algolia-site-verification',
-        content: '7E788011C4B265B2',
+  plugins: [
+    [
+      '@cmfcmf/docusaurus-search-local',
+      {
+        indexDocs: true,
+        indexBlog: true,
+        indexPages: false,
+        language: 'en', // ko 미지원, 한글 검색은 기본 토크나이저로 동작
+        maxSearchResults: 8,
       },
-    },
+    ],
   ],
-
-  // Algolia 검색: DocSearch 신청 후 themeConfig.algolia에 appId, apiKey, indexName 추가
-  // 참고: placeholder credentials 사용 시 SearchPage 에러 발생 가능
 
   // sitemap, gtag는 preset 옵션으로 설정됨
 
@@ -148,12 +148,6 @@ const config = {
       prism: {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
-      },
-      algolia: {
-        appId: 'OM0JQHRZ7R',
-        apiKey: 'c1817c3006752244a792bc3c3356449f',
-        indexName: 'algolia',
-        contextualSearch: true,
       },
     }),
 };
