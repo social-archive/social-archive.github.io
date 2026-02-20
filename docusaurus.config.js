@@ -33,6 +33,16 @@ const config = {
 
   onBrokenLinks: 'throw',
 
+  headTags: [
+    {
+      tagName: 'meta',
+      attributes: {
+        name: 'algolia-site-verification',
+        content: '7E788011C4B265B2',
+      },
+    },
+  ],
+
   // Algolia 검색: DocSearch 신청 후 themeConfig.algolia에 appId, apiKey, indexName 추가
   // 참고: placeholder credentials 사용 시 SearchPage 에러 발생 가능
 
@@ -121,6 +131,12 @@ const config = {
       prism: {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
+      },
+      algolia: {
+        appId: 'OM0JQHRZ7R',
+        apiKey: 'c1817c3006752244a792bc3c3356449f',
+        indexName: 'algolia',
+        contextualSearch: true,
       },
     }),
 };
