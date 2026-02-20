@@ -15,7 +15,7 @@ const FeatureList = [
     ),
   },
   {
-    title: '무료자료실',
+    title: '자료실',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     to: '/docs/free/starter',
     description: (

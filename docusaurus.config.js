@@ -11,7 +11,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: '소셜아카이브',
-  tagline: '공지사항, 무료자료실, 스토어',
+  tagline: '공지사항, 자료실, 스토어',
   favicon: 'img/sa_150.png',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -111,7 +111,7 @@ const config = {
           src: 'img/sa_150.png',
         },
         items: [
-          { to: '/docs/free/starter', label: '무료자료실', position: 'left' },
+          { to: '/docs/free/starter', label: '자료실', position: 'left' },
           { to: '/blog', label: '블로그', position: 'left' },
           {
             href: 'https://inf.run/jiXTj',
@@ -131,7 +131,7 @@ const config = {
           {
             title: '링크',
             items: [
-              { label: '무료자료실', to: '/docs/free/starter' },
+              { label: '자료실', to: '/docs/free/starter' },
               { label: '블로그', to: '/blog' },
               {
                 label: '인프런 강의',
