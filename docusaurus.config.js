@@ -1,34 +1,21 @@
 // @ts-check
-// `@type` JSDoc annotations allow editor autocompletion and type checking
-// (when paired with `@ts-check`).
-// There are various equivalent ways to declare your Docusaurus config.
-// See: https://docusaurus.io/docs/api/docusaurus-config
-
-import {themes as prismThemes} from 'prism-react-renderer';
-
-// This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
+import { themes as prismThemes } from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: '소셜아카이브',
-  tagline: '소셜아카이브,ai,blog,공지사항',
+  tagline: 'AI 콘텐츠 · 자료실 · 강의 · 스토어를 하나로 연결한 허브',
   favicon: 'img/logo_1000x1000.png',
 
-  // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
-    v4: true, // Improve compatibility with the upcoming Docusaurus v4
+    v4: true,
   },
 
-  // Set the production url of your site here
   url: 'https://social-archive.github.io',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'social-archive', // Usually your GitHub org/user name.
-  projectName: 'social-archive.github.io', // Usually your repo name.
+  organizationName: 'social-archive',
+  projectName: 'social-archive.github.io',
   trailingSlash: false,
 
   onBrokenLinks: 'throw',
@@ -39,7 +26,8 @@ const config = {
     {
       tagName: 'script',
       attributes: {},
-      innerHTML: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}window.gtag=gtag;`,
+      innerHTML:
+        'window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}window.gtag=gtag;',
     },
   ],
 
@@ -51,17 +39,12 @@ const config = {
         language: ['ko'],
         indexDocs: true,
         indexBlog: true,
-        indexPages: false,
+        indexPages: true,
         searchResultLimits: 8,
       },
     ],
   ],
 
-  // sitemap, gtag는 preset 옵션으로 설정됨
-
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'ko',
     locales: ['ko'],
@@ -70,19 +53,15 @@ const config = {
   presets: [
     [
       'classic',
-      /** @type {import('@docusaurus/preset-classic').Options} */
-      ({
+      {
         docs: {
           sidebarPath: './sidebars.js',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/social-archive/social-archive.github.io/tree/main/',
+          editUrl: 'https://github.com/social-archive/social-archive.github.io/tree/main/',
         },
         blog: {
           showReadingTime: true,
           blogTitle: '소셜아카이브 블로그',
-          blogDescription: '유튜브 영상, 활용 팁, 업데이트 소식',
+          blogDescription: '콘텐츠 운영 팁, 업데이트 노트, AI 활용 인사이트',
           feedOptions: { type: ['rss', 'atom'], xslt: true },
           editUrl: 'https://github.com/social-archive/social-archive.github.io/tree/main/',
           blogSidebarTitle: '최근 글',
@@ -102,14 +81,13 @@ const config = {
           trackingID: 'G-QQBV4FLKC7',
           anonymizeIP: true,
         },
-      }),
+      },
     ],
   ],
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      // Replace with your project's social card
       image: 'img/logo_1000x1000.png',
       colorMode: {
         respectPrefersColorScheme: true,
@@ -122,6 +100,7 @@ const config = {
         },
         items: [
           { to: '/docs/free/starter', label: '자료실', position: 'left' },
+          { to: '/docs/notice/2024-02-01', label: '공지사항', position: 'left' },
           { to: '/blog', label: '블로그', position: 'left' },
           {
             href: 'https://inf.run/jiXTj',
@@ -130,7 +109,7 @@ const config = {
           },
           {
             href: 'https://www.latpeed.com/stores/oVjgN',
-            label: '멤버십스토어',
+            label: '스토어',
             position: 'right',
           },
         ],
@@ -139,29 +118,41 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: '링크',
+            title: '콘텐츠',
             items: [
               { label: '자료실', to: '/docs/free/starter' },
+              { label: '공지사항', to: '/docs/notice/2024-02-01' },
               { label: '블로그', to: '/blog' },
-              {
-                label: '인프런 강의',
-                href: 'https://inf.run/jiXTj',
-              },
-              {
-                label: '멤버십스토어',
-                href: 'https://www.latpeed.com/stores/oVjgN',
-              },
             ],
           },
           {
-            title: '법적 고지',
+            title: '서비스',
+            items: [
+              { label: '인프런 강의', href: 'https://inf.run/jiXTj' },
+              { label: '멤버십 스토어', href: 'https://www.latpeed.com/stores/oVjgN' },
+            ],
+          },
+          {
+            title: '정책',
             items: [
               { label: '개인정보 처리방침', to: '/privacy-policy' },
               { label: '이용약관', to: '/terms' },
             ],
           },
+          {
+            title: '사업자 정보',
+            items: [
+              { html: '<span class="biz-meta">상호명: 소셜아카이브</span>' },
+              { html: '<span class="biz-meta">대표자: 서정욱</span>' },
+              { html: '<span class="biz-meta">주소: 서울특별시 신림동 19-3 믿음하우스 1003호</span>' },
+              { html: '<span class="biz-meta">전화: 01042215066</span>' },
+              { html: '<span class="biz-meta">메일: dj500dj100@gmail.com</span>' },
+              { html: '<span class="biz-meta">사업자등록번호: 634-17-02226</span>' },
+              { html: '<span class="biz-meta">통신판매신고번호: 2025-서울관악-1441</span>' },
+            ],
+          },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} 소셜아카이브`,
+        copyright: `Copyright ${new Date().getFullYear()} Social Archive. All rights reserved.`,
       },
       prism: {
         theme: prismThemes.github,

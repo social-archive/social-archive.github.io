@@ -1,34 +1,96 @@
-/**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
- */
-
-/* Pretendard - 깔끔한 한글 폰트 */
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
 
-/* Algolia-inspired theme - 깔끔한 블루/퍼플 톤 */
 :root {
-  --ifm-font-family-base: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
-  --ifm-color-primary: #5468ff;
-  --ifm-color-primary-dark: #3d52e8;
-  --ifm-color-primary-darker: #2f44d9;
-  --ifm-color-primary-darkest: #1e32b3;
-  --ifm-color-primary-light: #6b7fff;
-  --ifm-color-primary-lighter: #7d8fff;
-  --ifm-color-primary-lightest: #9aa8ff;
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(84, 104, 255, 0.1);
+  --ifm-font-family-base: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --ifm-color-primary: #0f766e;
+  --ifm-color-primary-dark: #0b675f;
+  --ifm-color-primary-darker: #095c55;
+  --ifm-color-primary-darkest: #074842;
+  --ifm-color-primary-light: #13857d;
+  --ifm-color-primary-lighter: #1b938a;
+  --ifm-color-primary-lightest: #37a69e;
+  --ifm-background-color: #f7fbfb;
+  --ifm-code-font-size: 94%;
+  --ifm-heading-font-weight: 700;
+  --ifm-navbar-height: 72px;
+  --docusaurus-highlighted-code-line-bg: rgba(14, 101, 108, 0.12);
 }
 
-/* Algolia dark mode - 네이비 블루 톤 */
+html,
+body {
+  background:
+    radial-gradient(circle at top left, rgba(255, 166, 0, 0.09), rgba(255, 166, 0, 0) 35%),
+    radial-gradient(circle at 85% 10%, rgba(15, 118, 110, 0.08), rgba(15, 118, 110, 0) 30%),
+    var(--ifm-background-color);
+}
+
+.navbar {
+  backdrop-filter: blur(8px);
+  background: rgba(247, 251, 251, 0.86);
+  border-bottom: 1px solid rgba(11, 72, 82, 0.12);
+}
+
+.navbar__title {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.button {
+  border-radius: 12px;
+  font-weight: 700;
+}
+
+.pagination-nav__link,
+.table-of-contents,
+.alert {
+  border-radius: 14px;
+}
+
+.footer {
+  background: linear-gradient(140deg, #062b2e 0%, #114851 100%);
+}
+
+.footer__link-item:hover {
+  color: #b8f2ed;
+}
+
+.biz-meta {
+  display: block;
+  font-size: 0.66rem;
+  line-height: 1.35;
+  letter-spacing: 0.01em;
+  opacity: 0.55;
+}
+
+.footer .footer__title {
+  font-size: 0.95rem;
+}
+
 [data-theme='dark'] {
-  --ifm-color-primary: #7d8fff;
-  --ifm-color-primary-dark: #6b7fff;
-  --ifm-color-primary-darker: #5468ff;
-  --ifm-color-primary-darkest: #3d52e8;
-  --ifm-color-primary-light: #9aa8ff;
-  --ifm-color-primary-lighter: #b8c2ff;
-  --ifm-color-primary-lightest: #d6dcff;
-  --docusaurus-highlighted-code-line-bg: rgba(84, 104, 255, 0.2);
+  --ifm-color-primary: #3ac6bb;
+  --ifm-color-primary-dark: #2db7ac;
+  --ifm-color-primary-darker: #1ea99e;
+  --ifm-color-primary-darkest: #11837b;
+  --ifm-color-primary-light: #4dd2c7;
+  --ifm-color-primary-lighter: #67dbd1;
+  --ifm-color-primary-lightest: #8be7de;
+  --ifm-background-color: #08171b;
+  --docusaurus-highlighted-code-line-bg: rgba(58, 198, 187, 0.22);
+}
+
+[data-theme='dark'] html,
+[data-theme='dark'] body {
+  background:
+    radial-gradient(circle at top left, rgba(255, 166, 0, 0.15), rgba(255, 166, 0, 0) 40%),
+    radial-gradient(circle at 85% 10%, rgba(58, 198, 187, 0.2), rgba(58, 198, 187, 0) 35%),
+    var(--ifm-background-color);
+}
+
+[data-theme='dark'] .navbar {
+  background: rgba(7, 21, 25, 0.8);
+  border-bottom-color: rgba(130, 216, 209, 0.18);
+}
+
+[data-theme='dark'] .biz-meta {
+  opacity: 0.48;
 }
