@@ -11,8 +11,8 @@ import {themes as prismThemes} from 'prism-react-renderer';
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: '소셜아카이브',
-  tagline: '공지사항, 자료실, 스토어',
-  favicon: 'img/sa_150.png',
+  tagline: '소셜아카이브,ai,blog,공지사항',
+  favicon: 'img/logo_1000x1000.png',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
@@ -32,6 +32,16 @@ const config = {
   trailingSlash: false,
 
   onBrokenLinks: 'throw',
+
+  clientModules: [require.resolve('./src/gtag-stub.js')],
+
+  headTags: [
+    {
+      tagName: 'script',
+      attributes: {},
+      innerHTML: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}window.gtag=gtag;`,
+    },
+  ],
 
   themes: [
     [
@@ -100,7 +110,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/sa_150.png',
+      image: 'img/logo_1000x1000.png',
       colorMode: {
         respectPrefersColorScheme: true,
       },
@@ -108,7 +118,7 @@ const config = {
         title: '소셜아카이브',
         logo: {
           alt: '소셜아카이브 로고',
-          src: 'img/sa_150.png',
+          src: 'img/logo_1000x1000.png',
         },
         items: [
           { to: '/docs/free/starter', label: '자료실', position: 'left' },
@@ -141,6 +151,13 @@ const config = {
                 label: '멤버십스토어',
                 href: 'https://www.latpeed.com/stores/oVjgN',
               },
+            ],
+          },
+          {
+            title: '법적 고지',
+            items: [
+              { label: '개인정보 처리방침', to: '/privacy-policy' },
+              { label: '이용약관', to: '/terms' },
             ],
           },
         ],
