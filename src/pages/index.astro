@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import background from '../assets/background.svg';
 
 const archiveItems = [
 	{
@@ -15,156 +16,114 @@ const archiveItems = [
 		link: '#',
 	},
 ];
+
+const links = [
+	{ href: 'https://github.com/social-archive', label: 'GitHub', primary: true },
+	{ href: 'https://x.com', label: 'X (Twitter)', primary: false },
+	{ href: '#', label: '블로그', primary: false },
+];
 ---
 
-<Layout title="소셜 아카이브" description="소셜 미디어 포스트 아카이브">
-	<header class="header">
-		<div class="container">
-			<h1 class="logo">소셜 아카이브</h1>
-			<p class="tagline">소셜 미디어 포스트를 모아두는 공간</p>
-		</div>
+<Layout title="소셜 아카이브" description="소셜 미디어 포스트를 모아두는 공간. 다양한 플랫폼의 포스트를 한곳에서 확인하세요.">
+	<!-- Background -->
+	<div
+		class="fixed inset-0 -z-10 bg-cover bg-center blur-[100px] opacity-50 pointer-events-none"
+		style={`background-image: url(${background.src})`}
+	/>
+
+	<!-- Header -->
+	<header class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 py-5 border-b border-[#f0f0f0]">
+		<a href="/" class="flex items-center no-underline hover:opacity-70 transition-opacity">
+			<img src="/logo.png" alt="소셜 아카이브" class="h-12 w-auto" />
+		</a>
+		<nav class="flex flex-wrap items-center gap-6 md:gap-8">
+			{links.map((link) => (
+				<a
+					href={link.href}
+					class={`text-[15px] font-medium text-[#1a1a1a] transition-opacity hover:opacity-60 hover:no-underline ${
+						link.primary
+							? 'bg-[#1a1a1a] text-white px-5 py-2.5 rounded-md hover:bg-[#333] hover:opacity-100'
+							: ''
+					}`}
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					{link.label}
+				</a>
+			))}
+		</nav>
 	</header>
 
-	<main class="main">
-		<div class="container">
-			<section class="archive-section">
-				<h2 class="section-title">아카이브</h2>
-				<ul class="archive-list">
-					{archiveItems.map((item) => (
-						<li class="archive-item">
-							<article class="card">
-								<div class="card-meta">
-									<time datetime={item.date}>{item.date}</time>
-									<span class="platform">{item.platform}</span>
-								</div>
-								<p class="card-content">{item.content}</p>
-								{item.link && (
-									<a href={item.link} class="card-link" target="_blank" rel="noopener noreferrer">
-										원문 보기 →
-									</a>
-								)}
-							</article>
-						</li>
-					))}
-				</ul>
-			</section>
-		</div>
+	<!-- Hero -->
+	<section class="py-16 border-b border-[#f0f0f0]">
+		<h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-[#1a1a1a] leading-tight tracking-tight mb-4">
+			소셜 미디어 포스트를<br />모아두는 공간
+		</h1>
+		<p class="text-lg text-[#666666]">다양한 플랫폼의 포스트를 한곳에서 확인하세요</p>
+	</section>
+
+	<!-- Main -->
+	<main class="py-16">
+		<section>
+			<div class="mb-7">
+				<h2 class="text-lg font-semibold text-[#1a1a1a] tracking-tight mb-1">아카이브</h2>
+				<p class="text-sm text-[#888888]">최근 포스트</p>
+			</div>
+			<ul class="flex flex-col gap-3 list-none m-0 p-0">
+				{archiveItems.map((item) => (
+					<li>
+						<article
+							class="bg-white/90 border border-[#f0f0f0] rounded-lg p-6 transition-all hover:border-[#e5e5e5] hover:bg-white/95"
+						>
+							<div class="flex gap-4 mb-2.5 text-[13px] text-[#888888] font-medium tabular-nums">
+								<time datetime={item.date}>{item.date}</time>
+								<span class="text-[#1a1a1a] font-semibold">{item.platform}</span>
+							</div>
+							<p class="text-[#333333] leading-relaxed text-[15px] mb-3">{item.content}</p>
+							{item.link && (
+								<a
+									href={item.link}
+									class="text-sm font-medium text-[#1a1a1a] hover:opacity-60 hover:no-underline"
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									원문 보기 →
+								</a>
+							)}
+						</article>
+					</li>
+				))}
+			</ul>
+		</section>
 	</main>
 
-	<footer class="footer">
-		<div class="container">
-			<p>Built with <a href="https://astro.build" target="_blank" rel="noopener noreferrer">Astro</a> · Hosted on GitHub Pages</p>
+	<!-- Footer -->
+	<footer class="pt-16 mt-16 border-t border-[#f0f0f0] pb-8">
+		<div class="text-center">
+			<div class="flex items-center justify-center gap-3 mb-5 text-sm">
+				<a href="/terms" class="font-medium text-[#1a1a1a] hover:underline">이용약관</a>
+				<span class="text-[#d0d0d0]">|</span>
+				<a href="/privacy" class="font-medium text-[#1a1a1a] hover:underline">개인정보 처리방침</a>
+			</div>
+			<dl class="grid grid-cols-[auto_1fr] gap-x-6 gap-y-1 max-w-[400px] mx-auto mb-5 text-left text-[13px] text-[#888888]">
+				<dt class="font-medium text-[#666666]">상호</dt>
+				<dd>소셜아카이브</dd>
+				<dt class="font-medium text-[#666666]">대표</dt>
+				<dd>서정욱</dd>
+				<dt class="font-medium text-[#666666]">주소</dt>
+				<dd>서울특별시 신림동 19-3 믿음하우스 1003호</dd>
+				<dt class="font-medium text-[#666666]">전화</dt>
+				<dd><a href="tel:01042215066" class="text-[#1a1a1a]">010-4221-5066</a></dd>
+				<dt class="font-medium text-[#666666]">메일</dt>
+				<dd><a href="mailto:dj500dj100@gmail.com" class="text-[#1a1a1a]">dj500dj100@gmail.com</a></dd>
+				<dt class="font-medium text-[#666666]">사업자번호</dt>
+				<dd>634-17-02226</dd>
+				<dt class="font-medium text-[#666666]">통신판매신고번호</dt>
+				<dd>2025-서울관악-1441</dd>
+			</dl>
+			<p class="text-[13px] text-[#aaaaaa]">
+				Built with <a href="https://astro.build" target="_blank" rel="noopener noreferrer" class="text-[#666666] hover:underline">Astro</a> · Hosted on GitHub Pages
+			</p>
 		</div>
 	</footer>
 </Layout>
-
-<style>
-	.header {
-		padding: 3rem 1.5rem;
-		border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-	}
-
-	.logo {
-		font-size: 2rem;
-		font-weight: 700;
-		margin: 0 0 0.5rem;
-		background: linear-gradient(135deg, #a78bfa 0%, #c084fc 100%);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-clip: text;
-	}
-
-	.tagline {
-		margin: 0;
-		color: #a1a1aa;
-		font-size: 1rem;
-	}
-
-	.container {
-		max-width: 720px;
-		margin: 0 auto;
-		padding: 0 1.5rem;
-	}
-
-	.main {
-		padding: 3rem 0;
-	}
-
-	.section-title {
-		font-size: 1.25rem;
-		font-weight: 600;
-		margin: 0 0 1.5rem;
-		color: #d4d4d8;
-	}
-
-	.archive-list {
-		list-style: none;
-		margin: 0;
-		padding: 0;
-		display: flex;
-		flex-direction: column;
-		gap: 1rem;
-	}
-
-	.archive-item {
-		margin: 0;
-	}
-
-	.card {
-		background: rgba(255, 255, 255, 0.03);
-		border: 1px solid rgba(255, 255, 255, 0.06);
-		border-radius: 12px;
-		padding: 1.25rem 1.5rem;
-		transition: border-color 0.2s, background 0.2s;
-	}
-
-	.card:hover {
-		background: rgba(255, 255, 255, 0.05);
-		border-color: rgba(167, 139, 250, 0.3);
-	}
-
-	.card-meta {
-		display: flex;
-		gap: 1rem;
-		margin-bottom: 0.75rem;
-		font-size: 0.875rem;
-		color: #71717a;
-	}
-
-	.card-meta time {
-		font-variant-numeric: tabular-nums;
-	}
-
-	.platform {
-		color: #a78bfa;
-		font-weight: 500;
-	}
-
-	.card-content {
-		margin: 0 0 0.75rem;
-		color: #e4e4e7;
-		line-height: 1.6;
-	}
-
-	.card-link {
-		font-size: 0.875rem;
-		color: #a78bfa;
-	}
-
-	.card-link:hover {
-		text-decoration: none;
-		opacity: 0.9;
-	}
-
-	.footer {
-		padding: 2rem 1.5rem;
-		border-top: 1px solid rgba(255, 255, 255, 0.08);
-		text-align: center;
-		font-size: 0.875rem;
-		color: #71717a;
-	}
-
-	.footer a {
-		color: #a78bfa;
-	}
-</style>

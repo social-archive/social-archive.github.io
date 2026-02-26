@@ -1,10 +1,17 @@
 ---
+import '../styles/global.css';
+
 interface Props {
 	title?: string;
 	description?: string;
+	image?: string;
 }
 
-const { title = '소셜 아카이브', description = '소셜 미디어 아카이브' } = Astro.props;
+const { title = '소셜 아카이브', description = '소셜 미디어 포스트를 모아두는 공간', image } = Astro.props;
+
+const siteUrl = 'https://social-archive.github.io';
+const pageUrl = new URL(Astro.url.pathname, siteUrl).href;
+const ogImage = image ? `${siteUrl}${image}` : `${siteUrl}/logo.png`;
 ---
 
 <!doctype html>
@@ -12,40 +19,32 @@ const { title = '소셜 아카이브', description = '소셜 미디어 아카이
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
+		<link rel="stylesheet" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+		<link rel="manifest" href="/site.webmanifest" />
 		<meta name="generator" content={Astro.generator} />
-		<meta name="description" content={description} />
 		<title>{title}</title>
+		<meta name="description" content={description} />
+		<meta name="author" content="소셜아카이브" />
+		<link rel="canonical" href={Astro.url.href} />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={pageUrl} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={ogImage} />
+		<meta property="og:locale" content="ko_KR" />
+		<meta property="og:site_name" content="소셜 아카이브" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={ogImage} />
 	</head>
-	<body>
-		<slot />
+	<body class="min-h-screen bg-white text-[#1a1a1a] antialiased">
+		<div class="w-full max-w-[1200px] mx-auto px-6 md:px-10">
+			<slot />
+		</div>
 	</body>
 </html>
-
-<style is:global>
-	* {
-		box-sizing: border-box;
-	}
-
-	html,
-	body {
-		margin: 0;
-		padding: 0;
-		width: 100%;
-		min-height: 100%;
-		font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
-		background: #0f0f12;
-		color: #e4e4e7;
-		line-height: 1.6;
-	}
-
-	a {
-		color: #a78bfa;
-		text-decoration: none;
-	}
-
-	a:hover {
-		text-decoration: underline;
-	}
-</style>
