@@ -1,129 +1,18 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import background from '../assets/background.svg';
-
-const archiveItems = [
-	{
-		date: '2025-02-26',
-		platform: 'X (Twitter)',
-		content: '소셜 아카이브 프로젝트를 시작했습니다.',
-		link: '#',
-	},
-	{
-		date: '2025-02-25',
-		platform: 'GitHub',
-		content: 'Astro로 정적 사이트 구축 중.',
-		link: '#',
-	},
-];
-
-const links = [
-	{ href: 'https://github.com/social-archive', label: 'GitHub', primary: true },
-	{ href: 'https://x.com', label: 'X (Twitter)', primary: false },
-	{ href: '#', label: '블로그', primary: false },
-];
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 ---
 
 <Layout title="소셜 아카이브" description="소셜 미디어 포스트를 모아두는 공간. 다양한 플랫폼의 포스트를 한곳에서 확인하세요.">
-	<!-- Background -->
-	<div
-		class="fixed inset-0 -z-10 bg-cover bg-center blur-[100px] opacity-50 pointer-events-none"
-		style={`background-image: url(${background.src})`}
-	/>
+	<Header />
 
-	<!-- Header -->
-	<header class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 py-5 border-b border-[#f0f0f0]">
-		<a href="/" class="flex items-center no-underline hover:opacity-70 transition-opacity">
-			<img src="/logo.png" alt="소셜 아카이브" class="h-12 w-auto" />
-		</a>
-		<nav class="flex flex-wrap items-center gap-6 md:gap-8">
-			{links.map((link) => (
-				<a
-					href={link.href}
-					class={`text-[15px] font-medium text-[#1a1a1a] transition-opacity hover:opacity-60 hover:no-underline ${
-						link.primary
-							? 'bg-[#1a1a1a] text-white px-5 py-2.5 rounded-md hover:bg-[#333] hover:opacity-100'
-							: ''
-					}`}
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					{link.label}
-				</a>
-			))}
-		</nav>
-	</header>
-
-	<!-- Hero -->
-	<section class="py-16 border-b border-[#f0f0f0]">
-		<h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-[#1a1a1a] leading-tight tracking-tight mb-4">
+	<section class="py-24 md:py-32">
+		<h1 class="text-4xl md:text-5xl font-bold text-neutral-900 leading-tight tracking-tight mb-6">
 			소셜 미디어 포스트를<br />모아두는 공간
 		</h1>
-		<p class="text-lg text-[#666666]">다양한 플랫폼의 포스트를 한곳에서 확인하세요</p>
+		<p class="text-xl md:text-2xl text-neutral-600">다양한 플랫폼의 포스트를 한곳에서 확인하세요</p>
 	</section>
 
-	<!-- Main -->
-	<main class="py-16">
-		<section>
-			<div class="mb-7">
-				<h2 class="text-lg font-semibold text-[#1a1a1a] tracking-tight mb-1">아카이브</h2>
-				<p class="text-sm text-[#888888]">최근 포스트</p>
-			</div>
-			<ul class="flex flex-col gap-3 list-none m-0 p-0">
-				{archiveItems.map((item) => (
-					<li>
-						<article
-							class="bg-white/90 border border-[#f0f0f0] rounded-lg p-6 transition-all hover:border-[#e5e5e5] hover:bg-white/95"
-						>
-							<div class="flex gap-4 mb-2.5 text-[13px] text-[#888888] font-medium tabular-nums">
-								<time datetime={item.date}>{item.date}</time>
-								<span class="text-[#1a1a1a] font-semibold">{item.platform}</span>
-							</div>
-							<p class="text-[#333333] leading-relaxed text-[15px] mb-3">{item.content}</p>
-							{item.link && (
-								<a
-									href={item.link}
-									class="text-sm font-medium text-[#1a1a1a] hover:opacity-60 hover:no-underline"
-									target="_blank"
-									rel="noopener noreferrer"
-								>
-									원문 보기 →
-								</a>
-							)}
-						</article>
-					</li>
-				))}
-			</ul>
-		</section>
-	</main>
-
-	<!-- Footer -->
-	<footer class="pt-16 mt-16 border-t border-[#f0f0f0] pb-8">
-		<div class="text-center">
-			<div class="flex items-center justify-center gap-3 mb-5 text-sm">
-				<a href="/terms" class="font-medium text-[#1a1a1a] hover:underline">이용약관</a>
-				<span class="text-[#d0d0d0]">|</span>
-				<a href="/privacy" class="font-medium text-[#1a1a1a] hover:underline">개인정보 처리방침</a>
-			</div>
-			<dl class="grid grid-cols-[auto_1fr] gap-x-6 gap-y-1 max-w-[400px] mx-auto mb-5 text-left text-[13px] text-[#888888]">
-				<dt class="font-medium text-[#666666]">상호</dt>
-				<dd>소셜아카이브</dd>
-				<dt class="font-medium text-[#666666]">대표</dt>
-				<dd>서정욱</dd>
-				<dt class="font-medium text-[#666666]">주소</dt>
-				<dd>서울특별시 신림동 19-3 믿음하우스 1003호</dd>
-				<dt class="font-medium text-[#666666]">전화</dt>
-				<dd><a href="tel:01042215066" class="text-[#1a1a1a]">010-4221-5066</a></dd>
-				<dt class="font-medium text-[#666666]">메일</dt>
-				<dd><a href="mailto:dj500dj100@gmail.com" class="text-[#1a1a1a]">dj500dj100@gmail.com</a></dd>
-				<dt class="font-medium text-[#666666]">사업자번호</dt>
-				<dd>634-17-02226</dd>
-				<dt class="font-medium text-[#666666]">통신판매신고번호</dt>
-				<dd>2025-서울관악-1441</dd>
-			</dl>
-			<p class="text-[13px] text-[#aaaaaa]">
-				Built with <a href="https://astro.build" target="_blank" rel="noopener noreferrer" class="text-[#666666] hover:underline">Astro</a> · Hosted on GitHub Pages
-			</p>
-		</div>
-	</footer>
+	<Footer />
 </Layout>

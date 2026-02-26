@@ -1,0 +1,36 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const rawPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true }));
+const posts = rawPosts
+	.map((post) => ({
+		url: post.url,
+		title: post.frontmatter.title,
+		description: post.frontmatter.description,
+		pubDate: post.frontmatter.pubDate,
+	}))
+	.sort((a, b) => new Date(b.pubDate).getTime() - new Date(a.pubDate).getTime());
+---
+
+<Layout title="이벤트 / 소식 - 소셜 아카이브" description="소셜 아카이브 이벤트 및 소식">
+	<Header />
+
+	<main class="py-6">
+		<div class="space-y-4">
+			{posts.map((post) => (
+				<a
+					href={post.url}
+					class="rounded-lg block p-8 border border-neutral-200 hover:border-neutral-300 hover:bg-neutral-50 transition-colors no-underline"
+				>
+					<h2 class="text-xl font-semibold text-neutral-900 mb-2">{post.title}</h2>
+					{post.description && <p class="text-base text-neutral-600 mb-2">{post.description}</p>}
+					<span class="text-base text-neutral-500">읽기 →</span>
+				</a>
+			))}
+		</div>
+	</main>
+
+	<Footer />
+</Layout>

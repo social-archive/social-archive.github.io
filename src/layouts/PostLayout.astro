@@ -1,0 +1,31 @@
+---
+import Layout from './Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+	title: string;
+	description?: string;
+	author?: string;
+	pubDate?: Date;
+	image?: { url: string; alt?: string };
+}
+
+const { title, description, author, pubDate, image } = Astro.props;
+---
+
+<Layout title={title} description={description} image={image?.url}>
+	<Header />
+
+	<main class="py-16">
+		<article class="prose prose-lg prose-neutral max-w-none prose-headings:font-bold prose-h1:text-4xl prose-h2:text-2xl prose-p:text-lg prose-p:leading-relaxed">
+			<div class="text-base text-neutral-500 mb-8">
+				{pubDate && <time datetime={pubDate instanceof Date ? pubDate.toISOString() : String(pubDate)}>{pubDate instanceof Date ? pubDate.toLocaleDateString('ko-KR') : pubDate}</time>}
+				{author && <span class="ml-2">· {author}</span>}
+			</div>
+			<slot />
+		</article>
+	</main>
+
+	<Footer />
+</Layout>

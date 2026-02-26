@@ -1,45 +1,37 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 ---
 
 <Layout title="개인정보 처리방침 - 소셜 아카이브" description="소셜 아카이브 개인정보 처리방침">
-	<!-- Header -->
-	<header class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 py-5 border-b border-[#f0f0f0]">
-		<a href="/" class="flex items-center no-underline hover:opacity-70 transition-opacity">
-			<img src="/logo.png" alt="소셜 아카이브" class="h-12 w-auto" />
-		</a>
-		<nav class="flex items-center gap-4">
-			<a href="/terms" class="text-[15px] font-medium text-[#1a1a1a] hover:opacity-60 hover:no-underline">이용약관</a>
-			<a href="/" class="text-[15px] font-medium text-[#1a1a1a] hover:opacity-60 hover:no-underline">홈</a>
-		</nav>
-	</header>
+	<Header />
 
-	<!-- Main -->
-	<main class="py-12">
-		<article>
-			<h1 class="text-2xl font-bold text-[#1a1a1a] mb-2">개인정보 처리방침</h1>
-			<p class="text-sm text-[#888888] mb-8">시행일자: 2025년 2월 26일</p>
+	<main class="py-16">
+		<article class="prose prose-lg prose-neutral max-w-none prose-headings:font-bold prose-h1:text-4xl prose-h2:text-2xl prose-p:text-lg prose-p:leading-relaxed">
+			<h1>개인정보 처리방침</h1>
+			<p class="text-neutral-500 text-base mb-12">시행일자: 2025년 2월 26일</p>
 
-			<section class="mb-8">
-				<h2 class="text-lg font-semibold text-[#1a1a1a] mt-8 mb-3 first:mt-0">제1조 (목적)</h2>
-				<p class="text-[#333333] leading-relaxed mb-2">소셜아카이브(이하 "회사")는 이용자의 개인정보를 중요시하며, 「개인정보 보호법」 등 관련 법령을 준수하고 있습니다. 본 개인정보 처리방침은 회사가 제공하는 서비스(이하 "서비스") 이용 시 수집·이용되는 개인정보에 관한 사항을 규정함을 목적으로 합니다.</p>
+			<hr class="border-neutral-200 my-12" />
+			<section>
+				<h2 class="mt-12 mb-4">제1조 (목적)</h2>
+				<p>소셜아카이브(이하 "회사")는 이용자의 개인정보를 중요시하며, 「개인정보 보호법」 등 관련 법령을 준수하고 있습니다. 본 개인정보 처리방침은 회사가 제공하는 서비스(이하 "서비스") 이용 시 수집·이용되는 개인정보에 관한 사항을 규정함을 목적으로 합니다.</p>
 			</section>
 
-			<section class="mb-8">
-				<h2 class="text-lg font-semibold text-[#1a1a1a] mt-8 mb-3 first:mt-0">제2조 (수집하는 개인정보 항목)</h2>
-				<p class="text-[#333333] leading-relaxed mb-2">회사는 서비스 제공을 위해 다음과 같은 개인정보를 수집할 수 있습니다.</p>
-				<ul class="list-disc pl-6 my-2 space-y-1 text-[#333333]">
+			<section>
+				<h2 class="mt-12 mb-4">제2조 (수집하는 개인정보 항목)</h2>
+				<p>회사는 서비스 제공을 위해 다음과 같은 개인정보를 수집할 수 있습니다.</p>
+				<ul class="list-disc pl-6 my-4 space-y-2">
 					<li>필수항목: 이메일 주소, 연락처</li>
 					<li>선택항목: 이름, 소셜 미디어 계정 정보</li>
 					<li>자동수집항목: IP주소, 쿠키, 서비스 이용 기록, 접속 로그</li>
 				</ul>
 			</section>
 
-			<section class="mb-8">
-				<h2 class="text-lg font-semibold text-[#1a1a1a] mt-8 mb-3 first:mt-0">제3조 (개인정보의 수집 및 이용 목적)</h2>
-				<p class="text-[#333333] leading-relaxed mb-2">회사는 수집한 개인정보를 다음의 목적을 위해 활용합니다.</p>
-				<ul class="list-disc pl-6 my-2 space-y-1 text-[#333333]">
+			<section>
+				<h2 class="mt-12 mb-4">제3조 (개인정보의 수집 및 이용 목적)</h2>
+				<p>회사는 수집한 개인정보를 다음의 목적을 위해 활용합니다.</p>
+				<ul class="list-disc pl-6 my-4 space-y-2">
 					<li>서비스 제공 및 운영</li>
 					<li>회원 관리 및 본인 확인</li>
 					<li>고객 문의 응대</li>
@@ -48,34 +40,34 @@ import Footer from '../components/Footer.astro';
 				</ul>
 			</section>
 
-			<section class="mb-8">
-				<h2 class="text-lg font-semibold text-[#1a1a1a] mt-8 mb-3 first:mt-0">제4조 (개인정보의 보유 및 이용 기간)</h2>
-				<p class="text-[#333333] leading-relaxed mb-2">회사는 개인정보 수집 및 이용 목적이 달성된 후에는 해당 정보를 지체 없이 파기합니다. 단, 관련 법령에 따라 보존할 필요가 있는 경우 해당 기간 동안 보관합니다.</p>
+			<section>
+				<h2 class="mt-12 mb-4">제4조 (개인정보의 보유 및 이용 기간)</h2>
+				<p>회사는 개인정보 수집 및 이용 목적이 달성된 후에는 해당 정보를 지체 없이 파기합니다. 단, 관련 법령에 따라 보존할 필요가 있는 경우 해당 기간 동안 보관합니다.</p>
 			</section>
 
-			<section class="mb-8">
-				<h2 class="text-lg font-semibold text-[#1a1a1a] mt-8 mb-3 first:mt-0">제5조 (개인정보의 제3자 제공)</h2>
-				<p class="text-[#333333] leading-relaxed mb-2">회사는 이용자의 개인정보를 원칙적으로 제3자에게 제공하지 않습니다. 다만, 법령에 따르거나 이용자의 동의가 있는 경우에는 예외로 합니다.</p>
+			<section>
+				<h2 class="mt-12 mb-4">제5조 (개인정보의 제3자 제공)</h2>
+				<p>회사는 이용자의 개인정보를 원칙적으로 제3자에게 제공하지 않습니다. 다만, 법령에 따르거나 이용자의 동의가 있는 경우에는 예외로 합니다.</p>
 			</section>
 
-			<section class="mb-8">
-				<h2 class="text-lg font-semibold text-[#1a1a1a] mt-8 mb-3 first:mt-0">제6조 (이용자의 권리)</h2>
-				<p class="text-[#333333] leading-relaxed mb-2">이용자는 언제든지 자신의 개인정보에 대해 열람, 정정, 삭제, 처리정지 요청을 할 수 있으며, 회사는 이에 대해 지체 없이 조치하겠습니다.</p>
+			<section>
+				<h2 class="mt-12 mb-4">제6조 (이용자의 권리)</h2>
+				<p>이용자는 언제든지 자신의 개인정보에 대해 열람, 정정, 삭제, 처리정지 요청을 할 수 있으며, 회사는 이에 대해 지체 없이 조치하겠습니다.</p>
 			</section>
 
-			<section class="mb-8">
-				<h2 class="text-lg font-semibold text-[#1a1a1a] mt-8 mb-3 first:mt-0">제7조 (개인정보 보호책임자)</h2>
-				<p class="text-[#333333] leading-relaxed mb-2">회사는 개인정보 처리에 관한 업무를 총괄하여 책임지고, 개인정보 처리와 관련한 이용자의 불만처리 및 피해구제를 위하여 아래와 같이 개인정보 보호책임자를 지정하고 있습니다.</p>
-				<ul class="list-disc pl-6 my-2 space-y-1 text-[#333333]">
+			<section>
+				<h2 class="mt-12 mb-4">제7조 (개인정보 보호책임자)</h2>
+				<p>회사는 개인정보 처리에 관한 업무를 총괄하여 책임지고, 개인정보 처리와 관련한 이용자의 불만처리 및 피해구제를 위하여 아래와 같이 개인정보 보호책임자를 지정하고 있습니다.</p>
+				<ul class="list-disc pl-6 my-4 space-y-2">
 					<li>담당자: 서정욱</li>
 					<li>이메일: dj500dj100@gmail.com</li>
 					<li>전화: 010-4221-5066</li>
 				</ul>
 			</section>
 
-			<section class="mb-8">
-				<h2 class="text-lg font-semibold text-[#1a1a1a] mt-8 mb-3 first:mt-0">제8조 (개인정보 처리방침 변경)</h2>
-				<p class="text-[#333333] leading-relaxed mb-2">본 개인정보 처리방침은 법령 및 방침에 따라 변경될 수 있으며, 변경 시 서비스 내 공지사항을 통해 안내드립니다.</p>
+			<section>
+				<h2 class="mt-12 mb-4">제8조 (개인정보 처리방침 변경)</h2>
+				<p>본 개인정보 처리방침은 법령 및 방침에 따라 변경될 수 있으며, 변경 시 서비스 내 공지사항을 통해 안내드립니다.</p>
 			</section>
 		</article>
 	</main>
