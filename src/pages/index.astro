@@ -1,0 +1,170 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const archiveItems = [
+	{
+		date: '2025-02-26',
+		platform: 'X (Twitter)',
+		content: '소셜 아카이브 프로젝트를 시작했습니다.',
+		link: '#',
+	},
+	{
+		date: '2025-02-25',
+		platform: 'GitHub',
+		content: 'Astro로 정적 사이트 구축 중.',
+		link: '#',
+	},
+];
+---
+
+<Layout title="소셜 아카이브" description="소셜 미디어 포스트 아카이브">
+	<header class="header">
+		<div class="container">
+			<h1 class="logo">소셜 아카이브</h1>
+			<p class="tagline">소셜 미디어 포스트를 모아두는 공간</p>
+		</div>
+	</header>
+
+	<main class="main">
+		<div class="container">
+			<section class="archive-section">
+				<h2 class="section-title">아카이브</h2>
+				<ul class="archive-list">
+					{archiveItems.map((item) => (
+						<li class="archive-item">
+							<article class="card">
+								<div class="card-meta">
+									<time datetime={item.date}>{item.date}</time>
+									<span class="platform">{item.platform}</span>
+								</div>
+								<p class="card-content">{item.content}</p>
+								{item.link && (
+									<a href={item.link} class="card-link" target="_blank" rel="noopener noreferrer">
+										원문 보기 →
+									</a>
+								)}
+							</article>
+						</li>
+					))}
+				</ul>
+			</section>
+		</div>
+	</main>
+
+	<footer class="footer">
+		<div class="container">
+			<p>Built with <a href="https://astro.build" target="_blank" rel="noopener noreferrer">Astro</a> · Hosted on GitHub Pages</p>
+		</div>
+	</footer>
+</Layout>
+
+<style>
+	.header {
+		padding: 3rem 1.5rem;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+	}
+
+	.logo {
+		font-size: 2rem;
+		font-weight: 700;
+		margin: 0 0 0.5rem;
+		background: linear-gradient(135deg, #a78bfa 0%, #c084fc 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+	}
+
+	.tagline {
+		margin: 0;
+		color: #a1a1aa;
+		font-size: 1rem;
+	}
+
+	.container {
+		max-width: 720px;
+		margin: 0 auto;
+		padding: 0 1.5rem;
+	}
+
+	.main {
+		padding: 3rem 0;
+	}
+
+	.section-title {
+		font-size: 1.25rem;
+		font-weight: 600;
+		margin: 0 0 1.5rem;
+		color: #d4d4d8;
+	}
+
+	.archive-list {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+
+	.archive-item {
+		margin: 0;
+	}
+
+	.card {
+		background: rgba(255, 255, 255, 0.03);
+		border: 1px solid rgba(255, 255, 255, 0.06);
+		border-radius: 12px;
+		padding: 1.25rem 1.5rem;
+		transition: border-color 0.2s, background 0.2s;
+	}
+
+	.card:hover {
+		background: rgba(255, 255, 255, 0.05);
+		border-color: rgba(167, 139, 250, 0.3);
+	}
+
+	.card-meta {
+		display: flex;
+		gap: 1rem;
+		margin-bottom: 0.75rem;
+		font-size: 0.875rem;
+		color: #71717a;
+	}
+
+	.card-meta time {
+		font-variant-numeric: tabular-nums;
+	}
+
+	.platform {
+		color: #a78bfa;
+		font-weight: 500;
+	}
+
+	.card-content {
+		margin: 0 0 0.75rem;
+		color: #e4e4e7;
+		line-height: 1.6;
+	}
+
+	.card-link {
+		font-size: 0.875rem;
+		color: #a78bfa;
+	}
+
+	.card-link:hover {
+		text-decoration: none;
+		opacity: 0.9;
+	}
+
+	.footer {
+		padding: 2rem 1.5rem;
+		border-top: 1px solid rgba(255, 255, 255, 0.08);
+		text-align: center;
+		font-size: 0.875rem;
+		color: #71717a;
+	}
+
+	.footer a {
+		color: #a78bfa;
+	}
+</style>

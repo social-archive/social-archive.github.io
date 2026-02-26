@@ -1,0 +1,51 @@
+---
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const { title = '소셜 아카이브', description = '소셜 미디어 아카이브' } = Astro.props;
+---
+
+<!doctype html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content={description} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+
+<style is:global>
+	* {
+		box-sizing: border-box;
+	}
+
+	html,
+	body {
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		min-height: 100%;
+		font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+		background: #0f0f12;
+		color: #e4e4e7;
+		line-height: 1.6;
+	}
+
+	a {
+		color: #a78bfa;
+		text-decoration: none;
+	}
+
+	a:hover {
+		text-decoration: underline;
+	}
+</style>
