@@ -17,7 +17,11 @@ const posts = rawPosts
 <Layout title="이벤트 / 소식 - 소셜 아카이브" description="소셜 아카이브 이벤트 및 소식">
 	<Header />
 
-	<main class="py-6">
+	<main class="py-16">
+		<div class="mb-12">
+			<h1 class="text-4xl font-bold text-neutral-900 mb-3">이벤트 / 소식</h1>
+			<p class="text-xl text-neutral-600">소셜 아카이브 이벤트 및 소식입니다.</p>
+		</div>
 		<div class="space-y-4">
 			{posts.map((post) => (
 				<a

@@ -1,0 +1,41 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Contact - 소셜 아카이브" description="소셜 아카이브 문의">
+	<Header />
+
+	<main class="py-16">
+		<div class="mb-12">
+			<h1 class="text-4xl font-bold text-neutral-900 mb-3">Contact</h1>
+			<p class="text-xl text-neutral-600">소셜 아카이브로 문의해 주세요.</p>
+		</div>
+		<div class="space-y-10">
+			<section class="p-8 border border-neutral-200">
+				<h2 class="text-xl font-semibold text-neutral-900 mb-4">협업문의</h2>
+				<p class="text-neutral-600 mb-4">파트너십, 제휴, 협업 관련 문의</p>
+				<p class="text-lg"><a href="mailto:dj500dj100@gmail.com?subject=[협업문의]" class="text-blue-600 hover:underline">dj500dj100@gmail.com</a></p>
+				<p class="text-lg"><a href="tel:01042215066" class="text-blue-600 hover:underline">010-4221-5066</a></p>
+			</section>
+			<section class="p-8 border border-neutral-200">
+				<h2 class="text-xl font-semibold text-neutral-900 mb-4">컨텐츠 문의</h2>
+				<p class="text-neutral-600 mb-4">콘텐츠 제작, 라이선스, 활용 관련 문의</p>
+				<p class="text-lg"><a href="mailto:dj500dj100@gmail.com?subject=[컨텐츠 문의]" class="text-blue-600 hover:underline">dj500dj100@gmail.com</a></p>
+				<p class="text-lg"><a href="tel:01042215066" class="text-blue-600 hover:underline">010-4221-5066</a></p>
+			</section>
+			<section class="p-8 border border-neutral-200">
+				<h2 class="text-xl font-semibold text-neutral-900 mb-4">광고문의</h2>
+				<p class="text-neutral-600 mb-4">광고, 홍보, 협찬 관련 문의</p>
+				<p class="text-lg"><a href="mailto:dj500dj100@gmail.com?subject=[광고문의]" class="text-blue-600 hover:underline">dj500dj100@gmail.com</a></p>
+				<p class="text-lg"><a href="tel:01042215066" class="text-blue-600 hover:underline">010-4221-5066</a></p>
+			</section>
+		</div>
+		<div class="mt-12 pt-8 border-t border-neutral-200">
+			<p class="text-neutral-600"><strong>주소</strong> 서울특별시 신림동 19-3 믿음하우스 1003호</p>
+		</div>
+	</main>
+
+	<Footer />
+</Layout>
