@@ -10,24 +10,45 @@ const posts = rawPosts
 		title: post.frontmatter.title,
 		description: post.frontmatter.description,
 		pubDate: post.frontmatter.pubDate,
+		tags: post.frontmatter.tags || [],
 	}))
 	.sort((a, b) => new Date(b.pubDate).getTime() - new Date(a.pubDate).getTime());
+
+const categories = [...new Set(posts.flatMap((p) => p.tags))].sort();
 ---
 
-<Layout title="이벤트 / 소식 - 소셜 아카이브" description="소셜 아카이브 이벤트 및 소식">
+<Layout title="공지/소식 - 소셜 아카이브" description="소셜 아카이브 공지 및 소식">
 	<Header />
 
 	<main class="py-16">
 		<div class="mb-12">
-			<h1 class="text-4xl font-bold text-neutral-900 mb-3">이벤트 / 소식</h1>
-			<p class="text-xl text-neutral-600">소셜 아카이브 이벤트 및 소식입니다.</p>
+			<h1 class="text-4xl font-bold text-neutral-900 mb-3">공지/소식</h1>
+			<p class="text-xl text-neutral-600">소셜 아카이브 공지 및 소식입니다.</p>
 		</div>
-		<div class="space-y-4">
+		{categories.length > 0 && (
+			<div class="flex flex-wrap gap-2 mb-10" id="category-filter">
+				<button type="button" class="category-btn px-4 py-2 text-sm font-medium bg-neutral-900 text-white rounded cursor-pointer border-0" data-category="">
+					전체
+				</button>
+				{categories.map((cat) => (
+					<button type="button" class="category-btn px-4 py-2 text-sm font-medium bg-neutral-100 hover:bg-neutral-200 rounded cursor-pointer border-0 text-neutral-700" data-category={cat}>
+						{cat}
+					</button>
+				))}
+			</div>
+		)}
+		<div class="space-y-4" id="post-list">
 			{posts.map((post) => (
 				<a
 					href={post.url}
-					class="rounded-lg block p-8 border border-neutral-200 hover:border-neutral-300 hover:bg-neutral-50 transition-colors no-underline"
+					class="post-item rounded-lg block p-8 border border-neutral-200 hover:border-neutral-300 hover:bg-neutral-50 transition-colors no-underline"
+					data-tags={JSON.stringify(post.tags)}
 				>
+					<div class="flex flex-wrap gap-2 mb-2">
+						{post.tags.map((tag) => (
+							<span class="text-xs font-medium text-neutral-500 bg-neutral-100 px-2 py-1 rounded">{tag}</span>
+						))}
+					</div>
 					<h2 class="text-xl font-semibold text-neutral-900 mb-2">{post.title}</h2>
 					{post.description && <p class="text-base text-neutral-600 mb-2">{post.description}</p>}
 					<span class="text-base text-neutral-500">읽기 →</span>
@@ -37,4 +58,24 @@ const posts = rawPosts
 	</main>
 
 	<Footer />
+
+	<script>
+		document.querySelectorAll('.category-btn').forEach((btn) => {
+			btn.addEventListener('click', () => {
+				const category = btn.dataset.category;
+				document.querySelectorAll('.category-btn').forEach((b) => {
+					b.classList.remove('bg-neutral-900', 'text-white');
+					b.classList.add('bg-neutral-100', 'text-neutral-700');
+				});
+				btn.classList.remove('bg-neutral-100', 'text-neutral-700');
+				btn.classList.add('bg-neutral-900', 'text-white');
+
+				document.querySelectorAll('.post-item').forEach((item) => {
+					const tags = JSON.parse(item.dataset.tags || '[]');
+					const show = !category || tags.includes(category);
+					item.style.display = show ? '' : 'none';
+				});
+			});
+		});
+	</script>
 </Layout>

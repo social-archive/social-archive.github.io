@@ -7,7 +7,7 @@ interface Props {
 	image?: string;
 }
 
-const { title = '소셜 아카이브', description = 'AI 인플루언서 엔터테인먼트. AI 기반 가상 인플루언서 콘텐츠와 엔터테인먼트', image } = Astro.props;
+const { title = '소셜 아카이브', description = 'AI 엔터테인먼트', image } = Astro.props;
 
 const siteUrl = 'https://social-archive.github.io';
 const pageUrl = new URL(Astro.url.pathname, siteUrl).href;
