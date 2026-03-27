@@ -25,7 +25,14 @@ export function getGalleryImagesFromPublic(): GalleryImageEntry[] {
 		return IMAGE_EXT.has(path.extname(name).toLowerCase());
 	});
 
-	names.sort((a, b) => b.localeCompare(a, 'ko', { numeric: true }));
+	/** 최신 수정 순(위로 갈수록 최근에 추가·수정된 파일) */
+	names.sort((a, b) => {
+		const ma = fs.statSync(path.join(dir, a)).mtimeMs;
+		const mb = fs.statSync(path.join(dir, b)).mtimeMs;
+		const diff = mb - ma;
+		if (diff !== 0) return diff;
+		return b.localeCompare(a, 'ko', { numeric: true });
+	});
 
 	return names.map((filename) => {
 		const ext = path.extname(filename);
