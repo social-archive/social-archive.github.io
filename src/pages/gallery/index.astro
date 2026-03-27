@@ -1,0 +1,138 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { getGalleryImagesFromPublic } from '../../lib/gallery';
+
+const items = getGalleryImagesFromPublic();
+---
+
+<Layout title="갤러리 - 소셜 아카이브" description="소셜 아카이브 갤러리">
+	<Header />
+
+	<main class="bg-neutral-50 min-h-[70vh] py-12 md:py-16 lg:py-20">
+		<div class="max-w-[1680px] mx-auto px-4 sm:px-6 lg:px-10">
+			<header class="mb-8 md:mb-12 lg:mb-14 max-w-2xl">
+				<h1 class="text-2xl md:text-3xl font-semibold text-neutral-900 tracking-tight">갤러리</h1>
+				<p class="text-sm md:text-base text-neutral-500 mt-2">
+					<code class="rounded bg-neutral-100 px-1.5 py-0.5 text-xs text-neutral-700">public/images/gallery</code>에 이미지를 넣으면 여기에 자동으로 표시됩니다. 썸네일을 눌러 확대할 수 있습니다.
+				</p>
+			</header>
+			{items.length === 0 ? (
+				<div class="p-10 border border-neutral-200/80 bg-white text-neutral-600 text-center rounded-sm shadow-sm">
+					등록된 이미지가 없습니다.
+				</div>
+			) : (
+				<ul class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-8 lg:gap-10 list-none p-0 m-0">
+					{items.map((item) => (
+						<li>
+							<button
+								type="button"
+								data-gallery-open
+								data-image={item.image}
+								data-title={item.title}
+								aria-label={`${item.title} 이미지 확대 보기`}
+								class="group w-full text-left cursor-zoom-in border-0 bg-transparent p-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-50 rounded-sm"
+							>
+								<figure class="m-0 bg-white p-2 md:p-3 shadow-[0_2px_40px_-12px_rgba(0,0,0,0.12)] ring-1 ring-neutral-200/80 transition-shadow duration-300 group-hover:shadow-[0_12px_48px_-12px_rgba(0,0,0,0.18)]">
+									<div class="relative aspect-[3/4] overflow-hidden bg-neutral-100">
+										<img
+											src={item.image}
+											alt=""
+											class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04] pointer-events-none"
+											loading="lazy"
+											decoding="async"
+										/>
+										<figcaption class="absolute inset-x-0 bottom-0 flex flex-col justify-end p-4 md:p-5 pt-16 md:pt-20 bg-gradient-to-t from-black/75 via-black/25 to-transparent pointer-events-none">
+											<span class="text-[11px] md:text-xs font-medium text-white/95 tracking-wide line-clamp-2">{item.title}</span>
+										</figcaption>
+									</div>
+								</figure>
+							</button>
+						</li>
+					))}
+				</ul>
+			)}
+		</div>
+	</main>
+
+	<dialog
+		id="gallery-lightbox"
+		class="gallery-lightbox m-0 max-h-none max-w-none h-full w-full border-0 bg-transparent p-0 text-white backdrop:bg-black/88 backdrop:backdrop-blur-[2px]"
+		aria-labelledby="gallery-lightbox-title"
+	>
+		<div
+			class="gallery-lightbox__scrim fixed inset-0 flex min-h-full flex-col items-center justify-center p-4 md:p-10"
+			data-lightbox-scrim
+		>
+			<button
+				type="button"
+				class="gallery-lightbox__close absolute right-3 top-3 z-10 flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-2xl leading-none text-white transition hover:bg-white/20 md:right-6 md:top-6"
+				data-lightbox-close
+				aria-label="닫기"
+			>
+				×
+			</button>
+			<div
+				class="relative flex max-h-[min(88vh,92vw)] w-full max-w-[min(100%,1400px)] flex-col items-center"
+				data-lightbox-content
+			>
+				<img
+					data-lightbox-img
+					class="max-h-[min(82vh,85vw)] w-auto max-w-full rounded-sm object-contain shadow-2xl"
+					alt=""
+				/>
+				<div class="mt-4 w-full max-w-xl text-center md:mt-5">
+					<p id="gallery-lightbox-title" class="text-sm font-medium text-white/95 md:text-base" data-lightbox-caption></p>
+				</div>
+			</div>
+		</div>
+	</dialog>
+
+	<Footer />
+
+	<script>
+		function initGalleryLightbox() {
+			const dialog = document.getElementById('gallery-lightbox');
+			const scrim = dialog?.querySelector('[data-lightbox-scrim]');
+			const img = dialog?.querySelector('[data-lightbox-img]');
+			const caption = dialog?.querySelector('[data-lightbox-caption]');
+			const closeBtn = dialog?.querySelector('[data-lightbox-close]');
+			if (!dialog || !img || !caption || !scrim || !closeBtn) return;
+
+			function openFromButton(btn) {
+				const src = btn.getAttribute('data-image');
+				const title = btn.getAttribute('data-title') || '';
+
+				img.src = src || '';
+				img.alt = title;
+				caption.textContent = title;
+
+				dialog.showModal();
+				document.documentElement.style.overflow = 'hidden';
+			}
+
+			function closeLightbox() {
+				dialog.close();
+			}
+
+			dialog.addEventListener('close', () => {
+				document.documentElement.style.overflow = '';
+				img.removeAttribute('src');
+				img.alt = '';
+			});
+
+			document.querySelectorAll('[data-gallery-open]').forEach((btn) => {
+				btn.addEventListener('click', () => openFromButton(btn));
+			});
+
+			closeBtn.addEventListener('click', closeLightbox);
+
+			scrim.addEventListener('click', (e) => {
+				if (e.target === scrim) closeLightbox();
+			});
+		}
+
+		initGalleryLightbox();
+	</script>
+</Layout>

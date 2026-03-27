@@ -38,6 +38,11 @@ const categories = [...new Set(posts.flatMap((p) => p.tags))].sort();
 			</div>
 		)}
 		<div class="space-y-4" id="post-list">
+			{posts.length === 0 && (
+				<div class="p-8 border border-neutral-200 bg-neutral-50 text-neutral-600 text-lg rounded-lg">
+					등록된 게시물이 없습니다.
+				</div>
+			)}
 			{posts.map((post) => (
 				<a
 					href={post.url}

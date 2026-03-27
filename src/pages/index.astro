@@ -2,6 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import { getGalleryImagesFromPublic } from '../lib/gallery';
+
+const galleryPreview = getGalleryImagesFromPublic().slice(0, 6);
 ---
 
 <Layout title="소셜 아카이브" description="AI 놀이터">
@@ -11,6 +14,61 @@ import Footer from '../components/Footer.astro';
 		<p class="text-3xl md:text-4xl font-bold text-neutral-900 leading-tight tracking-tight">
 			AI 놀이터
 		</p>
+	</section>
+
+	<section class="border-t border-neutral-200/80 bg-neutral-50 py-16 md:py-24" aria-labelledby="home-gallery-heading">
+		<div class="max-w-[1680px] mx-auto px-4 sm:px-6 lg:px-10">
+			<div class="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between mb-10 md:mb-12">
+				<div>
+					<h2 id="home-gallery-heading" class="text-2xl md:text-3xl font-semibold text-neutral-900 tracking-tight">
+						갤러리
+					</h2>
+					<p class="mt-2 text-sm md:text-base text-neutral-500 max-w-xl">
+						최근에 올라온 이미지입니다. 클릭하면 갤러리에서 크게 볼 수 있습니다.
+					</p>
+				</div>
+				<a
+					href="/gallery/"
+					class="inline-flex shrink-0 items-center justify-center rounded-sm border border-neutral-300 bg-white px-5 py-2.5 text-sm font-medium text-neutral-900 no-underline transition hover:border-neutral-400 hover:bg-neutral-50"
+				>
+					갤러리 전체 보기 →
+				</a>
+			</div>
+
+			{galleryPreview.length === 0 ? (
+				<p class="rounded-sm border border-dashed border-neutral-300 bg-white px-6 py-10 text-center text-neutral-500 text-sm">
+					<code class="rounded bg-neutral-100 px-1.5 py-0.5 text-xs text-neutral-700">public/images/gallery</code>
+					에 이미지를 넣고 빌드하면 여기에 미리보기가 표시됩니다.
+				</p>
+			) : (
+				<ul class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 list-none p-0 m-0">
+					{galleryPreview.map((item) => (
+						<li>
+							<a
+								href="/gallery/"
+								class="group block no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-50 rounded-sm"
+								aria-label={`갤러리에서 ${item.title} 보기`}
+							>
+								<figure class="m-0 bg-white p-2 md:p-2.5 shadow-[0_2px_28px_-10px_rgba(0,0,0,0.12)] ring-1 ring-neutral-200/80 transition-shadow duration-300 group-hover:shadow-[0_8px_36px_-10px_rgba(0,0,0,0.16)]">
+									<div class="relative aspect-[3/4] overflow-hidden bg-neutral-100">
+										<img
+											src={item.image}
+											alt=""
+											class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+											loading="lazy"
+											decoding="async"
+										/>
+										<figcaption class="absolute inset-x-0 bottom-0 flex flex-col justify-end p-3 pt-12 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none">
+											<span class="text-[10px] md:text-[11px] font-medium text-white/95 line-clamp-2">{item.title}</span>
+										</figcaption>
+									</div>
+								</figure>
+							</a>
+						</li>
+					))}
+				</ul>
+			)}
+		</div>
 	</section>
 
 	<Footer />
