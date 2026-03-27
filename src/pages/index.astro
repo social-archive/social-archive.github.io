@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import YouTubeChannelEmbed from '../components/YouTubeChannelEmbed.astro';
 import { getGalleryImagesFromPublic } from '../lib/gallery';
 
 const galleryPreview = getGalleryImagesFromPublic().slice(0, 6);
@@ -10,29 +11,17 @@ const galleryPreview = getGalleryImagesFromPublic().slice(0, 6);
 <Layout title="소셜 아카이브" description="AI 놀이터">
 	<Header />
 
-	<section class="py-32 md:py-40">
-		<p class="text-3xl md:text-4xl font-bold text-neutral-900 leading-tight tracking-tight">
-			AI 놀이터
-		</p>
-	</section>
-
-	<section class="border-t border-neutral-200/80 bg-white py-16 md:py-20" aria-labelledby="home-archive-heading">
+	<section class="border-b border-neutral-200/80 bg-neutral-50 py-14 md:py-20 lg:py-24">
 		<div class="max-w-[1680px] mx-auto px-4 sm:px-6 lg:px-10">
-			<div class="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-				<div class="max-w-2xl">
-					<h2 id="home-archive-heading" class="text-2xl md:text-3xl font-semibold text-neutral-900 tracking-tight">
-						자료실
-					</h2>
-					<p class="mt-2 text-sm md:text-base text-neutral-500">
-						가이드·양식·참고 자료 등을 내려받을 수 있는 공간입니다. 현재 콘텐츠를 준비 중이며, 상단 메뉴의 자료실에서도 들어오실 수 있습니다.
+			<div class="grid grid-cols-1 gap-10 lg:grid-cols-10 lg:gap-12 lg:items-center">
+				<div class="lg:col-span-3">
+					<p class="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-neutral-900 leading-tight tracking-tight">
+						AI 놀이터
 					</p>
 				</div>
-				<a
-					href="/archive/"
-					class="inline-flex shrink-0 items-center justify-center rounded-sm bg-blue-700 px-6 py-3 text-base font-semibold text-white no-underline transition hover:bg-neutral-800"
-				>
-					자료실 열기 →
-				</a>
+				<div class="lg:col-span-7 flex justify-center">
+					<YouTubeChannelEmbed frameClass="lg:max-w-[min(100%,520px)]" />
+				</div>
 			</div>
 		</div>
 	</section>

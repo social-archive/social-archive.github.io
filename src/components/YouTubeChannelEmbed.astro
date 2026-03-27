@@ -1,0 +1,70 @@
+---
+/**
+ * 공개 재생목록(PL…) 임베드. 쇼츠에 맞춰 9:16 세로 프레임.
+ * @see https://www.youtube.com/playlist?list=PLNBtyV-edEDbqPcyuDNp60rs-w-wdVs61
+ */
+interface Props {
+	playlistId?: string;
+	channelId?: string;
+	title?: string;
+	class?: string;
+	/** 세로 프레임(9:16)에 추가 클래스. 예: `lg:max-w-[520px]` */
+	frameClass?: string;
+	/** 페이지 로드 후 재생 시도. 브라우저·YouTube 정책으로 막힐 수 있음 */
+	autoplay?: boolean;
+	/**
+	 * 자동재생 시 음소거로 시작(권장).
+	 * 소리가 나면 대부분의 브라우저가 자동재생을 차단합니다.
+	 */
+	mutedAutoplay?: boolean;
+}
+
+const {
+	playlistId = 'PLNBtyV-edEDbqPcyuDNp60rs-w-wdVs61',
+	channelId = 'UCYKTneduvwZAcqQcETM0ckA',
+	title = '이게 AI라고? — YouTube 재생목록',
+	class: className = '',
+	frameClass = '',
+	autoplay = true,
+	mutedAutoplay = true,
+} = Astro.props;
+
+const embedParams = new URLSearchParams({ list: playlistId });
+if (autoplay) {
+	embedParams.set('autoplay', '1');
+	if (mutedAutoplay) embedParams.set('mute', '1');
+}
+embedParams.set('playsinline', '1');
+
+const embedSrc = `https://www.youtube.com/embed/videoseries?${embedParams.toString()}`;
+const channelUrl = `https://www.youtube.com/channel/${channelId}/`;
+---
+
+<div class:list={['youtube-channel-embed', className]}>
+	<div
+		class:list={[
+			'relative mx-auto w-full max-w-[min(100%,420px)] aspect-[9/16] overflow-hidden rounded-2xl border border-neutral-200 bg-black shadow-[0_12px_48px_-14px_rgba(0,0,0,0.35)]',
+			frameClass,
+		]}
+	>
+		<iframe
+			class="absolute inset-0 h-full w-full"
+			src={embedSrc}
+			title={title}
+			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+			referrerpolicy="strict-origin-when-cross-origin"
+			allowfullscreen
+			loading="lazy"
+		/>
+	</div>
+	<div class="mt-4 flex justify-center">
+		<a
+			href={channelUrl}
+			class="inline-flex items-center justify-center rounded-sm bg-[#FF0000] px-5 py-2.5 text-sm font-semibold text-white no-underline shadow-sm transition hover:bg-[#cc0000] focus:outline-none focus-visible:ring-2 focus-visible:ring-red-600 focus-visible:ring-offset-2"
+			target="_blank"
+			rel="noopener noreferrer"
+		>
+			AI dance 유튜브 채널 보러가기
+		</a>
+	</div>
+</div>
