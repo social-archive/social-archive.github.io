@@ -1,0 +1,196 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+---
+
+<Layout
+	title="캐릭터 · 이미지 프롬프트 제너레이터 - 자료실"
+	description="인물·캐릭터 이미지용 프롬프트를 만듭니다."
+>
+	<Header />
+
+	<main class="py-12 md:py-16">
+		<div class="mb-8">
+			<p class="mb-2 flex flex-wrap gap-x-4 gap-y-1 text-sm">
+				<a href="/archive/" class="text-neutral-500 hover:text-neutral-900 no-underline">← 자료실</a>
+				<a href="/archive/prompt-generator/" class="text-neutral-500 hover:text-neutral-900 no-underline">← 버전 목록</a>
+			</p>
+			<h1 class="mt-4 text-3xl md:text-4xl font-bold text-neutral-900">캐릭터 · 프롬프트 제너레이터</h1>
+			<p class="mt-2 text-neutral-600 max-w-2xl">인물·얼굴·의상·배경 위주로 초상·전신·반실사 캐릭터를 만들 때 씁니다.</p>
+		</div>
+
+		<div class="grid gap-10 lg:grid-cols-2 lg:gap-12">
+			<form class="space-y-6" autocomplete="off">
+				<div>
+					<label for="pgc-subject" class="block text-sm font-medium text-neutral-800 mb-1.5">캐릭터 설명</label>
+					<textarea
+						id="pgc-subject"
+						rows="3"
+						class="w-full rounded-md border border-neutral-300 px-3 py-2 text-neutral-900 placeholder:text-neutral-400 focus:border-neutral-900 focus:outline-none focus:ring-1 focus:ring-neutral-900"
+						placeholder="예: 은발 단발, 헤드셋, 스트리트 패션"
+					></textarea>
+				</div>
+
+				<div class="grid gap-4 sm:grid-cols-2">
+					<div>
+						<label for="pgc-style" class="block text-sm font-medium text-neutral-800 mb-1.5">화풍</label>
+						<select
+							id="pgc-style"
+							class="w-full rounded-md border border-neutral-300 bg-white px-3 py-2 text-neutral-900 focus:border-neutral-900 focus:outline-none focus:ring-1 focus:ring-neutral-900"
+						>
+							<option value="">(선택)</option>
+							<option value="semi-realistic anime portrait, soft skin shading">반실사 애니</option>
+							<option value="classic anime illustration, cel shading, large expressive eyes">캐주얼 애니</option>
+							<option value="photorealistic portrait, skin pores visible, natural makeup">실사 초상</option>
+							<option value="3D character render, stylized proportions, PBR materials">3D 캐릭터</option>
+							<option value="fashion editorial illustration, ink lines with flat color">패션 일러스트</option>
+						</select>
+					</div>
+					<div>
+						<label for="pgc-shot" class="block text-sm font-medium text-neutral-800 mb-1.5">샷</label>
+						<select
+							id="pgc-shot"
+							class="w-full rounded-md border border-neutral-300 bg-white px-3 py-2 text-neutral-900 focus:border-neutral-900 focus:outline-none focus:ring-1 focus:ring-neutral-900"
+						>
+							<option value="">(선택)</option>
+							<option value="head and shoulders portrait, centered face">가슴 위 초상</option>
+							<option value="full body shot, head to toe, standing pose">전신</option>
+							<option value="waist-up portrait, hand gesture visible">상반신</option>
+							<option value="profile view, elegant silhouette">프로필</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="grid gap-4 sm:grid-cols-2">
+					<div>
+						<label for="pgc-outfit" class="block text-sm font-medium text-neutral-800 mb-1.5">의상 · 시대감</label>
+						<select
+							id="pgc-outfit"
+							class="w-full rounded-md border border-neutral-300 bg-white px-3 py-2 text-neutral-900 focus:border-neutral-900 focus:outline-none focus:ring-1 focus:ring-neutral-900"
+						>
+							<option value="">(선택)</option>
+							<option value="modern streetwear, layered outfits, accessories">스트릿</option>
+							<option value="stage costume, glitter, sequins, idol outfit">아이돌 무대복</option>
+							<option value="fantasy armor, ornate metalwork, cape">판타지</option>
+							<option value="school uniform, pleated skirt, neat hairstyle">교복</option>
+							<option value="casual hoodie, jeans, sneakers">캐주얼</option>
+						</select>
+					</div>
+					<div>
+						<label for="pgc-bg" class="block text-sm font-medium text-neutral-800 mb-1.5">배경</label>
+						<select
+							id="pgc-bg"
+							class="w-full rounded-md border border-neutral-300 bg-white px-3 py-2 text-neutral-900 focus:border-neutral-900 focus:outline-none focus:ring-1 focus:ring-neutral-900"
+						>
+							<option value="">(선택)</option>
+							<option value="simple gradient background, clean studio backdrop">심플 그라데이션</option>
+							<option value="bokeh city lights at night, neon">야경 보케</option>
+							<option value="soft pastel indoor, window light">실내 자연광</option>
+							<option value="abstract geometric shapes, minimal">추상 기하</option>
+							<option value="fantasy landscape, clouds and distant mountains">판타지 풍경</option>
+						</select>
+					</div>
+				</div>
+
+				<div>
+					<label for="pgc-extra" class="block text-sm font-medium text-neutral-800 mb-1.5">추가 (영문 쉼표)</label>
+					<input
+						id="pgc-extra"
+						type="text"
+						class="w-full rounded-md border border-neutral-300 px-3 py-2 text-neutral-900 focus:border-neutral-900 focus:outline-none focus:ring-1 focus:ring-neutral-900"
+						placeholder="smiling, looking at viewer"
+					/>
+				</div>
+
+				<div>
+					<label for="pgc-negative" class="block text-sm font-medium text-neutral-800 mb-1.5">네거티브</label>
+					<input
+						id="pgc-negative"
+						type="text"
+						class="w-full rounded-md border border-neutral-300 px-3 py-2 text-neutral-900 focus:border-neutral-900 focus:outline-none focus:ring-1 focus:ring-neutral-900"
+						placeholder="bad anatomy, extra fingers, blurry"
+					/>
+				</div>
+
+				<label class="inline-flex items-center gap-2 text-sm text-neutral-700 cursor-pointer">
+					<input id="pgc-quality" type="checkbox" class="rounded border-neutral-300" checked />
+					품질 태그
+				</label>
+			</form>
+
+			<div class="lg:sticky lg:top-8 h-fit space-y-3">
+				<div class="flex items-center justify-between gap-2">
+					<h2 class="text-sm font-semibold text-neutral-800">결과</h2>
+					<button type="button" id="pgc-copy" class="rounded-md bg-neutral-900 px-3 py-1.5 text-sm font-medium text-white hover:bg-neutral-700">
+						복사
+					</button>
+				</div>
+				<pre
+					id="pgc-output"
+					class="min-h-[12rem] whitespace-pre-wrap break-words rounded-lg border border-neutral-200 bg-white p-4 text-sm text-neutral-800 shadow-sm"
+				></pre>
+				<p id="pgc-hint" class="text-xs text-green-700 hidden">복사했습니다.</p>
+			</div>
+		</div>
+	</main>
+
+	<Footer />
+
+	<script>
+		const subject = document.getElementById('pgc-subject');
+		const style = document.getElementById('pgc-style');
+		const shot = document.getElementById('pgc-shot');
+		const outfit = document.getElementById('pgc-outfit');
+		const bg = document.getElementById('pgc-bg');
+		const extra = document.getElementById('pgc-extra');
+		const negative = document.getElementById('pgc-negative');
+		const quality = document.getElementById('pgc-quality');
+		const output = document.getElementById('pgc-output');
+		const copyBtn = document.getElementById('pgc-copy');
+		const hint = document.getElementById('pgc-hint');
+		const q = 'masterpiece, best quality, highly detailed, sharp focus, 8k uhd';
+
+		function build() {
+			const parts = [];
+			const s = subject?.value.trim();
+			if (s) parts.push(s);
+			for (const el of [style, shot, outfit, bg]) {
+				const v = el?.value?.trim();
+				if (v) parts.push(v);
+			}
+			const ex = extra?.value.trim();
+			if (ex) {
+				ex.split(',').forEach((x) => {
+					const t = x.trim();
+					if (t) parts.push(t);
+				});
+			}
+			if (quality?.checked) parts.push(q);
+			let text = parts.join(', ');
+			const neg = negative?.value.trim();
+			if (neg) text += '\n\n--- Negative ---\n' + neg;
+			if (output) output.textContent = text || '(캐릭터 설명을 입력하세요.)';
+		}
+
+		function wire() {
+			for (const el of [subject, style, shot, outfit, bg, extra, negative, quality]) {
+				el?.addEventListener('input', build);
+				el?.addEventListener('change', build);
+			}
+			copyBtn?.addEventListener('click', async () => {
+				const text = output?.textContent?.trim() || '';
+				if (!text || text.startsWith('(')) return;
+				try {
+					await navigator.clipboard.writeText(text);
+					hint?.classList.remove('hidden');
+					setTimeout(() => hint?.classList.add('hidden'), 2000);
+				} catch {
+					/* ignore */
+				}
+			});
+			build();
+		}
+		wire();
+	</script>
+</Layout>

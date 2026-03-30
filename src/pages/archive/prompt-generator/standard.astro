@@ -1,0 +1,228 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+---
+
+<Layout
+	title="표준 · 이미지 프롬프트 제너레이터 - 자료실"
+	description="AI 이미지 생성용 영문 프롬프트를 조합합니다."
+>
+	<Header />
+
+	<main class="py-12 md:py-16">
+		<div class="mb-8">
+			<p class="mb-2 flex flex-wrap gap-x-4 gap-y-1 text-sm">
+				<a href="/archive/" class="text-neutral-500 hover:text-neutral-900 no-underline">← 자료실</a>
+				<a href="/archive/prompt-generator/" class="text-neutral-500 hover:text-neutral-900 no-underline">← 버전 목록</a>
+			</p>
+			<h1 class="mt-4 text-3xl md:text-4xl font-bold text-neutral-900">표준 · 이미지 프롬프트 제너레이터</h1>
+			<p class="mt-2 text-neutral-600 max-w-2xl">
+				주제와 옵션을 고르면 영문 프롬프트를 조합합니다. Midjourney·SD·DALL·E 등에 붙여 넣어 쓰기 좋게 품질 태그를 덧붙입니다.
+			</p>
+		</div>
+
+		<div class="grid gap-10 lg:grid-cols-2 lg:gap-12">
+			<form id="pg-form" class="space-y-6" autocomplete="off">
+				<div>
+					<label for="pg-subject" class="block text-sm font-medium text-neutral-800 mb-1.5">주제 · 장면</label>
+					<textarea
+						id="pg-subject"
+						name="subject"
+						rows="4"
+						class="w-full rounded-md border border-neutral-300 px-3 py-2 text-neutral-900 placeholder:text-neutral-400 focus:border-neutral-900 focus:outline-none focus:ring-1 focus:ring-neutral-900"
+						placeholder="예: 무대 위에서 춤추는 AI 캐릭터, 네온 조명"
+					></textarea>
+				</div>
+
+				<div class="grid gap-4 sm:grid-cols-2">
+					<div>
+						<label for="pg-style" class="block text-sm font-medium text-neutral-800 mb-1.5">비주얼 스타일</label>
+						<select
+							id="pg-style"
+							class="w-full rounded-md border border-neutral-300 bg-white px-3 py-2 text-neutral-900 focus:border-neutral-900 focus:outline-none focus:ring-1 focus:ring-neutral-900"
+						>
+							<option value="">(선택)</option>
+							<option value="photorealistic, shot on full-frame camera, shallow depth of field">사진/실사</option>
+							<option value="digital illustration, crisp edges, vibrant colors">디지털 일러스트</option>
+							<option value="anime style, cel shading, clean line art">애니/셀</option>
+							<option value="3D render, octane render, soft studio lighting">3D 렌더</option>
+							<option value="oil painting texture, expressive brushstrokes">유화 느낌</option>
+							<option value="minimalist graphic design, flat color blocks">미니멀 그래픽</option>
+							<option value="cinematic still, movie color grading, widescreen composition">시네마틱</option>
+						</select>
+					</div>
+					<div>
+						<label for="pg-light" class="block text-sm font-medium text-neutral-800 mb-1.5">조명</label>
+						<select
+							id="pg-light"
+							class="w-full rounded-md border border-neutral-300 bg-white px-3 py-2 text-neutral-900 focus:border-neutral-900 focus:outline-none focus:ring-1 focus:ring-neutral-900"
+						>
+							<option value="">(선택)</option>
+							<option value="soft diffused lighting, even highlights">부드러운 확산광</option>
+							<option value="dramatic rim light, strong contrast">림라이트 · 대비</option>
+							<option value="golden hour warm sunlight">골든아워</option>
+							<option value="cool blue night scene, neon accents">야경 · 네온</option>
+							<option value="studio softbox, clean white background">스튜디오 화이트</option>
+							<option value="volumetric fog, god rays">볼륨 라이트 · 빛기둥</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="grid gap-4 sm:grid-cols-2">
+					<div>
+						<label for="pg-mood" class="block text-sm font-medium text-neutral-800 mb-1.5">분위기</label>
+						<select
+							id="pg-mood"
+							class="w-full rounded-md border border-neutral-300 bg-white px-3 py-2 text-neutral-900 focus:border-neutral-900 focus:outline-none focus:ring-1 focus:ring-neutral-900"
+						>
+							<option value="">(선택)</option>
+							<option value="energetic, dynamic pose, sense of motion">역동적</option>
+							<option value="calm, serene atmosphere">차분함</option>
+							<option value="futuristic, high-tech">미래/테크</option>
+							<option value="dreamy, ethereal glow">몽환</option>
+							<option value="dark moody atmosphere">다크 · 무드</option>
+							<option value="playful, whimsical">유쾌 · 키치</option>
+						</select>
+					</div>
+					<div>
+						<label for="pg-shot" class="block text-sm font-medium text-neutral-800 mb-1.5">구도 · 렌즈 느낌</label>
+						<select
+							id="pg-shot"
+							class="w-full rounded-md border border-neutral-300 bg-white px-3 py-2 text-neutral-900 focus:border-neutral-900 focus:outline-none focus:ring-1 focus:ring-neutral-900"
+						>
+							<option value="">(선택)</option>
+							<option value="wide angle shot, environmental context">와이드 (환경 강조)</option>
+							<option value="medium shot, balanced framing">미디엄 샷</option>
+							<option value="close-up portrait, sharp eyes">클로즈업</option>
+							<option value="low angle, heroic perspective">로우앵글</option>
+							<option value="bird's eye view, top-down">탑다운</option>
+							<option value="rule of thirds composition">3분할 구도</option>
+						</select>
+					</div>
+				</div>
+
+				<div>
+					<label for="pg-extra" class="block text-sm font-medium text-neutral-800 mb-1.5">추가 키워드 (영문 쉼표로)</label>
+					<input
+						id="pg-extra"
+						type="text"
+						class="w-full rounded-md border border-neutral-300 px-3 py-2 text-neutral-900 placeholder:text-neutral-400 focus:border-neutral-900 focus:outline-none focus:ring-1 focus:ring-neutral-900"
+						placeholder="e.g. k-pop stage, LED wall, crowd bokeh"
+					/>
+				</div>
+
+				<div>
+					<label for="pg-negative" class="block text-sm font-medium text-neutral-800 mb-1.5">네거티브 (제외할 요소)</label>
+					<input
+						id="pg-negative"
+						type="text"
+						class="w-full rounded-md border border-neutral-300 px-3 py-2 text-neutral-900 placeholder:text-neutral-400 focus:border-neutral-900 focus:outline-none focus:ring-1 focus:ring-neutral-900"
+						placeholder="예: blurry, watermark, extra fingers"
+					/>
+				</div>
+
+				<div class="flex flex-wrap gap-3">
+					<label class="inline-flex items-center gap-2 text-sm text-neutral-700 cursor-pointer">
+						<input id="pg-quality" type="checkbox" class="rounded border-neutral-300" checked />
+						품질 태그 덧붙이기 (highly detailed, sharp focus, 8k…)
+					</label>
+				</div>
+			</form>
+
+			<div class="lg:sticky lg:top-8 h-fit space-y-3">
+				<div class="flex items-center justify-between gap-2">
+					<h2 class="text-sm font-semibold text-neutral-800">생성된 프롬프트</h2>
+					<button
+						type="button"
+						id="pg-copy"
+						class="rounded-md bg-neutral-900 px-3 py-1.5 text-sm font-medium text-white hover:bg-neutral-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-2"
+					>
+						복사
+					</button>
+				</div>
+				<pre
+					id="pg-output"
+					class="min-h-[12rem] whitespace-pre-wrap break-words rounded-lg border border-neutral-200 bg-white p-4 text-sm text-neutral-800 shadow-sm"
+				></pre>
+				<p id="pg-copy-hint" class="text-xs text-green-700 hidden">클립보드에 복사했습니다.</p>
+
+				<div class="rounded-lg border border-dashed border-neutral-300 bg-neutral-50 p-4 text-xs text-neutral-600">
+					<strong class="text-neutral-800">팁:</strong> 주제는 한국어로 적어도 됩니다. 모델이 영문을 선호하면 번역기로 한 번 거친 뒤 붙여 넣어도 됩니다. 네거티브는 Stable Diffusion 웹UI 등에서만 쓰는 경우가 많습니다.
+				</div>
+			</div>
+		</div>
+	</main>
+
+	<Footer />
+
+	<script>
+		const subject = document.getElementById('pg-subject');
+		const style = document.getElementById('pg-style');
+		const light = document.getElementById('pg-light');
+		const mood = document.getElementById('pg-mood');
+		const shot = document.getElementById('pg-shot');
+		const extra = document.getElementById('pg-extra');
+		const negative = document.getElementById('pg-negative');
+		const quality = document.getElementById('pg-quality');
+		const output = document.getElementById('pg-output');
+		const copyBtn = document.getElementById('pg-copy');
+		const hint = document.getElementById('pg-copy-hint');
+
+		const qualityBlock =
+			'highly detailed, sharp focus, professional, masterpiece, best quality, 8k uhd';
+
+		function build() {
+			const parts = [];
+			const subj = subject?.value.trim();
+			if (subj) parts.push(subj);
+
+			for (const el of [style, light, mood, shot]) {
+				const v = el?.value?.trim();
+				if (v) parts.push(v);
+			}
+
+			const ex = extra?.value.trim();
+			if (ex) {
+				ex.split(',').forEach((s) => {
+					const t = s.trim();
+					if (t) parts.push(t);
+				});
+			}
+
+			if (quality?.checked) parts.push(qualityBlock);
+
+			const main = parts.join(', ');
+			const neg = negative?.value.trim();
+
+			let text = main;
+			if (neg) {
+				text += '\n\n--- Negative ---\n' + neg;
+			}
+
+			if (output) output.textContent = text || '(주제를 입력하면 프롬프트가 만들어집니다.)';
+		}
+
+		function wire() {
+			for (const el of [subject, style, light, mood, shot, extra, negative, quality]) {
+				el?.addEventListener('input', build);
+				el?.addEventListener('change', build);
+			}
+			copyBtn?.addEventListener('click', async () => {
+				const t = output?.textContent?.trim() || '';
+				if (!t || t.startsWith('(')) return;
+				try {
+					await navigator.clipboard.writeText(t);
+					if (hint) {
+						hint.classList.remove('hidden');
+						setTimeout(() => hint.classList.add('hidden'), 2000);
+					}
+				} catch {
+					/* ignore */
+				}
+			});
+			build();
+		}
+		wire();
+	</script>
+</Layout>

@@ -1,0 +1,69 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+
+const versions = [
+	{
+		href: '/archive/prompt-generator/standard/',
+		title: '표준 (풀 옵션)',
+		desc: '주제·스타일·조명·분위기·구도·추가 키워드·네거티브까지 모두 조합합니다. 범용으로 쓰기 좋습니다.',
+		tag: '추천',
+	},
+	{
+		href: '/archive/prompt-generator/minimal/',
+		title: '미니멀 (빠르게)',
+		desc: '주제 한 줄 + 프리셋 몇 가지만 고릅니다. 급할 때·실험할 때 적합합니다.',
+		tag: '빠름',
+	},
+	{
+		href: '/archive/prompt-generator/stage/',
+		title: '스테이지 · 퍼포먼스',
+		desc: '무대·조명·관객 시점 등 공연·댄스·쇼츠 썸네일에 맞춘 키워드입니다.',
+		tag: '공연',
+	},
+	{
+		href: '/archive/prompt-generator/character/',
+		title: '캐릭터 · 인물',
+		desc: '인물·얼굴·의상·배경 위주로 초상·전신·반실사 캐릭터를 만들 때 씁니다.',
+		tag: '인물',
+	},
+];
+---
+
+<Layout
+	title="프롬프트 제너레이터 모음 - 자료실"
+	description="용도별 이미지 프롬프트 제너레이터를 고릅니다."
+>
+	<Header />
+
+	<main class="py-12 md:py-16">
+		<div class="mb-10">
+			<a href="/archive/" class="text-sm text-neutral-500 hover:text-neutral-900 no-underline">← 자료실</a>
+			<h1 class="mt-4 text-3xl md:text-4xl font-bold text-neutral-900">이미지 프롬프트 제너레이터</h1>
+			<p class="mt-2 text-neutral-600 max-w-2xl">
+				버전별로 필드가 다릅니다. 하나 골라 들어가면 됩니다.
+			</p>
+		</div>
+
+		<ul class="grid gap-4 sm:grid-cols-2 list-none p-0 m-0">
+			{versions.map((v) => (
+				<li>
+					<a
+						href={v.href}
+						class="group flex h-full flex-col rounded-xl border border-neutral-200 bg-white p-6 shadow-sm transition hover:border-blue-300 hover:shadow-md no-underline"
+					>
+						<div class="mb-2 flex items-center gap-2">
+							<h2 class="text-lg font-semibold text-neutral-900 group-hover:text-blue-700">{v.title}</h2>
+							<span class="rounded-full bg-neutral-100 px-2 py-0.5 text-xs font-medium text-neutral-600">{v.tag}</span>
+						</div>
+						<p class="flex-1 text-sm text-neutral-600 leading-relaxed">{v.desc}</p>
+						<span class="mt-4 text-sm font-medium text-blue-700">이 버전 열기 →</span>
+					</a>
+				</li>
+			))}
+		</ul>
+	</main>
+
+	<Footer />
+</Layout>

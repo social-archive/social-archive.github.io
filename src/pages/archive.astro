@@ -10,11 +10,27 @@ import Footer from '../components/Footer.astro';
 	<main class="py-16">
 		<div class="mb-12">
 			<h1 class="text-4xl font-bold text-neutral-900 mb-3">자료실</h1>
-			<p class="text-xl text-neutral-600">소셜 아카이브 자료실입니다.</p>
+			<p class="text-xl text-neutral-600">다운로드·도구 모음입니다.</p>
 		</div>
-		<div class="p-8 border border-neutral-200 bg-neutral-50 text-neutral-600 text-lg">
-			준비 중입니다.
-		</div>
+
+		<ul class="space-y-4 list-none p-0 m-0">
+			<li>
+				<a
+					href="/archive/prompt-generator/"
+					class="group flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 rounded-lg border border-neutral-200 bg-white p-6 shadow-sm transition hover:border-neutral-300 hover:shadow-md no-underline"
+				>
+					<div>
+						<h2 class="text-lg font-semibold text-neutral-900 group-hover:text-blue-700 transition-colors">
+							이미지 프롬프트 제너레이터 (여러 버전)
+						</h2>
+						<p class="mt-1 text-sm text-neutral-600 max-w-2xl">
+							표준·미니멀·스테이지·캐릭터 등 용도별로 고를 수 있습니다. 영문 프롬프트를 조합해 복사합니다.
+						</p>
+					</div>
+					<span class="text-sm font-medium text-blue-700 shrink-0">열기 →</span>
+				</a>
+			</li>
+		</ul>
 	</main>
 
 	<Footer />

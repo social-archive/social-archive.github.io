@@ -1,0 +1,182 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+---
+
+<Layout
+	title="스테이지 · 이미지 프롬프트 제너레이터 - 자료실"
+	description="공연·무대·댄스 이미지용 프롬프트를 만듭니다."
+>
+	<Header />
+
+	<main class="py-12 md:py-16">
+		<div class="mb-8">
+			<p class="mb-2 flex flex-wrap gap-x-4 gap-y-1 text-sm">
+				<a href="/archive/" class="text-neutral-500 hover:text-neutral-900 no-underline">← 자료실</a>
+				<a href="/archive/prompt-generator/" class="text-neutral-500 hover:text-neutral-900 no-underline">← 버전 목록</a>
+			</p>
+			<h1 class="mt-4 text-3xl md:text-4xl font-bold text-neutral-900">스테이지 · 프롬프트 제너레이터</h1>
+			<p class="mt-2 text-neutral-600 max-w-2xl">무대·조명·관객 시점 등 퍼포먼스 영상·썸네일에 맞춘 키워드입니다.</p>
+		</div>
+
+		<div class="grid gap-10 lg:grid-cols-2 lg:gap-12">
+			<form class="space-y-6" autocomplete="off">
+				<div>
+					<label for="pgt-subject" class="block text-sm font-medium text-neutral-800 mb-1.5">퍼포먼스 / 장면</label>
+					<textarea
+						id="pgt-subject"
+						rows="3"
+						class="w-full rounded-md border border-neutral-300 px-3 py-2 text-neutral-900 placeholder:text-neutral-400 focus:border-neutral-900 focus:outline-none focus:ring-1 focus:ring-neutral-900"
+						placeholder="예: 솔로 댄서, 팀 포메이션, 밴드 라이브"
+					></textarea>
+				</div>
+
+				<div class="grid gap-4 sm:grid-cols-2">
+					<div>
+						<label for="pgt-venue" class="block text-sm font-medium text-neutral-800 mb-1.5">무대 규모</label>
+						<select
+							id="pgt-venue"
+							class="w-full rounded-md border border-neutral-300 bg-white px-3 py-2 text-neutral-900 focus:border-neutral-900 focus:outline-none focus:ring-1 focus:ring-neutral-900"
+						>
+							<option value="">(선택)</option>
+							<option value="massive arena stage, towering LED screens, pyrotechnics">아레나급</option>
+							<option value="intimate club stage, close crowd, haze and spotlights">클럽·소극장</option>
+							<option value="outdoor festival stage, daylight, sky visible">야외 페스티벌</option>
+							<option value="broadcast studio, clean lighting truss, multi-camera setup">TV 스튜디오</option>
+							<option value="dance practice room, wall mirrors, hardwood floor">연습실</option>
+						</select>
+					</div>
+					<div>
+						<label for="pgt-lights" class="block text-sm font-medium text-neutral-800 mb-1.5">조명 · 이펙트</label>
+						<select
+							id="pgt-lights"
+							class="w-full rounded-md border border-neutral-300 bg-white px-3 py-2 text-neutral-900 focus:border-neutral-900 focus:outline-none focus:ring-1 focus:ring-neutral-900"
+						>
+							<option value="">(선택)</option>
+							<option value="moving head beams, synchronized light show">무빙 헤드 · 싱크</option>
+							<option value="LED wall, pixel-mapped visuals, vibrant colors">LED 월</option>
+							<option value="laser sweeps, haze, volumetric lighting">레이저 · 헤이즈</option>
+							<option value="follow spotlight, dramatic silhouette">팔로우 스팟</option>
+							<option value="soft wash lights, even exposure, no harsh shadows">부드러운 워시</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="grid gap-4 sm:grid-cols-2">
+					<div>
+						<label for="pgt-cam" class="block text-sm font-medium text-neutral-800 mb-1.5">시점</label>
+						<select
+							id="pgt-cam"
+							class="w-full rounded-md border border-neutral-300 bg-white px-3 py-2 text-neutral-900 focus:border-neutral-900 focus:outline-none focus:ring-1 focus:ring-neutral-900"
+						>
+							<option value="">(선택)</option>
+							<option value="front row audience POV, crowd silhouettes in foreground">관객 시점 (앞줄)</option>
+							<option value="crane shot sweeping over the crowd">크레인 샷</option>
+							<option value="side stage camera, dynamic angle">측면 스테이지</option>
+							<option value="center stage head-on, symmetrical framing">정면 대칭</option>
+							<option value="backstage documentary handheld feel">다큐멘터리 핸드헬드</option>
+						</select>
+					</div>
+					<div>
+						<label for="pgt-energy" class="block text-sm font-medium text-neutral-800 mb-1.5">에너지</label>
+						<select
+							id="pgt-energy"
+							class="w-full rounded-md border border-neutral-300 bg-white px-3 py-2 text-neutral-900 focus:border-neutral-900 focus:outline-none focus:ring-1 focus:ring-neutral-900"
+						>
+							<option value="">(선택)</option>
+							<option value="explosive energy, motion blur, peak moment">하이 텐션</option>
+							<option value="emotional ballad moment, soft spotlight, stillness">감성 · 발라드</option>
+							<option value="choreography freeze frame, sharp pose, mid-air jump">포즈 강조</option>
+						</select>
+					</div>
+				</div>
+
+				<div>
+					<label for="pgt-extra" class="block text-sm font-medium text-neutral-800 mb-1.5">추가 (영문 쉼표)</label>
+					<input
+						id="pgt-extra"
+						type="text"
+						class="w-full rounded-md border border-neutral-300 px-3 py-2 text-neutral-900 focus:border-neutral-900 focus:outline-none focus:ring-1 focus:ring-neutral-900"
+						placeholder="k-pop, backup dancers, confetti"
+					/>
+				</div>
+
+				<label class="inline-flex items-center gap-2 text-sm text-neutral-700 cursor-pointer">
+					<input id="pgt-quality" type="checkbox" class="rounded border-neutral-300" checked />
+					품질 태그
+				</label>
+			</form>
+
+			<div class="lg:sticky lg:top-8 h-fit space-y-3">
+				<div class="flex items-center justify-between gap-2">
+					<h2 class="text-sm font-semibold text-neutral-800">결과</h2>
+					<button type="button" id="pgt-copy" class="rounded-md bg-neutral-900 px-3 py-1.5 text-sm font-medium text-white hover:bg-neutral-700">
+						복사
+					</button>
+				</div>
+				<pre
+					id="pgt-output"
+					class="min-h-[12rem] whitespace-pre-wrap break-words rounded-lg border border-neutral-200 bg-white p-4 text-sm text-neutral-800 shadow-sm"
+				></pre>
+				<p id="pgt-hint" class="text-xs text-green-700 hidden">복사했습니다.</p>
+			</div>
+		</div>
+	</main>
+
+	<Footer />
+
+	<script>
+		const subject = document.getElementById('pgt-subject');
+		const venue = document.getElementById('pgt-venue');
+		const lights = document.getElementById('pgt-lights');
+		const cam = document.getElementById('pgt-cam');
+		const energy = document.getElementById('pgt-energy');
+		const extra = document.getElementById('pgt-extra');
+		const quality = document.getElementById('pgt-quality');
+		const output = document.getElementById('pgt-output');
+		const copyBtn = document.getElementById('pgt-copy');
+		const hint = document.getElementById('pgt-hint');
+		const q = 'highly detailed, sharp focus, professional concert photography, 8k uhd';
+
+		function build() {
+			const parts = [];
+			const s = subject?.value.trim();
+			if (s) parts.push(s);
+			for (const el of [venue, lights, cam, energy]) {
+				const v = el?.value?.trim();
+				if (v) parts.push(v);
+			}
+			const ex = extra?.value.trim();
+			if (ex) {
+				ex.split(',').forEach((x) => {
+					const t = x.trim();
+					if (t) parts.push(t);
+				});
+			}
+			if (quality?.checked) parts.push(q);
+			const t = parts.join(', ');
+			if (output) output.textContent = t || '(퍼포먼스 설명을 입력하세요.)';
+		}
+
+		function wire() {
+			for (const el of [subject, venue, lights, cam, energy, extra, quality]) {
+				el?.addEventListener('input', build);
+				el?.addEventListener('change', build);
+			}
+			copyBtn?.addEventListener('click', async () => {
+				const text = output?.textContent?.trim() || '';
+				if (!text || text.startsWith('(')) return;
+				try {
+					await navigator.clipboard.writeText(text);
+					hint?.classList.remove('hidden');
+					setTimeout(() => hint?.classList.add('hidden'), 2000);
+				} catch {
+					/* ignore */
+				}
+			});
+			build();
+		}
+		wire();
+	</script>
+</Layout>
