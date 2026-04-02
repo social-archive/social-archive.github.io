@@ -1,0 +1,397 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import tagLibrary from '../../../data/image-tag-library.json';
+
+const { filters, groups } = tagLibrary;
+---
+
+<Layout
+	title="태그 프롬프트 제너레이터 - 자료실"
+	description="카테고리별 태그를 골라 긍정·부정 프롬프트를 조합합니다. NovelAI·SD 등에 붙여 넣기 좋습니다."
+>
+	<Header />
+
+	<main class="py-8 md:py-12">
+		<div class="mb-6 max-w-[1680px] mx-auto px-4 sm:px-6 lg:px-10">
+			<p class="mb-2 flex flex-wrap gap-x-4 gap-y-1 text-sm">
+				<a href="/archive/" class="text-neutral-500 hover:text-neutral-900 no-underline">← 자료실</a>
+				<a href="/archive/prompt-generator/" class="text-neutral-500 hover:text-neutral-900 no-underline">← 버전 목록</a>
+			</p>
+			<h1 class="mt-2 text-2xl md:text-3xl font-bold text-neutral-900">태그 프롬프트 제너레이터</h1>
+			<p class="mt-2 text-sm md:text-base text-neutral-600 max-w-3xl">
+				왼쪽에서 태그를 눌러 <strong class="font-medium text-neutral-800">긍정</strong> 또는 <strong class="font-medium text-neutral-800">부정</strong> 보관함에 담고, 쉼표로 이어진 프롬프트를 복사합니다. NovelAI·Stable Diffusion 계열 태그 스타일을 참고했습니다.
+			</p>
+		</div>
+
+		<div
+			class="mx-auto max-w-[1680px] px-2 sm:px-4 lg:px-8"
+			id="ntg-root"
+			data-ntg-groups
+		>
+			<div
+				class="rounded-xl border border-slate-700/80 bg-slate-950 text-slate-100 shadow-xl overflow-hidden min-h-[min(85vh,900px)] flex flex-col lg:flex-row"
+			>
+				<!-- 좌측: 검색 · 필터 · 태그 그리드 -->
+				<div class="flex flex-col flex-1 min-h-0 min-w-0 border-b lg:border-b-0 lg:border-r border-slate-700/80">
+					<div class="p-4 border-b border-slate-700/60 space-y-3 shrink-0">
+						<div class="flex flex-col sm:flex-row gap-3 sm:items-center">
+							<label class="relative flex-1 min-w-0">
+								<span class="sr-only">키워드 검색</span>
+								<input
+									type="search"
+									id="ntg-search"
+									class="w-full rounded-lg border border-slate-600 bg-slate-900/80 px-3 py-2.5 pl-9 text-sm text-slate-100 placeholder:text-slate-500 focus:border-emerald-500/80 focus:outline-none focus:ring-1 focus:ring-emerald-500/50"
+									placeholder="키워드 / 태그 검색"
+									autocomplete="off"
+								/>
+								<svg class="absolute left-2.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+								</svg>
+							</label>
+							<label class="inline-flex items-center gap-2 text-xs text-slate-400 shrink-0 cursor-pointer select-none">
+								<input type="checkbox" id="ntg-instant-copy" class="rounded border-slate-500 bg-slate-800 text-emerald-500 focus:ring-emerald-500" />
+								클릭 시 전체 복사
+							</label>
+						</div>
+						<div class="flex flex-wrap gap-1.5" id="ntg-filters" role="tablist" aria-label="카테고리">
+							{filters.map((f) => (
+								<button
+									type="button"
+									class="ntg-filter-btn rounded-full px-3 py-1.5 text-xs font-medium border border-slate-600 bg-slate-800/80 text-slate-300 hover:bg-slate-700 data-[active=true]:border-emerald-500 data-[active=true]:bg-emerald-950/80 data-[active=true]:text-emerald-200"
+									data-filter={f.id}
+									data-active={f.id === 'all' ? 'true' : 'false'}
+								>
+									{f.label}
+								</button>
+							))}
+						</div>
+					</div>
+
+					<div class="flex-1 overflow-y-auto p-4 space-y-5 custom-scrollbar" id="ntg-scroll">
+						{groups.map((g) => {
+							const searchBlob = [
+								g.title,
+								...g.tags.map((t) => `${t.v} ${t.l}`),
+							]
+								.join(' ')
+								.toLowerCase();
+							return (
+								<article
+									class="ntg-card rounded-xl border border-slate-700/60 bg-slate-900/50 p-4"
+									data-ntg-filter={g.filter}
+									data-ntg-search={searchBlob}
+								>
+									<h3 class="text-sm font-semibold text-slate-200 mb-3 flex items-center gap-2">
+										<span class="text-emerald-400/90">#</span>
+										{g.title}
+									</h3>
+									<div class="flex flex-wrap gap-2">
+										{g.tags.map((t) => (
+											<button
+												type="button"
+												class="ntg-tag inline-flex items-center gap-1.5 rounded-md border border-slate-600/80 bg-slate-800/90 px-2.5 py-1.5 text-left text-xs text-slate-200 hover:border-emerald-500/60 hover:bg-slate-700/90 transition-colors"
+												data-tag={t.v}
+												title={t.v}
+											>
+												<span class="text-slate-500 font-mono text-[10px] truncate max-w-[140px]">{t.v}</span>
+												<span class="text-slate-400">·</span>
+												<span>{t.l}</span>
+											</button>
+										))}
+									</div>
+								</article>
+							);
+						})}
+					</div>
+				</div>
+
+				<!-- 우측: 보관함 -->
+				<div class="w-full lg:w-[min(100%,420px)] xl:w-[460px] shrink-0 flex flex-col border-t lg:border-t-0 border-slate-700/80 bg-slate-900/30">
+					<div class="p-4 border-b border-slate-700/60 flex flex-wrap items-center justify-between gap-2">
+						<h2 class="text-sm font-bold text-slate-100 tracking-tight">보관함</h2>
+						<div class="flex items-center gap-1" role="group" aria-label="추가 대상">
+							<button
+								type="button"
+								id="ntg-bucket-pos"
+								class="ntg-bucket rounded-md px-3 py-1.5 text-xs font-semibold border border-emerald-500 bg-emerald-950/50 text-emerald-200"
+								data-bucket="pos"
+							>
+								긍정
+							</button>
+							<button
+								type="button"
+								id="ntg-bucket-neg"
+								class="ntg-bucket rounded-md px-3 py-1.5 text-xs font-medium border border-slate-600 bg-slate-800 text-slate-400"
+								data-bucket="neg"
+							>
+								부정
+							</button>
+						</div>
+					</div>
+
+					<div class="flex-1 overflow-y-auto p-4 space-y-4 min-h-[200px] custom-scrollbar">
+						<section aria-labelledby="ntg-pos-heading">
+							<div class="flex items-center justify-between gap-2 mb-2">
+								<h3 id="ntg-pos-heading" class="text-xs font-semibold uppercase tracking-wide text-slate-500">
+									기본 프롬프트 (긍정)
+								</h3>
+								<div class="flex gap-1">
+									<button type="button" id="ntg-copy-pos" class="p-1.5 rounded text-slate-400 hover:bg-slate-800 hover:text-emerald-300" title="긍정만 복사">
+										<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+											<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+										</svg>
+									</button>
+									<button type="button" id="ntg-clear-pos" class="p-1.5 rounded text-slate-400 hover:bg-slate-800 hover:text-rose-300" title="비우기">
+										<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+											<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+										</svg>
+									</button>
+								</div>
+							</div>
+							<div
+								id="ntg-chips-pos"
+								class="min-h-[4.5rem] rounded-lg border border-slate-700/80 bg-slate-950/50 p-2 flex flex-wrap gap-1.5 content-start"
+							>
+								<p class="text-xs text-slate-600 w-full py-2 px-1" data-ntg-placeholder-pos>
+									왼쪽 태그를 클릭하면 여기에 쌓입니다. 대상은 위 «긍정»이 켜져 있을 때입니다.
+								</p>
+							</div>
+						</section>
+
+						<section aria-labelledby="ntg-neg-heading">
+							<div class="flex items-center justify-between gap-2 mb-2">
+								<h3 id="ntg-neg-heading" class="text-xs font-semibold uppercase tracking-wide text-slate-500">
+									부정 프롬프트
+								</h3>
+								<div class="flex gap-1">
+									<button type="button" id="ntg-copy-neg" class="p-1.5 rounded text-slate-400 hover:bg-slate-800 hover:text-emerald-300" title="부정만 복사">
+										<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+											<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+										</svg>
+									</button>
+									<button type="button" id="ntg-clear-neg" class="p-1.5 rounded text-slate-400 hover:bg-slate-800 hover:text-rose-300" title="비우기">
+										<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+											<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+										</svg>
+									</button>
+								</div>
+							</div>
+							<div
+								id="ntg-chips-neg"
+								class="min-h-[4.5rem] rounded-lg border border-slate-700/80 bg-slate-950/50 p-2 flex flex-wrap gap-1.5 content-start"
+							>
+								<p class="text-xs text-slate-600 w-full py-2 px-1" data-ntg-placeholder-neg>
+									«부정»을 선택한 뒤 왼쪽 태그를 클릭하면 여기에 담깁니다.
+								</p>
+							</div>
+						</section>
+					</div>
+
+					<div class="p-4 border-t border-slate-700/60 space-y-2 shrink-0">
+						<button
+							type="button"
+							id="ntg-copy-all"
+							class="w-full rounded-lg bg-emerald-600 px-4 py-3 text-sm font-semibold text-white hover:bg-emerald-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900"
+						>
+							긍정 + 부정 한 번에 복사
+						</button>
+						<p id="ntg-toast" class="text-center text-xs text-emerald-400 min-h-[1rem] opacity-0 transition-opacity" role="status"></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	<Footer />
+
+	<style is:global>
+		.custom-scrollbar::-webkit-scrollbar {
+			width: 8px;
+			height: 8px;
+		}
+		.custom-scrollbar::-webkit-scrollbar-thumb {
+			background: rgb(51 65 85 / 0.8);
+			border-radius: 4px;
+		}
+		.custom-scrollbar::-webkit-scrollbar-track {
+			background: transparent;
+		}
+	</style>
+
+	<script is:inline>
+		// @ts-nocheck
+		(() => {
+			const $ = (sel, root = document) => root.querySelector(sel);
+			const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
+
+			let activeFilter = 'all';
+			let activeBucket = 'pos';
+			const positive = [];
+			const negative = [];
+
+			const searchEl = $('#ntg-search');
+			const filterBtns = $$('.ntg-filter-btn');
+			const cards = $$('.ntg-card');
+			const chipsPos = $('#ntg-chips-pos');
+			const chipsNeg = $('#ntg-chips-neg');
+			const phPos = $('[data-ntg-placeholder-pos]');
+			const phNeg = $('[data-ntg-placeholder-neg]');
+			const instantCopy = $('#ntg-instant-copy');
+			const toast = $('#ntg-toast');
+			const bucketBtns = $$('.ntg-bucket');
+
+			function showToast(msg) {
+				if (!toast) return;
+				toast.textContent = msg;
+				toast.classList.remove('opacity-0');
+				setTimeout(() => toast.classList.add('opacity-0'), 2000);
+			}
+
+			async function copyText(text) {
+				if (!text.trim()) {
+					showToast('복사할 내용이 없습니다.');
+					return;
+				}
+				try {
+					await navigator.clipboard.writeText(text);
+					showToast('클립보드에 복사했습니다.');
+				} catch {
+					showToast('복사에 실패했습니다.');
+				}
+			}
+
+			function joinTags(arr) {
+				return arr.join(', ');
+			}
+
+			function renderBucket(container, arr, ph, isNeg) {
+				if (!container) return;
+				container.querySelectorAll('.ntg-chip').forEach((n) => n.remove());
+				if (ph) ph.style.display = arr.length ? 'none' : '';
+				arr.forEach((tag) => {
+					const span = document.createElement('span');
+					span.className =
+						'ntg-chip inline-flex items-center gap-1 rounded-md border px-2 py-1 text-xs font-mono max-w-full ' +
+						(isNeg
+							? 'border-rose-900/60 bg-rose-950/40 text-rose-100'
+							: 'border-emerald-900/60 bg-emerald-950/40 text-emerald-100');
+					const t = document.createElement('span');
+					t.className = 'truncate';
+					t.textContent = tag;
+					const rm = document.createElement('button');
+					rm.type = 'button';
+					rm.className =
+						'shrink-0 rounded p-0.5 text-slate-500 hover:text-white hover:bg-slate-700';
+					rm.setAttribute('aria-label', '제거');
+					rm.innerHTML =
+						'<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>';
+					rm.addEventListener('click', () => {
+						const i = arr.indexOf(tag);
+						if (i >= 0) arr.splice(i, 1);
+						renderChips();
+					});
+					span.appendChild(t);
+					span.appendChild(rm);
+					container.appendChild(span);
+				});
+			}
+
+			function renderChips() {
+				renderBucket(chipsPos, positive, phPos, false);
+				renderBucket(chipsNeg, negative, phNeg, true);
+			}
+
+			function addTag(value) {
+				const bucket = activeBucket === 'neg' ? negative : positive;
+				if (bucket.includes(value)) return;
+				bucket.push(value);
+				renderChips();
+			}
+
+			function applyFilter() {
+				const q = (searchEl?.value || '').trim().toLowerCase();
+				cards.forEach((card) => {
+					const f = card.getAttribute('data-ntg-filter');
+					const blob = (card.getAttribute('data-ntg-search') || '').toLowerCase();
+					const matchFilter = activeFilter === 'all' || f === activeFilter;
+					const matchSearch = !q || blob.includes(q);
+					card.style.display = matchFilter && matchSearch ? '' : 'none';
+				});
+			}
+
+			filterBtns.forEach((btn) => {
+				btn.addEventListener('click', () => {
+					activeFilter = btn.getAttribute('data-filter') || 'all';
+					filterBtns.forEach((b) => b.setAttribute('data-active', String(b === btn)));
+					applyFilter();
+				});
+			});
+
+			searchEl?.addEventListener('input', applyFilter);
+
+			bucketBtns.forEach((btn) => {
+				btn.addEventListener('click', () => {
+					activeBucket = btn.getAttribute('data-bucket') || 'pos';
+					bucketBtns.forEach((b) => {
+						const on = b.getAttribute('data-bucket') === activeBucket;
+						if (on) {
+							b.classList.add('border-emerald-500', 'bg-emerald-950/50', 'text-emerald-200', 'font-semibold');
+							b.classList.remove('border-slate-600', 'bg-slate-800', 'text-slate-400', 'font-medium');
+						} else {
+							b.classList.remove('border-emerald-500', 'bg-emerald-950/50', 'text-emerald-200', 'font-semibold');
+							b.classList.add('border-slate-600', 'bg-slate-800', 'text-slate-400', 'font-medium');
+						}
+					});
+				});
+			});
+
+			document.getElementById('ntg-root')?.addEventListener('click', (e) => {
+				const tagBtn = e.target.closest?.('.ntg-tag');
+				if (!tagBtn) return;
+				const value = tagBtn.getAttribute('data-tag');
+				if (!value) return;
+
+				if (instantCopy?.checked) {
+					addTag(value);
+					const pos = joinTags(positive);
+					const neg = joinTags(negative);
+					let out = pos;
+					if (neg) out += '\n\nNegative: ' + neg;
+					copyText(out);
+					return;
+				}
+				addTag(value);
+			});
+
+			$('#ntg-clear-pos')?.addEventListener('click', () => {
+				positive.length = 0;
+				renderChips();
+			});
+			$('#ntg-clear-neg')?.addEventListener('click', () => {
+				negative.length = 0;
+				renderChips();
+			});
+
+			$('#ntg-copy-pos')?.addEventListener('click', () => copyText(joinTags(positive)));
+			$('#ntg-copy-neg')?.addEventListener('click', () => copyText(joinTags(negative)));
+			$('#ntg-copy-all')?.addEventListener('click', () => {
+				const pos = joinTags(positive);
+				const neg = joinTags(negative);
+				if (!pos && !neg) {
+					showToast('복사할 내용이 없습니다.');
+					return;
+				}
+				let out = pos;
+				if (neg) {
+					if (out) out += '\n\n--- Negative ---\n';
+					out += neg;
+				}
+				copyText(out);
+			});
+
+			applyFilter();
+		})();
+	</script>
+</Layout>

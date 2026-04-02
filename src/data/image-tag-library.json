@@ -1,0 +1,224 @@
+{
+	"filters": [
+		{ "id": "all", "label": "전체" },
+		{ "id": "quality", "label": "품질" },
+		{ "id": "style", "label": "화풍" },
+		{ "id": "character", "label": "캐릭터" },
+		{ "id": "appearance", "label": "외형" },
+		{ "id": "clothing", "label": "의상" },
+		{ "id": "action", "label": "포즈·동작" },
+		{ "id": "camera", "label": "구도·렌즈" },
+		{ "id": "background", "label": "배경" },
+		{ "id": "lighting", "label": "조명" },
+		{ "id": "negative", "label": "부정(제외)" }
+	],
+	"groups": [
+		{
+			"filter": "quality",
+			"title": "품질 / 완성도",
+			"tags": [
+				{ "v": "masterpiece", "l": "명작" },
+				{ "v": "best quality", "l": "최고 품질" },
+				{ "v": "highres", "l": "고해상도" },
+				{ "v": "absurdres", "l": "초고해상도" },
+				{ "v": "detailed", "l": "디테일" },
+				{ "v": "very aesthetic", "l": "미적 우수" },
+				{ "v": "newest", "l": "최신 느낌" }
+			]
+		},
+		{
+			"filter": "quality",
+			"title": "선호도 (일반)",
+			"tags": [
+				{ "v": "highly detailed", "l": "고디테일" },
+				{ "v": "sharp focus", "l": "선명 초점" },
+				{ "v": "intricate details", "l": "정교한 디테일" },
+				{ "v": "professional", "l": "전문가급" },
+				{ "v": "8k uhd", "l": "8K UHD" }
+			]
+		},
+		{
+			"filter": "style",
+			"title": "일러스트 / 애니",
+			"tags": [
+				{ "v": "anime", "l": "애니" },
+				{ "v": "cel shading", "l": "셀 셰이딩" },
+				{ "v": "visual novel", "l": "비주얼 노벨" },
+				{ "v": "flat color", "l": "플랫 컬러" },
+				{ "v": "lineart", "l": "라인아트" },
+				{ "v": "soft shading", "l": "부드러운 음영" }
+			]
+		},
+		{
+			"filter": "style",
+			"title": "실사 / 3D",
+			"tags": [
+				{ "v": "photorealistic", "l": "실사" },
+				{ "v": "realistic", "l": "리얼" },
+				{ "v": "3d render", "l": "3D 렌더" },
+				{ "v": "octane render", "l": "옥테인" },
+				{ "v": "unreal engine", "l": "언리얼" },
+				{ "v": "ray tracing", "l": "레이트레이싱" }
+			]
+		},
+		{
+			"filter": "style",
+			"title": "화풍 키워드",
+			"tags": [
+				{ "v": "watercolor (medium)", "l": "수채화" },
+				{ "v": "oil painting", "l": "유화" },
+				{ "v": "sketch", "l": "스케치" },
+				{ "v": "pixel art", "l": "픽셀아트" },
+				{ "v": "minimalist", "l": "미니멀" },
+				{ "v": "cinematic lighting", "l": "시네마틱 조명" }
+			]
+		},
+		{
+			"filter": "character",
+			"title": "성별 / 나이 느낌",
+			"tags": [
+				{ "v": "1girl", "l": "여성 1인" },
+				{ "v": "1boy", "l": "남성 1인" },
+				{ "v": "2girls", "l": "여성 2인" },
+				{ "v": "solo", "l": "단독" },
+				{ "v": "multiple girls", "l": "복수 여성" },
+				{ "v": "mature female", "l": "성숙한 여성" },
+				{ "v": "young adult", "l": "청년" }
+			]
+		},
+		{
+			"filter": "character",
+			"title": "감정 / 표정",
+			"tags": [
+				{ "v": "smile", "l": "미소" },
+				{ "v": "grin", "l": "씨익" },
+				{ "v": "blush", "l": "홍조" },
+				{ "v": "embarrassed", "l": "당황" },
+				{ "v": "serious", "l": "진지" },
+				{ "v": "closed eyes", "l": "눈 감음" },
+				{ "v": "looking at viewer", "l": "시선(뷰어)" }
+			]
+		},
+		{
+			"filter": "appearance",
+			"title": "머리 / 눈",
+			"tags": [
+				{ "v": "long hair", "l": "장발" },
+				{ "v": "short hair", "l": "단발" },
+				{ "v": "twintails", "l": "트윈테일" },
+				{ "v": "ponytail", "l": "포니테일" },
+				{ "v": "blue eyes", "l": "파란 눈" },
+				{ "v": "heterochromia", "l": "오드아이" },
+				{ "v": "glasses", "l": "안경" }
+			]
+		},
+		{
+			"filter": "appearance",
+			"title": "액세서리",
+			"tags": [
+				{ "v": "hair ornament", "l": "머리 장식" },
+				{ "v": "hairclip", "l": "머리핀" },
+				{ "v": "earrings", "l": "귀걸이" },
+				{ "v": "choker", "l": "초커" },
+				{ "v": "necklace", "l": "목걸이" },
+				{ "v": "hat", "l": "모자" }
+			]
+		},
+		{
+			"filter": "clothing",
+			"title": "복장",
+			"tags": [
+				{ "v": "school uniform", "l": "교복" },
+				{ "v": "dress", "l": "원피스" },
+				{ "v": "hoodie", "l": "후드" },
+				{ "v": "suit", "l": "정장" },
+				{ "v": "armor", "l": "갑옷" },
+				{ "v": "kimono", "l": "기모노" },
+				{ "v": "casual", "l": "캐주얼" }
+			]
+		},
+		{
+			"filter": "action",
+			"title": "포즈",
+			"tags": [
+				{ "v": "standing", "l": "서 있기" },
+				{ "v": "sitting", "l": "앉기" },
+				{ "v": "lying", "l": "눕기" },
+				{ "v": "running", "l": "달리기" },
+				{ "v": "dancing", "l": "춤" },
+				{ "v": "arms up", "l": "팔 올림" },
+				{ "v": "hand on hip", "l": "손 허리" }
+			]
+		},
+		{
+			"filter": "camera",
+			"title": "구도 / 샷",
+			"tags": [
+				{ "v": "portrait", "l": "초상" },
+				{ "v": "full body", "l": "전신" },
+				{ "v": "upper body", "l": "상반신" },
+				{ "v": "close-up", "l": "클로즈업" },
+				{ "v": "from above", "l": "위에서" },
+				{ "v": "from below", "l": "아래에서" },
+				{ "v": "wide shot", "l": "와이드" },
+				{ "v": "depth of field", "l": "피사계 심도" }
+			]
+		},
+		{
+			"filter": "background",
+			"title": "장소 / 분위기",
+			"tags": [
+				{ "v": "simple background", "l": "단순 배경" },
+				{ "v": "gradient background", "l": "그라데이션" },
+				{ "v": "outdoors", "l": "야외" },
+				{ "v": "indoors", "l": "실내" },
+				{ "v": "night", "l": "밤" },
+				{ "v": "cityscape", "l": "도시" },
+				{ "v": "nature", "l": "자연" },
+				{ "v": "starry sky", "l": "별 하늘" }
+			]
+		},
+		{
+			"filter": "lighting",
+			"title": "조명",
+			"tags": [
+				{ "v": "soft lighting", "l": "부드러운 조명" },
+				{ "v": "dramatic lighting", "l": "드라마틱" },
+				{ "v": "rim lighting", "l": "림 라이트" },
+				{ "v": "backlighting", "l": "역광" },
+				{ "v": "neon lighting", "l": "네온" },
+				{ "v": "golden hour", "l": "골든아워" },
+				{ "v": "studio lighting", "l": "스튜디오" }
+			]
+		},
+		{
+			"filter": "negative",
+			"title": "품질 / 결함 (부정)",
+			"tags": [
+				{ "v": "lowres", "l": "저해상도" },
+				{ "v": "worst quality", "l": "최악 품질" },
+				{ "v": "bad anatomy", "l": "해부 이상" },
+				{ "v": "bad hands", "l": "손 망가짐" },
+				{ "v": "extra fingers", "l": "손가락 과다" },
+				{ "v": "blurry", "l": "흐림" },
+				{ "v": "watermark", "l": "워터마크" },
+				{ "v": "text", "l": "글자 노이즈" },
+				{ "v": "jpeg artifacts", "l": "압축 아티팩트" },
+				{ "v": "cropped", "l": "잘림" }
+			]
+		},
+		{
+			"filter": "negative",
+			"title": "구도 / 기타 (부정)",
+			"tags": [
+				{ "v": "duplicate", "l": "중복" },
+				{ "v": "mutation", "l": "돌연변이" },
+				{ "v": "deformed", "l": "기형" },
+				{ "v": "ugly", "l": "미관상 불호" },
+				{ "v": "disfigured", "l": "얼굴 훼손" },
+				{ "v": "out of frame", "l": "프레임 밖" },
+				{ "v": "username", "l": "유저명 노출" }
+			]
+		}
+	]
+}

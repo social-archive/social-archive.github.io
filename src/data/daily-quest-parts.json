@@ -1,955 +1,815 @@
 {
 	"missions": [
 		{
-			"ko": "말 없이도 갈등이 읽히는 두 사람의 한 컷",
-			"en": "silent tension between two people, unspoken conflict, single frame"
+			"ko": "서로 다른 두 계절이 한 프레임에서 만나는 풍경",
+			"en": "two seasons colliding in one frame"
 		},
 		{
-			"ko": "‘다음에 무슨 일이 일어날지’ 궁금해지는 직전 순간만",
-			"en": "moment before the decisive action, suspense, anticipation"
+			"ko": "빛나는 것은 하나뿐—나머지는 모두 어둠에 잠긴 방",
+			"en": "single light source room everything else swallowed by dark"
 		},
 		{
-			"ko": "기쁨·슬픔을 얼굴이 아니라 손·어깨·자세로만",
-			"en": "emotion through body language only, face hidden or turned away"
+			"ko": "물 위에 떠 있지만 가라앉지 않는 집",
+			"en": "house floating on water never sinking"
 		},
 		{
-			"ko": "한 물건이 주인공인 이야기 (사람은 부차적이거나 없어도 됨)",
-			"en": "object as narrative protagonist, human secondary or absent"
+			"ko": "사람 없이도 누가 살았는지 알 수 있는 책상",
+			"en": "desk that tells who lived there without a person"
 		},
 		{
-			"ko": "거짓말·비밀이 드러날 듯한 순간의 시선",
-			"en": "eyes revealing lie or secret, guilt, micro-expression"
+			"ko": "너무 커서 문을 통과할 수 없는 부드러운 생명체",
+			"en": "soft creature too big to pass the door"
 		},
 		{
-			"ko": "이별·끝난 뒤의 ‘빈자리’를 풍경 설명 없이 분위기로만",
-			"en": "absence after goodbye, emotional void, no literal empty chair"
+			"ko": "시계가 거꾸로 가는데도 아무도 놀라지 않는 풍경",
+			"en": "clocks run backward nobody reacts"
 		},
 		{
-			"ko": "누군가를 기다리는 몸짓만으로 시간이 느껴지게",
-			"en": "waiting gesture, passage of time implied, subtle impatience"
+			"ko": "천장이 별이고 바닥이 구름인 방",
+			"en": "ceiling is stars floor is clouds"
 		},
 		{
-			"ko": "승리 직후 허무함이 스치는 표정",
-			"en": "hollow victory, bittersweet afterglow, post-climax"
+			"ko": "말을 건네기 직전 멈춘 입술만 클로즈업",
+			"en": "close-up lips frozen before words"
 		},
 		{
-			"ko": "첫 만남의 어색함을 시선만으로",
-			"en": "awkward first meeting, awkward eye contact, social distance"
+			"ko": "두 사람이 같은 물건을 잡으려다 손끝만 맞닿은 순간",
+			"en": "two hands almost touching same object"
 		},
 		{
-			"ko": "퍼포먼스·댄스의 ‘정지한 한 순간’만 (연속 동작은 암시)",
-			"en": "frozen pose mid-dance, peak motion, kinetic energy implied"
+			"ko": "무대 위가 아니라 관객석에서만 보이는 진짜 표정",
+			"en": "true emotion visible only from audience seats"
 		},
 		{
-			"ko": "연습실 거울 속 ‘아직 완성되지 않은’ 나",
-			"en": "incomplete self in mirror, practice room, rehearsal vulnerability"
+			"ko": "리허설복과 본무대 의상이 한 몸에 겹쳐 보이게",
+			"en": "rehearsal clothes and stage costume ghosted on one body"
 		},
 		{
-			"ko": "무대 조명 속 정체가 흐릿한 실루엣",
-			"en": "silhouette under stage lights, anonymous performer"
+			"ko": "조명이 꺼진 직후에만 보이는 실루엣",
+			"en": "silhouette visible only right after lights go out"
 		},
 		{
-			"ko": "관객 시점이 아닌 ‘무대 위에서 내려다본’ 한 장면",
-			"en": "performer POV looking at crowd lights, disorienting angle"
+			"ko": "백스테이지에서 물만 마시는 10초—주변은 소음",
+			"en": "ten seconds drinking water backstage noise blurred"
 		},
 		{
-			"ko": "한 장의 이미지로 ‘이전’과 ‘이후’를 동시에 암시",
-			"en": "before and after in one frame, split implication, transition"
+			"ko": "엔딩 크레딧이 올라가는 동안 화면만 남은 무대",
+			"en": "empty stage while credits roll on screen"
 		},
 		{
-			"ko": "친구·라이벌·연인 중 무엇인지 모호한 관계",
-			"en": "ambiguous relationship, ambiguous intimacy, tension"
+			"ko": "녹음 부스 유리 너머로만 보이는 눈물",
+			"en": "tears seen only through booth glass"
 		},
 		{
-			"ko": "꿈과 현실이 경계에서 섞인 장면",
-			"en": "dream bleeding into reality, liminal space, surreal edge"
+			"ko": "팬사인 줄의 끝과 맨 앞이 한 컷에 (거리감)",
+			"en": "fan signing queue front and end in one frame distance"
 		},
 		{
-			"ko": "어른이 된 뒤의 첫 번째 실패를 겨우 참는 순간",
-			"en": "adult holding back tears, first big failure, dignity"
+			"ko": "새벽 배송 상자만 쌓인 연습실 입구",
+			"en": "dawn practice room entrance stacked delivery boxes"
 		},
 		{
-			"ko": "누군가를 위해 연기하는 ‘가짜 미소’",
-			"en": "performing happiness for someone else, fake smile"
+			"ko": "지하철 광고판 얼굴과 옆 사람의 지친 옆얼굴",
+			"en": "subway ad face next to tired commuter profile"
 		},
 		{
-			"ko": "소리가 들릴 것 같은 ‘함성 직전’의 입술",
-			"en": "mouth about to scream, breath held, pre-shout"
+			"ko": "편의점 창 너머 비와 안의 따뜻한 빛만",
+			"en": "rain outside convenience window warm light inside"
 		},
 		{
-			"ko": "인물 없이 ‘누가 있었는지’만 남은 흔적",
-			"en": "absence of people, traces left behind, story without bodies"
+			"ko": "옥상 난간에 걸친 젖은 외투 하나",
+			"en": "one wet coat on rooftop railing no owner"
 		},
 		{
-			"ko": "밤버스 창밖 불빛만, 안은 한 사람의 침묵",
-			"en": "night bus interior, city bokeh outside, lone passenger, quiet"
+			"ko": "엘리베이터 거울에 남은 립스틱 자국만",
+			"en": "lipstick smudge on elevator mirror only"
 		},
 		{
-			"ko": "백스테이지 테이프·의상랙·반만 켜진 거울등만으로 긴장감",
-			"en": "backstage clutter, costume rack, half-lit mirror, pre-show tension"
+			"ko": "연습실 거울에 적힌 카운트 숫자와 지워진 자국",
+			"en": "count numbers written on studio mirror half erased"
 		},
 		{
-			"ko": "리허설과 본공의 ‘같은 포즈’인데 분위기만 다르게",
-			"en": "same pose rehearsal vs live, mood contrast, implied audience"
+			"ko": "방송 대기실 테이블 위 말린 꽃과 아직 열린 물병",
+			"en": "wilted flowers and open water bottle greenroom table"
 		},
 		{
-			"ko": "관객 머리 너머로만 보이는 무대 빛 (연주자는 프레임 밖)",
-			"en": "stage lights over crowd heads, performer implied off-frame"
+			"ko": "첫 솔로 무대 전 손에 쥔 마이크 떨림만",
+			"en": "trembling hand gripping mic before solo debut"
 		},
 		{
-			"ko": "빗방울이 유리에 뭉개진 창 너머, 안쪽 인물은 초점 밖",
-			"en": "rain on window, blurred figure inside, melancholy separation"
+			"ko": "퇴근길 이어폰 너머로만 들리는 세상",
+			"en": "world heard only through commute earphones"
 		},
 		{
-			"ko": "읽지 않은 메시지 직전—손만·호흡만 (화면 내용은 암시)",
-			"en": "unread message moment, hands and breath only, screen implied not literal"
+			"ko": "창문에 앉은 새와 실내의 고요가 같은 무게",
+			"en": "bird on windowsill same weight as indoor silence"
 		},
 		{
-			"ko": "같은 테이블인데 두 사람이 ‘한 프레임에 동시에’ 안 나오게",
-			"en": "same table split composition, two people never in same frame together"
+			"ko": "부엌 싱크대에 쌓인 설거지 전쟁 전야",
+			"en": "kitchen sink pile of dishes calm before washing"
 		},
 		{
-			"ko": "고백 말이 끊기는 순간, 입보다 어깨·목선에 담기게",
-			"en": "confession interrupted, emotion in shoulders and neck not mouth"
+			"ko": "세탁기 안에서 돌아가는 우주를 상상하게",
+			"en": "laundry drum spin suggests a tiny cosmos"
 		},
 		{
-			"ko": "연습생 복도 형광등 아래 길게 늘어진 그림자",
-			"en": "trainee hallway, harsh fluorescent, long shadows, institutional"
+			"ko": "이사 가기 전날 빈 방에 남은 테이프 자국",
+			"en": "tape marks on floor empty room night before move"
 		},
 		{
-			"ko": "얼굴 없이 방송·팟캐스트 분위기 (마이크·손·책상만)",
-			"en": "streaming setup, mic and hands only, faceless host vibe"
+			"ko": "우산 한 자루가 둘을 가릴 수 없는 거리",
+			"en": "one umbrella too small for two in rain"
 		},
 		{
-			"ko": "옥상 난간 너머 도시, 인물은 작게 ‘남겨두고 간’ 느낌",
-			"en": "rooftop tiny figure against city, vast sky, leaving or staying ambiguous"
+			"ko": "야시장 불빛만으로 그려진 사람의 윤곽",
+			"en": "person outline drawn only by night market lights"
 		},
 		{
-			"ko": "엘리베이터 문이 닫히며 사이에 낀 두 사람의 시선",
-			"en": "elevator doors closing, two people separated, eyes meet in gap"
+			"ko": "해변에서 발견한 알 수 없는 기계 부품",
+			"en": "unknown machine part found on beach"
 		},
 		{
-			"ko": "의상 갈아입는 중 천이 공중에 멈춘 한순간",
-			"en": "mid costume change, fabric frozen in air, vulnerability implied"
+			"ko": "숲 속 전신거울에 비친 것이 나무인지 사람인지",
+			"en": "forest mirror reflects tree or figure ambiguous"
 		},
 		{
-			"ko": "어두운 방에서 터진 플래시 한 번에만 드러나는 실루엣",
-			"en": "single camera flash in dark room, silhouettes, paparazzi or party"
+			"ko": "고래가 하늘을 나는 꿈을 꾸는 아이의 방",
+			"en": "child's room dreaming whales in sky"
 		},
 		{
-			"ko": "메이크업 의자에 기댄 새벽, 거울 속과 밖이 다른 온도",
-			"en": "makeup chair dawn exhaustion, mirror reflection colder than subject"
+			"ko": "도시 전체가 정전됐을 때만 보이는 별",
+			"en": "stars visible only during city blackout"
 		},
 		{
-			"ko": "‘방금 누가 지나갔는지’ 복도 끝에만 남은 움직임",
-			"en": "corridor end motion blur only, who passed implied, empty hall"
+			"ko": "유리관 속 표본이 아니라 살아 움직이는 듯한 식물",
+			"en": "plant in glass that seems alive not preserved"
 		},
 		{
-			"ko": "새벽 지하철에서 말 없이 스치는 감정만 남긴 한 컷",
-			"en": "dawn subway, silent emotions only, single cinematic frame"
+			"ko": "눈 덮인 벤치에 앉지 않고 서 있는 발자국만",
+			"en": "footprints in snow beside empty bench no sitter"
 		},
 		{
-			"ko": "새벽 택시 뒷좌석에서 누군가를 기다리다 시선이 흐트러진 한 컷",
-			"en": "dawn taxi back seat, waiting gaze drifting, single cinematic frame"
+			"ko": "사막 한가운데 작동 중인 자판기 하나",
+			"en": "single vending machine running in desert center"
 		},
 		{
-			"ko": "새벽 옥상에서 거짓말을 삼키기 직전의 한 컷",
-			"en": "dawn rooftop, moment before swallowing a lie, single cinematic frame"
+			"ko": "지하수면이 보이는 유리 바닥의 통로",
+			"en": "glass floor walkway showing water below"
 		},
 		{
-			"ko": "새벽 복도에서 작별 인사를 삼키기 직전의 한 컷",
-			"en": "dawn corridor, moment before swallowing goodbye, single cinematic frame"
+			"ko": "박물관에서 살아난 듯한 조각상의 눈동자만",
+			"en": "statue eyes only as if alive in museum"
 		},
 		{
-			"ko": "새벽 연습실에서 박수 소리가 울리기 직전의 한 컷",
-			"en": "dawn practice room, moment before applause, single cinematic frame"
+			"ko": "비행기 창문에 닿은 얼음 결정과 지나가는 구름",
+			"en": "ice crystal on plane window passing clouds"
 		},
 		{
-			"ko": "새벽 녹음실에서 거울과 눈이 마주친 한 컷",
-			"en": "dawn recording booth, eyes meeting mirror, single cinematic frame"
+			"ko": "지하 주차장 기둥에만 남은 낙서와 형광등 깜빡임",
+			"en": "graffiti on pillar flickering fluorescent parking"
 		},
 		{
-			"ko": "새벽 방송 대기실에서 문 손잡이에 손이 닿기 직전의 한 컷",
-			"en": "dawn broadcast waiting room, hand on door handle, single cinematic frame"
+			"ko": "온실 안에서 너무 자라난 한 포기가 천장을 뚫을 듯",
+			"en": "one overgrown plant in greenhouse pushing ceiling"
 		},
 		{
-			"ko": "새벽 편의점 앞에서 카메라가 켜지기 직전의 한 컷",
-			"en": "dawn convenience store front, moment before camera rolls, single cinematic frame"
+			"ko": "수족관 앞에서 물고기와 눈이 마주친 순간",
+			"en": "eye contact with fish through aquarium glass"
 		},
 		{
-			"ko": "한낮 지하철에서 누군가를 기다리다 시선이 흐트러진 한 컷",
-			"en": "midday subway, waiting gaze drifting, single cinematic frame"
+			"ko": "놀이공원이 문 닫은 뒤 회전목마만 천천히 돌아감",
+			"en": "carousel slowly turning after park closed"
 		},
 		{
-			"ko": "한낮 택시 뒷좌석에서 거짓말을 삼키기 직전의 한 컷",
-			"en": "midday taxi back seat, moment before swallowing a lie, single cinematic frame"
+			"ko": "철길 옆 피크닉 테이블과 멀리 오는 기차 불빛",
+			"en": "picnic table by tracks distant train light"
 		},
 		{
-			"ko": "한낮 옥상에서 작별 인사를 삼키기 직전의 한 컷",
-			"en": "midday rooftop, moment before swallowing goodbye, single cinematic frame"
+			"ko": "폐허가 된 수영장 바닥에 핀 한 송이 꽃",
+			"en": "single flower growing in cracked empty pool"
 		},
 		{
-			"ko": "한낮 복도에서 박수 소리가 울리기 직전의 한 컷",
-			"en": "midday corridor, moment before applause, single cinematic frame"
+			"ko": "안개 속 등대 꼭대기 불빛만 선명하게",
+			"en": "only lighthouse beam sharp in fog"
 		},
 		{
-			"ko": "한낮 연습실에서 거울과 눈이 마주친 한 컷",
-			"en": "midday practice room, eyes meeting mirror, single cinematic frame"
+			"ko": "달에서 본 지구가 작은 파란 점인 풍경",
+			"en": "earth as pale blue dot from moon view"
 		},
 		{
-			"ko": "한낮 녹음실에서 문 손잡이에 손이 닿기 직전의 한 컷",
-			"en": "midday recording booth, hand on door handle, single cinematic frame"
+			"ko": "우주 정거장 창가에 테이프로 붙인 아이의 그림",
+			"en": "child's crayon drawing taped on station window"
 		},
 		{
-			"ko": "한낮 방송 대기실에서 카메라가 켜지기 직전의 한 컷",
-			"en": "midday broadcast waiting room, moment before camera rolls, single cinematic frame"
+			"ko": "로봇이 버린 인간의 장난감을 주운 장면",
+			"en": "robot picking up discarded human toy"
 		},
 		{
-			"ko": "한낮 편의점 앞에서 말 없이 스치는 감정만 남긴 한 컷",
-			"en": "midday convenience store front, silent emotions only, single cinematic frame"
+			"ko": "가상현실을 벗어난 직후 어지러운 시야의 방",
+			"en": "room spinning right after removing VR headset"
 		},
 		{
-			"ko": "황혼 지하철에서 거짓말을 삼키기 직전의 한 컷",
-			"en": "dusk subway, moment before swallowing a lie, single cinematic frame"
+			"ko": "스마트폰 화면 속 풍경이 창밖과 1초 어긋남",
+			"en": "phone screen landscape 1 second out of sync with window"
 		},
 		{
-			"ko": "황혼 택시 뒷좌석에서 작별 인사를 삼키기 직전의 한 컷",
-			"en": "dusk taxi back seat, moment before swallowing goodbye, single cinematic frame"
+			"ko": "인쇄된 사진과 실제 풍경이 겹쳐 보이는 창틀",
+			"en": "printed photo overlaps real view in window frame"
 		},
 		{
-			"ko": "황혼 옥상에서 박수 소리가 울리기 직전의 한 컷",
-			"en": "dusk rooftop, moment before applause, single cinematic frame"
+			"ko": "거울 셀카 대신 거울이 찍힌 사진",
+			"en": "photo of mirror instead of selfie in mirror"
 		},
 		{
-			"ko": "황혼 복도에서 거울과 눈이 마주친 한 컷",
-			"en": "dusk corridor, eyes meeting mirror, single cinematic frame"
+			"ko": "그림자가 주인보다 먼저 방을 나가는 순간",
+			"en": "shadow leaves room before person"
 		},
 		{
-			"ko": "황혼 연습실에서 문 손잡이에 손이 닿기 직전의 한 컷",
-			"en": "dusk practice room, hand on door handle, single cinematic frame"
+			"ko": "반쪽만 채색된 스케치북 페이지",
+			"en": "sketchbook page half colored half line only"
 		},
 		{
-			"ko": "황혼 녹음실에서 카메라가 켜지기 직전의 한 컷",
-			"en": "dusk recording booth, moment before camera rolls, single cinematic frame"
+			"ko": "팔레트 위에서 섞이기 전 두 색만 마주보게",
+			"en": "two paint blobs about to touch not yet mixed"
 		},
 		{
-			"ko": "황혼 방송 대기실에서 말 없이 스치는 감정만 남긴 한 컷",
-			"en": "dusk broadcast waiting room, silent emotions only, single cinematic frame"
+			"ko": "캔버스 첫 번째 획과 마지막 획이 한 줄에 공존",
+			"en": "first and last brushstroke visible on same line"
 		},
 		{
-			"ko": "황혼 편의점 앞에서 누군가를 기다리다 시선이 흐트러진 한 컷",
-			"en": "dusk convenience store front, waiting gaze drifting, single cinematic frame"
+			"ko": "종이를 태우기 직전 불꽃이 비친 눈동자",
+			"en": "flame reflection in eye before burning paper"
 		},
 		{
-			"ko": "한밤 지하철에서 작별 인사를 삼키기 직전의 한 컷",
-			"en": "late night subway, moment before swallowing goodbye, single cinematic frame"
+			"ko": "스프레이 캔과 벽면의 반쯤 완성된 캐릭터",
+			"en": "spray can and half finished mural character"
 		},
 		{
-			"ko": "한밤 택시 뒷좌석에서 박수 소리가 울리기 직전의 한 컷",
-			"en": "late night taxi back seat, moment before applause, single cinematic frame"
+			"ko": "도자기 가마가 식는 동안 균열 하나",
+			"en": "single crack in cooling ceramic kiln piece"
 		},
 		{
-			"ko": "한밤 옥상에서 거울과 눈이 마주친 한 컷",
-			"en": "late night rooftop, eyes meeting mirror, single cinematic frame"
+			"ko": "실 뭉치가 고양이에게 점령당한 바구니",
+			"en": "yarn basket conquered by cat"
 		},
 		{
-			"ko": "한밤 복도에서 문 손잡이에 손이 닿기 직전의 한 컷",
-			"en": "late night corridor, hand on door handle, single cinematic frame"
+			"ko": "바느질 중 손에 박힌 바늘과 멈춘 숨",
+			"en": "needle prick frozen breath mid sewing"
 		},
 		{
-			"ko": "한밤 연습실에서 카메라가 켜지기 직전의 한 컷",
-			"en": "late night practice room, moment before camera rolls, single cinematic frame"
+			"ko": "뜨개질 반쯤 된 스카프와 겨울 창밖",
+			"en": "half knitted scarf and winter outside window"
 		},
 		{
-			"ko": "한밤 녹음실에서 말 없이 스치는 감정만 남긴 한 컷",
-			"en": "late night recording booth, silent emotions only, single cinematic frame"
+			"ko": "레고로 만든 성 옆에 진짜 개미 한 마리",
+			"en": "LEGO castle with one real ant for scale"
 		},
 		{
-			"ko": "한밤 방송 대기실에서 누군가를 기다리다 시선이 흐트러진 한 컷",
-			"en": "late night broadcast waiting room, waiting gaze drifting, single cinematic frame"
+			"ko": "보드게임 말이 실수로 떨어진 컵 옆에",
+			"en": "board game piece fallen beside spilled cup"
 		},
 		{
-			"ko": "한밤 편의점 앞에서 거짓말을 삼키기 직전의 한 컷",
-			"en": "late night convenience store front, moment before swallowing a lie, single cinematic frame"
+			"ko": "체스에서 폰만 남은 최종장",
+			"en": "chess endgame only pawns left"
 		},
 		{
-			"ko": "비 오는 지하철에서 박수 소리가 울리기 직전의 한 컷",
-			"en": "rainy subway, moment before applause, single cinematic frame"
+			"ko": "트럼펫 안쪽으로 보이는 연주자의 입술",
+			"en": "trumpet bell view of player lips inside"
 		},
 		{
-			"ko": "비 오는 택시 뒷좌석에서 거울과 눈이 마주친 한 컷",
-			"en": "rainy taxi back seat, eyes meeting mirror, single cinematic frame"
+			"ko": "바이올린 활에 남은 로진 가루",
+			"en": "rosin dust on violin bow hair"
 		},
 		{
-			"ko": "비 오는 옥상에서 문 손잡이에 손이 닿기 직전의 한 컷",
-			"en": "rainy rooftop, hand on door handle, single cinematic frame"
+			"ko": "드럼 스틱이 공중에 멈춘 박자",
+			"en": "drumsticks frozen mid air on beat"
 		},
 		{
-			"ko": "비 오는 복도에서 카메라가 켜지기 직전의 한 컷",
-			"en": "rainy corridor, moment before camera rolls, single cinematic frame"
+			"ko": "그랜드 피아노 안 현과 먼지 한 톨",
+			"en": "grand piano strings and single dust mote"
 		},
 		{
-			"ko": "비 오는 연습실에서 말 없이 스치는 감정만 남긴 한 컷",
-			"en": "rainy practice room, silent emotions only, single cinematic frame"
+			"ko": "노래방 화면 가사와 실제로 부르는 입 모양이 어긋남",
+			"en": "karaoke lyrics and mouth shape slightly out of sync"
 		},
 		{
-			"ko": "비 오는 녹음실에서 누군가를 기다리다 시선이 흐트러진 한 컷",
-			"en": "rainy recording booth, waiting gaze drifting, single cinematic frame"
+			"ko": "이어폰 줄이 풀리지 않은 채 엉킨 정적",
+			"en": "tangled earphone cable silent frustration"
 		},
 		{
-			"ko": "비 오는 방송 대기실에서 거짓말을 삼키기 직전의 한 컷",
-			"en": "rainy broadcast waiting room, moment before swallowing a lie, single cinematic frame"
+			"ko": "라디오 잡음 사이로만 들리는 노래 한 소절",
+			"en": "one line of song through radio static"
 		},
 		{
-			"ko": "비 오는 편의점 앞에서 작별 인사를 삼키기 직전의 한 컷",
-			"en": "rainy convenience store front, moment before swallowing goodbye, single cinematic frame"
+			"ko": "콘서트 후 귀가 멍—주변 소리가 물속 같음",
+			"en": "post concert ears ringing world underwater"
 		},
 		{
-			"ko": "눈 내리는 지하철에서 거울과 눈이 마주친 한 컷",
-			"en": "snowy subway, eyes meeting mirror, single cinematic frame"
+			"ko": "악보에 낙서된 하트와 지우개 찌꺼기",
+			"en": "heart doodle on sheet music eraser crumbs"
 		},
 		{
-			"ko": "눈 내리는 택시 뒷좌석에서 문 손잡이에 손이 닿기 직전의 한 컷",
-			"en": "snowy taxi back seat, hand on door handle, single cinematic frame"
+			"ko": "첫 페이지와 마지막 페이지가 이어진 책 (비현실)",
+			"en": "book where first and last page connect impossible loop"
 		},
 		{
-			"ko": "눈 내리는 옥상에서 카메라가 켜지기 직전의 한 컷",
-			"en": "snowy rooftop, moment before camera rolls, single cinematic frame"
+			"ko": "책갈피가 꽂힌 페이지만 다른 계절",
+			"en": "bookmark page shows different season than rest"
 		},
 		{
-			"ko": "눈 내리는 복도에서 말 없이 스치는 감정만 남긴 한 컷",
-			"en": "snowy corridor, silent emotions only, single cinematic frame"
+			"ko": "도서관에서 가장 조용한 구역의 한 의자",
+			"en": "single chair in quietest library zone"
 		},
 		{
-			"ko": "눈 내리는 연습실에서 누군가를 기다리다 시선이 흐트러진 한 컷",
-			"en": "snowy practice room, waiting gaze drifting, single cinematic frame"
+			"ko": "자동판매기에서 걸려 나오지 않는 캔",
+			"en": "can stuck halfway in vending machine slot"
 		},
 		{
-			"ko": "눈 내리는 녹음실에서 거짓말을 삼키기 직전의 한 컷",
-			"en": "snowy recording booth, moment before swallowing a lie, single cinematic frame"
+			"ko": "라면 끓이는 동안 김이 서린 안경",
+			"en": "glasses steamed while waiting for ramen"
 		},
 		{
-			"ko": "눈 내리는 방송 대기실에서 작별 인사를 삼키기 직전의 한 컷",
-			"en": "snowy broadcast waiting room, moment before swallowing goodbye, single cinematic frame"
+			"ko": "밤참으로 먹은 샌드위치와 노트북 빛만",
+			"en": "midnight sandwich laptop glow only"
 		},
 		{
-			"ko": "눈 내리는 편의점 앞에서 박수 소리가 울리기 직전의 한 컷",
-			"en": "snowy convenience store front, moment before applause, single cinematic frame"
+			"ko": "냉장고 문 열린 채로 멍하니 서 있는 한밤",
+			"en": "open fridge staring midnight snack indecision"
 		},
 		{
-			"ko": "안개 낀 지하철에서 문 손잡이에 손이 닿기 직전의 한 컷",
-			"en": "foggy subway, hand on door handle, single cinematic frame"
+			"ko": "생일 케이크 촛불 하나만 켜진 어두운 방",
+			"en": "one candle on birthday cake dark room"
 		},
 		{
-			"ko": "안개 낀 택시 뒷좌석에서 카메라가 켜지기 직전의 한 컷",
-			"en": "foggy taxi back seat, moment before camera rolls, single cinematic frame"
+			"ko": "촛불을 끄는 순간의 연기 한 줄기",
+			"en": "single curl of smoke as candle goes out"
 		},
 		{
-			"ko": "안개 낀 옥상에서 말 없이 스치는 감정만 남긴 한 컷",
-			"en": "foggy rooftop, silent emotions only, single cinematic frame"
+			"ko": "불꽃놀이가 시작되기 전 잠깐의 어둠",
+			"en": "dark second before fireworks start"
 		},
 		{
-			"ko": "안개 낀 복도에서 누군가를 기다리다 시선이 흐트러진 한 컷",
-			"en": "foggy corridor, waiting gaze drifting, single cinematic frame"
+			"ko": "폭죽 대신 비눗방울을 터뜨리는 축제",
+			"en": "festival popping bubbles instead of firecrackers"
 		},
 		{
-			"ko": "안개 낀 연습실에서 거짓말을 삼키기 직전의 한 컷",
-			"en": "foggy practice room, moment before swallowing a lie, single cinematic frame"
+			"ko": "풍선이 하나 남아 천장에 닿아 있는 파티 끝",
+			"en": "one balloon left touching ceiling after party"
 		},
 		{
-			"ko": "안개 낀 녹음실에서 작별 인사를 삼키기 직전의 한 컷",
-			"en": "foggy recording booth, moment before swallowing goodbye, single cinematic frame"
+			"ko": "웨딩홀 복도에 떨어진 리본 조각",
+			"en": "ribbon scrap fallen on wedding hall corridor"
 		},
 		{
-			"ko": "안개 낀 방송 대기실에서 박수 소리가 울리기 직전의 한 컷",
-			"en": "foggy broadcast waiting room, moment before applause, single cinematic frame"
+			"ko": "졸업식 후 교실에 남은 꽃다발 한 송이",
+			"en": "single flower left in classroom after graduation"
 		},
 		{
-			"ko": "안개 낀 편의점 앞에서 거울과 눈이 마주친 한 컷",
-			"en": "foggy convenience store front, eyes meeting mirror, single cinematic frame"
+			"ko": "운동장 관중석이 비고 깃발만 펄럭임",
+			"en": "empty bleachers flag still flapping"
 		},
 		{
-			"ko": "맑은 날의 지하철에서 카메라가 켜지기 직전의 한 컷",
-			"en": "clear day subway, moment before camera rolls, single cinematic frame"
+			"ko": "마라톤 피니시라인을 넘기 직전의 그림자",
+			"en": "shadow at marathon finish line one step before"
 		},
 		{
-			"ko": "맑은 날의 택시 뒷좌석에서 말 없이 스치는 감정만 남긴 한 컷",
-			"en": "clear day taxi back seat, silent emotions only, single cinematic frame"
+			"ko": "수영장 레인 줄 위에만 반짝이는 물줄기",
+			"en": "water gleam only on lane ropes"
 		},
 		{
-			"ko": "맑은 날의 옥상에서 누군가를 기다리다 시선이 흐트러진 한 컷",
-			"en": "clear day rooftop, waiting gaze drifting, single cinematic frame"
+			"ko": "눈싸움 직전 손에 쥔 눈덩이가 녹기 시작",
+			"en": "snowball melting in hand before snowball fight"
 		},
 		{
-			"ko": "맑은 날의 복도에서 거짓말을 삼키기 직전의 한 컷",
-			"en": "clear day corridor, moment before swallowing a lie, single cinematic frame"
+			"ko": "캠프파이어가 꺼진 뒤 남은 재만으로 그림",
+			"en": "drawing with only ashes after campfire out"
 		},
 		{
-			"ko": "맑은 날의 연습실에서 작별 인사를 삼키기 직전의 한 컷",
-			"en": "clear day practice room, moment before swallowing goodbye, single cinematic frame"
+			"ko": "텐트 안 손전등 원 안에서만 이야기 나눔",
+			"en": "conversation only inside flashlight circle in tent"
 		},
 		{
-			"ko": "맑은 날의 녹음실에서 박수 소리가 울리기 직전의 한 컷",
-			"en": "clear day recording booth, moment before applause, single cinematic frame"
+			"ko": "등산 중 만난 길 위의 뱀과 멈춘 발",
+			"en": "snake on trail frozen foot mid step"
 		},
 		{
-			"ko": "맑은 날의 방송 대기실에서 거울과 눈이 마주친 한 컷",
-			"en": "clear day broadcast waiting room, eyes meeting mirror, single cinematic frame"
+			"ko": "정상 부표 옆에서 마시는 첫 모금의 물병",
+			"en": "first sip of water at summit marker"
 		},
 		{
-			"ko": "맑은 날의 편의점 앞에서 문 손잡이에 손이 닿기 직전의 한 컷",
-			"en": "clear day convenience store front, hand on door handle, single cinematic frame"
+			"ko": "지하 동굴 호수에 비친 자신의 헤드램프",
+			"en": "headlamp reflection in underground cave lake"
 		}
 	],
 	"emotions": [
 		{
-			"ko": "조용한 긴장",
-			"en": "quiet tension, restrained emotion"
+			"ko": "입술을 깨물며 참는 애정",
+			"en": "biting lip holding back affection"
 		},
 		{
-			"ko": "폭발 직전의 참음",
-			"en": "suppressed rage about to break, jaw clenched"
+			"ko": "웃음이 얼어붙는 순간의 공포",
+			"en": "terror as smile freezes"
 		},
 		{
-			"ko": "허무한 응원",
-			"en": "hollow cheer, empty celebration"
+			"ko": "남의 행복을 진심으로 빌어주는 서운함",
+			"en": "sincere well-wish tinged with hurt"
 		},
 		{
-			"ko": "설렘과 불안이 섞임",
-			"en": "mixed excitement and anxiety"
+			"ko": "익숙한 손길이 낯설어진 순간",
+			"en": "familiar touch suddenly alien"
 		},
 		{
-			"ko": "첫사랑 같은 서툼",
-			"en": "first-love clumsiness, shy vulnerability"
+			"ko": "끝내 말하지 못한 고마움",
+			"en": "gratitude never spoken"
 		},
 		{
-			"ko": "무대공포증과 성취감이 동시에",
-			"en": "stage fright and triumph mixed"
+			"ko": "끝내 말하지 못한 미안함",
+			"en": "apology never spoken"
 		},
 		{
-			"ko": "질투를 부끄러워하는 마음",
-			"en": "ashamed jealousy, conflicted desire"
+			"ko": "스스로를 탓하는 순간의 온기",
+			"en": "warmth mixed with self-blame"
 		},
 		{
-			"ko": "이별을 미루는 망설임",
-			"en": "stalling goodbye, last moment hesitation"
+			"ko": "누군가의 실패를 자기 탓으로 받아들이는 마음",
+			"en": "taking someone else's failure as own fault"
 		},
 		{
-			"ko": "혼자만 아는 뿌듯함",
-			"en": "private pride, smug smile hidden"
+			"ko": "기대가 무거워져 숨이 얕아짐",
+			"en": "expectation so heavy breath goes shallow"
 		},
 		{
-			"ko": "남에게 말 못 하는 피로",
-			"en": "unspoken exhaustion, burnout"
+			"ko": "안도와 실망이 한숨에 섞임",
+			"en": "relief and disappointment in one sigh"
 		},
 		{
-			"ko": "익숙한 루틴에 묻힌 무력감",
-			"en": "numbness in routine, quiet despair"
+			"ko": "질투 대신 응원을 선택한 밤",
+			"en": "night of choosing cheer over jealousy"
 		},
 		{
-			"ko": "한순간의 동질감",
-			"en": "sudden kinship with stranger, fleeting connection"
+			"ko": "동경이 부끄러움으로 바뀌는 순간",
+			"en": "admiration turning into bashfulness"
 		},
 		{
-			"ko": "누군가를 원망하지 않으려는 노력",
-			"en": "trying not to blame, forgiveness struggle"
+			"ko": "체념이 아니라 포기 직전의 고요",
+			"en": "quiet before giving up not resignation yet"
 		},
 		{
-			"ko": "어린 시절의 수치심이 스치는 순간",
-			"en": "childhood shame flashback, vulnerable"
+			"ko": "불안 속에서도 손끝은 따뜻함",
+			"en": "warm fingertips despite anxiety"
 		},
 		{
-			"ko": "미래에 대한 막연한 희망",
-			"en": "vague hope for future, soft light"
+			"ko": "그리움이 목보다 먼저 도착함",
+			"en": "longing arrives in throat before tears"
 		},
 		{
-			"ko": "끝난 줄 알았는데 아직 남은 미련",
-			"en": "lingering attachment, unresolved"
+			"ko": "수치가 아니라 알려지길 바라는 마음",
+			"en": "wanting to be known not hiding shame"
 		},
 		{
-			"ko": "웃음 뒤에 숨긴 진심",
-			"en": "truth behind laughter, mask slipping"
+			"ko": "자부심 뒤에 숨은 공허",
+			"en": "emptiness behind pride"
 		},
 		{
-			"ko": "익명으로 받는 위로",
-			"en": "anonymous comfort, online stranger warmth"
+			"ko": "허무함이 아니라 '다음'이 보이지 않음",
+			"en": "not emptiness but no visible next step"
 		},
 		{
-			"ko": "스포트라이트 아래의 고독",
-			"en": "loneliness under spotlight, isolation in fame"
+			"ko": "설렘이 아니라 두근거림이 먼저",
+			"en": "flutter before named excitement"
 		},
 		{
-			"ko": "익숙해진 칭찬에 무뎌진 기쁨",
-			"en": "numb joy from overused praise, hollow validation"
+			"ko": "외로움이 차갑지 않고 말랑함",
+			"en": "loneliness soft not cold"
 		},
 		{
-			"ko": "떠나기 전 마지막으로 남기고 싶은 말이 막히는 순간",
-			"en": "words stuck before leaving, throat tight, unfinished sentence"
+			"ko": "분노가 아니라 억울함이 먼저",
+			"en": "injustice felt before anger"
 		},
 		{
-			"ko": "남이 보기엔 성공인데 본인만 아는 공허",
-			"en": "success that feels empty only to the one who achieved it"
+			"ko": "감사가 말로 나오면 울릴 것 같음",
+			"en": "gratitude would bring tears if spoken"
 		},
 		{
-			"ko": "잘못을 인정하면 무너질 것 같은 두려움",
-			"en": "fear that admitting fault will collapse everything"
+			"ko": "미움보다 실망이 길게 남음",
+			"en": "disappointment lingers longer than hate"
 		},
 		{
-			"ko": "오래된 우정에 끼어든 질투",
-			"en": "jealousy wedged into old friendship, guilty affection"
+			"ko": "애정이 부담으로 번질 때의 당황",
+			"en": "panic when affection feels like burden"
 		},
 		{
-			"ko": "응원이 부담으로 바뀐 순간",
-			"en": "when cheering becomes pressure, expectations crushing"
+			"ko": "첫눈에 반한 게 아니라 두 번째에 알아봄",
+			"en": "recognition on second glance not love at first sight"
 		},
 		{
-			"ko": "혼자만 기억하는 약속",
-			"en": "promise only one person remembers, asymmetric nostalgia"
+			"ko": "작별 인사가 축하처럼 들린 날",
+			"en": "goodbye sounded like congratulations"
 		},
 		{
-			"ko": "돌아가도 달라지지 않을 거란 걸 아는 체념",
-			"en": "resignation knowing return changes nothing"
+			"ko": "재회가 처음보다 낯섦",
+			"en": "reunion stranger than first meeting"
 		},
 		{
-			"ko": "낯선 도시에서의 잠깐 동질감",
-			"en": "brief kinship with stranger in unfamiliar city"
+			"ko": "침묵이 싸움이 아니라 동의",
+			"en": "silence as agreement not fight"
 		},
 		{
-			"ko": "누군가를 미워해도 되는지 모르는 어린 마음",
-			"en": "childlike confusion whether hating is allowed"
+			"ko": "웃음이 방어가 아니라 진심",
+			"en": "laughter as sincerity not shield"
 		},
 		{
-			"ko": "박수가 멈춘 뒤의 정적이 더 크게 들릴 때",
-			"en": "silence after applause louder than the crowd"
+			"ko": "눈물이 슬픔이 아니라 해방",
+			"en": "tears as release not only sadness"
 		},
 		{
-			"ko": "사과하고 싶은데 자존심이 먼저 나올 때",
-			"en": "pride blocking apology, conflicted silence"
+			"ko": "피곤함이 노력의 흔적으로 느껴짐",
+			"en": "exhaustion feels earned not defeated"
 		},
 		{
-			"ko": "‘괜찮다’고 말한 직후의 눈빛",
-			"en": "eyes right after saying I'm fine, betraying the lie"
+			"ko": "불면이 생각 때문이 아니라 설렘",
+			"en": "sleepless from thrill not worry"
 		},
 		{
-			"ko": "함께 있어도 혼자인 느낌",
-			"en": "lonely together, emotional distance in proximity"
+			"ko": "배고픔이 음식이 아니라 사람을 향함",
+			"en": "hunger for person not food"
 		},
 		{
-			"ko": "다음 무대가 두렵기보다 끝나는 게 두려울 때",
-			"en": "fear of ending more than fear of next performance"
+			"ko": "추위가 날씨가 아니라 말 한마디",
+			"en": "chill from words not weather"
 		},
 		{
-			"ko": "서늘한 기대",
-			"en": "cool expectation, emotional undertone"
+			"ko": "더위가 온도가 아니라 시선",
+			"en": "heat from gaze not temperature"
 		},
 		{
-			"ko": "서늘한 미안함",
-			"en": "cool guilt, emotional undertone"
+			"ko": "고요가 공포가 아니라 안식",
+			"en": "stillness as rest not dread"
 		},
 		{
-			"ko": "서늘한 질투",
-			"en": "cool jealousy, emotional undertone"
+			"ko": "소음이 외로움이 아니라 생명",
+			"en": "noise as life not loneliness"
 		},
 		{
-			"ko": "서늘한 동경",
-			"en": "cool admiration, emotional undertone"
+			"ko": "어둠이 끝이 아니라 쉼",
+			"en": "darkness as pause not end"
 		},
 		{
-			"ko": "서늘한 체념",
-			"en": "cool resignation, emotional undertone"
+			"ko": "빛이 희망이 아니라 부담",
+			"en": "light as burden not only hope"
 		},
 		{
-			"ko": "서늘한 안도",
-			"en": "cool relief, emotional undertone"
+			"ko": "속도가 급함이 아니라 답답함",
+			"en": "speed feels suffocating not exciting"
 		},
 		{
-			"ko": "서늘한 불안",
-			"en": "cool anxiety, emotional undertone"
+			"ko": "느림이 게으름이 아니라 응시",
+			"en": "slowness as attention not laziness"
 		},
 		{
-			"ko": "서늘한 그리움",
-			"en": "cool longing, emotional undertone"
+			"ko": "거리가 멀음이 아니라 닿지 못함",
+			"en": "distance as unreachable not meters"
 		},
 		{
-			"ko": "서늘한 수치",
-			"en": "cool shame, emotional undertone"
+			"ko": "가까움이 편안함이 아니라 위험",
+			"en": "closeness risky not cozy"
 		},
 		{
-			"ko": "서늘한 자부심",
-			"en": "cool pride, emotional undertone"
+			"ko": "익숙함이 안전이 아니라 지루함",
+			"en": "familiarity boring not safe"
 		},
 		{
-			"ko": "서늘한 허무",
-			"en": "cool emptiness, emotional undertone"
+			"ko": "낯섦이 불안이 아니라 가능성",
+			"en": "strangeness as possibility not fear"
 		},
 		{
-			"ko": "달큰한 기대",
-			"en": "warm expectation, emotional undertone"
+			"ko": "완벽함이 목표가 아니라 외로움",
+			"en": "perfection lonely not goal"
 		},
 		{
-			"ko": "달큰한 미안함",
-			"en": "warm guilt, emotional undertone"
+			"ko": "흠집이 결함이 아니라 증거",
+			"en": "flaws as evidence not failure"
 		},
 		{
-			"ko": "달큰한 질투",
-			"en": "warm jealousy, emotional undertone"
+			"ko": "빈자리가 결핍이 아니라 여지",
+			"en": "absence as room not lack"
 		},
 		{
-			"ko": "달큰한 동경",
-			"en": "warm admiration, emotional undertone"
+			"ko": "잔소리가 귀찮음이 아니라 걱정",
+			"en": "nagging as worry not annoyance"
 		},
 		{
-			"ko": "달큰한 체념",
-			"en": "warm resignation, emotional undertone"
+			"ko": "칭찬이 부담이 아니라 믿음",
+			"en": "praise as trust not pressure"
 		},
 		{
-			"ko": "달큰한 안도",
-			"en": "warm relief, emotional undertone"
+			"ko": "비판이 적이 아니라 거울",
+			"en": "criticism as mirror not enemy"
 		},
 		{
-			"ko": "달큰한 불안",
-			"en": "warm anxiety, emotional undertone"
+			"ko": "침묵의 동의가 아니라 침묵의 거부",
+			"en": "silence as refusal not consent"
 		},
 		{
-			"ko": "달큰한 그리움",
-			"en": "warm longing, emotional undertone"
+			"ko": "한 마디에 담긴 오해와 이해",
+			"en": "one line holding misunderstanding and hope"
 		},
 		{
-			"ko": "달큰한 수치",
-			"en": "warm shame, emotional undertone"
+			"ko": "눈빛만으로 한 페이지 분량",
+			"en": "a page of story in one glance"
 		},
 		{
-			"ko": "달큰한 자부심",
-			"en": "warm pride, emotional undertone"
+			"ko": "손을 떼기 직전의 망설임",
+			"en": "hesitation before letting go"
 		},
 		{
-			"ko": "달큰한 허무",
-			"en": "warm emptiness, emotional undertone"
+			"ko": "잡기 직전에 멈춘 손",
+			"en": "hand frozen before grasp"
 		},
 		{
-			"ko": "뜨거운 기대",
-			"en": "hot expectation, emotional undertone"
+			"ko": "돌아보지 않는 뒷모습의 애원",
+			"en": "plea in back that will not turn"
 		},
 		{
-			"ko": "뜨거운 미안함",
-			"en": "hot guilt, emotional undertone"
+			"ko": "돌아본 얼굴의 거짓 평온",
+			"en": "false calm on face that turned"
 		},
 		{
-			"ko": "뜨거운 질투",
-			"en": "hot jealousy, emotional undertone"
+			"ko": "웃으며 돌린 고개의 슬픔",
+			"en": "sadness in smile turned away"
 		},
 		{
-			"ko": "뜨거운 동경",
-			"en": "hot admiration, emotional undertone"
+			"ko": "인사치레의 '또 봐'가 진심인 날",
+			"en": "see you soon meant that day"
 		},
 		{
-			"ko": "뜨거운 체념",
-			"en": "hot resignation, emotional undertone"
+			"ko": "진심인 '괜찮아'가 거짓인 날",
+			"en": "fine was a lie that day"
 		},
 		{
-			"ko": "뜨거운 안도",
-			"en": "hot relief, emotional undertone"
+			"ko": "아무 말 없는 카톡 읽음",
+			"en": "read receipt silence"
 		},
 		{
-			"ko": "뜨거운 불안",
-			"en": "hot anxiety, emotional undertone"
+			"ko": "답장 고민 중 삭제한 문장들",
+			"en": "deleted drafts of reply"
 		},
 		{
-			"ko": "뜨거운 그리움",
-			"en": "hot longing, emotional undertone"
+			"ko": "보내지 않은 편지의 무게",
+			"en": "weight of letter never sent"
 		},
 		{
-			"ko": "뜨거운 수치",
-			"en": "hot shame, emotional undertone"
+			"ko": "받지 못한 편지를 기다림",
+			"en": "waiting for letter that never came"
 		},
 		{
-			"ko": "뜨거운 자부심",
-			"en": "hot pride, emotional undertone"
+			"ko": "잘못 배달된 택배의 호기심",
+			"en": "curiosity at wrong parcel"
 		},
 		{
-			"ko": "뜨거운 허무",
-			"en": "hot emptiness, emotional undertone"
+			"ko": "내 이름이 아닌 초대장",
+			"en": "invitation with wrong name"
 		},
 		{
-			"ko": "무거운 기대",
-			"en": "heavy expectation, emotional undertone"
+			"ko": "초대를 거절하고 후회하는 밤",
+			"en": "night of regretting declined invite"
 		},
 		{
-			"ko": "무거운 미안함",
-			"en": "heavy guilt, emotional undertone"
+			"ko": "혼자 남은 단톡방의 알림",
+			"en": "notification in group chat alone left"
 		},
 		{
-			"ko": "무거운 질투",
-			"en": "heavy jealousy, emotional undertone"
+			"ko": "읽지 않은 공지의 불안",
+			"en": "anxiety of unread announcement"
 		},
 		{
-			"ko": "무거운 동경",
-			"en": "heavy admiration, emotional undertone"
+			"ko": "읽은 척한 공지의 죄책감",
+			"en": "guilt of pretending to read"
 		},
 		{
-			"ko": "무거운 체념",
-			"en": "heavy resignation, emotional undertone"
+			"ko": "좋아요를 누르지 않는 이유",
+			"en": "reason not to press like"
 		},
 		{
-			"ko": "무거운 안도",
-			"en": "heavy relief, emotional undertone"
+			"ko": "좋아요만 누른 이유",
+			"en": "only like no words why"
 		},
 		{
-			"ko": "무거운 불안",
-			"en": "heavy anxiety, emotional undertone"
+			"ko": "스토리에 올리지 않은 하루",
+			"en": "day not posted to story"
 		},
 		{
-			"ko": "무거운 그리움",
-			"en": "heavy longing, emotional undertone"
+			"ko": "스토리에만 올린 진심",
+			"en": "truth only on story"
 		},
 		{
-			"ko": "무거운 수치",
-			"en": "heavy shame, emotional undertone"
+			"ko": "프로필 사진보다 어색한 만남",
+			"en": "meeting more awkward than profile"
 		},
 		{
-			"ko": "무거운 자부심",
-			"en": "heavy pride, emotional undertone"
+			"ko": "프로필과 다른 사람의 반가움",
+			"en": "relief that person unlike profile"
 		},
 		{
-			"ko": "무거운 허무",
-			"en": "heavy emptiness, emotional undertone"
+			"ko": "노래 가사가 너무 내 얘기인 날",
+			"en": "day lyrics too personal"
 		},
 		{
-			"ko": "가벼운 기대",
-			"en": "light expectation, emotional undertone"
+			"ko": "노래를 끊지 못하는 반복",
+			"en": "cannot skip song on repeat"
 		},
 		{
-			"ko": "가벼운 미안함",
-			"en": "light guilt, emotional undertone"
+			"ko": "플레이리스트가 망가진 순간",
+			"en": "moment playlist order breaks mood"
 		},
 		{
-			"ko": "가벼운 질투",
-			"en": "light jealousy, emotional undertone"
+			"ko": "이어폰이 한쪽만 들리는 고독",
+			"en": "loneliness of one dead earbud"
 		},
 		{
-			"ko": "가벼운 동경",
-			"en": "light admiration, emotional undertone"
+			"ko": "배터리 1%의 절박한 사랑 고백",
+			"en": "confession at one percent battery"
 		},
 		{
-			"ko": "가벼운 체념",
-			"en": "light resignation, emotional undertone"
+			"ko": "충전기를 빌려준 사이의 떨림",
+			"en": "tremor lending a charger"
 		},
 		{
-			"ko": "가벼운 안도",
-			"en": "light relief, emotional undertone"
+			"ko": "와이파이 없는 방의 솔직함",
+			"en": "honesty in offline room"
 		},
 		{
-			"ko": "가벼운 불안",
-			"en": "light anxiety, emotional undertone"
+			"ko": "와이파이 비번을 묻는 첫 대화",
+			"en": "first words asking wifi password"
 		},
 		{
-			"ko": "가벼운 그리움",
-			"en": "light longing, emotional undertone"
+			"ko": "비번을 알려준 뒤의 어색함",
+			"en": "awkward after sharing password"
 		},
 		{
-			"ko": "가벼운 수치",
-			"en": "light shame, emotional undertone"
+			"ko": "잠금 화면과 주인의 대비",
+			"en": "contrast of lock screen and owner"
 		},
 		{
-			"ko": "가벼운 자부심",
-			"en": "light pride, emotional undertone"
+			"ko": "앨범 속 과거의 나를 보는 눈빛",
+			"en": "eyes looking at past self in album"
 		},
 		{
-			"ko": "가벼운 허무",
-			"en": "light emptiness, emotional undertone"
+			"ko": "삭제했다가 복구한 사진",
+			"en": "photo deleted then recovered"
 		},
 		{
-			"ko": "뾰족한 기대",
-			"en": "sharp expectation, emotional undertone"
+			"ko": "영구 삭제 직전의 망설임",
+			"en": "hesitation before permanent delete"
 		},
 		{
-			"ko": "뾰족한 미안함",
-			"en": "sharp guilt, emotional undertone"
+			"ko": "클라우드에만 남은 관계",
+			"en": "relationship only in cloud backup"
 		},
 		{
-			"ko": "뾰족한 질투",
-			"en": "sharp jealousy, emotional undertone"
+			"ko": "오프라인으로 남기고 싶은 순간",
+			"en": "moment to keep offline only"
 		},
 		{
-			"ko": "뾰족한 동경",
-			"en": "sharp admiration, emotional undertone"
+			"ko": "스크린샷으로 남긴 약속",
+			"en": "promise saved as screenshot"
 		},
 		{
-			"ko": "뾰족한 체념",
-			"en": "sharp resignation, emotional undertone"
+			"ko": "스크린 녹화로 남지 않은 약속",
+			"en": "promise not in recording"
 		},
 		{
-			"ko": "뾰족한 안도",
-			"en": "sharp relief, emotional undertone"
+			"ko": "자동 저장이 구해준 순간",
+			"en": "moment autosave rescued"
 		},
 		{
-			"ko": "뾰족한 불안",
-			"en": "sharp anxiety, emotional undertone"
+			"ko": "저장 안 함으로 지운 하루",
+			"en": "day lost by not saving"
 		},
 		{
-			"ko": "뾰족한 그리움",
-			"en": "sharp longing, emotional undertone"
+			"ko": "새 탭으로 연 관계",
+			"en": "relationship opened in new tab"
 		},
 		{
-			"ko": "뾰족한 수치",
-			"en": "sharp shame, emotional undertone"
+			"ko": "창을 닫지 못하는 인사",
+			"en": "goodbye cannot close window"
 		},
 		{
-			"ko": "뾰족한 자부심",
-			"en": "sharp pride, emotional undertone"
+			"ko": "새로고침해도 같은 에러",
+			"en": "same error after refresh"
 		},
 		{
-			"ko": "뾰족한 허무",
-			"en": "sharp emptiness, emotional undertone"
+			"ko": "404인 사람을 찾는 날",
+			"en": "day of seeking person not found"
 		}
 	],
 	"constraints": [
-		{
-			"ko": "인물 얼굴은 보이지 않게 (뒷모습·가림·프레임 밖)",
-			"en": "face not visible, back view or obscured, face out of frame"
-		},
-		{
-			"ko": "색은 세 가지 이하로만 쓴다고 상상하고 구성",
-			"en": "limited color palette, max three dominant colors"
-		},
-		{
-			"ko": "화면에 글자는 최대 한 단어 (또는 없음)",
-			"en": "at most one word of text, or no text"
-		},
-		{
-			"ko": "대칭 구도에 ‘한 가지’만 비대칭인 요소",
-			"en": "mostly symmetrical composition, one asymmetrical break"
-		},
-		{
-			"ko": "광원은 딱 한 곳만 있다고 가정",
-			"en": "single light source, hard shadows"
-		},
-		{
-			"ko": "손·손가락에 시선이 머물게",
-			"en": "focus on hands and fingers, gesture storytelling"
-		},
-		{
-			"ko": "발·신발로 서사를 암시",
-			"en": "feet and shoes tell story, stance, stance"
-		},
-		{
-			"ko": "프레임 안에 ‘빈 공간’을 의도적으로 크게",
-			"en": "generous negative space, loneliness or anticipation"
-		},
-		{
-			"ko": "인물은 작게, 환경/공기감이 더 크게",
-			"en": "tiny figure, vast environment, atmosphere"
-		},
-		{
-			"ko": "거울·유리·물면에 비친 ‘둘째 시선’을 활용",
-			"en": "reflection, mirror, double meaning"
-		},
-		{
-			"ko": "움직임은 ‘흐름’으로만 (선·잔상·모션 블러)",
-			"en": "motion implied by blur, streaks, flow lines"
-		},
-		{
-			"ko": "동물·생명체는 작게 한 마리만",
-			"en": "one small creature or pet, symbolic"
-		},
-		{
-			"ko": "시선은 화면 밖을 향하게",
-			"en": "subject looking off-frame, unseen focus"
-		},
-		{
-			"ko": "시간대는 새벽 블루 아워",
-			"en": "blue hour before sunrise, cool ambient"
-		},
-		{
-			"ko": "렌즈 플레어·빛 번짐을 허용",
-			"en": "lens flare, bloom, imperfect optics"
-		},
-		{
-			"ko": "질감(종이·캔버스·노이즈)을 의도적으로 살림",
-			"en": "visible texture, grain, canvas tooth"
-		},
-		{
-			"ko": "한 장에 ‘두 시점’을 몽타주로 (분할/겹침)",
-			"en": "diptych feel, montage within one frame, layered time"
-		},
-		{
-			"ko": "코드·UI·스크린 없이 ‘디지털 감성’만",
-			"en": "digital mood without literal screens, abstract tech feeling"
-		},
-		{
-			"ko": "유머는 ‘눈에만’ (캡션 없이)",
-			"en": "visual humor only, no caption, slapstick subtle"
-		},
-		{
-			"ko": "폭력은 직접 없이 ‘직후’만",
-			"en": "aftermath of violence, no gore, implied only"
-		},
-		{
-			"ko": "수평선은 기울이지 말고, 대신 인물·소품만 기울게",
-			"en": "level horizon, dutch angle via subject tilt only, unsettling stability"
-		},
-		{
-			"ko": "프레임 가장자리에만 ‘사건의 단서’가 보이게",
-			"en": "clue only at frame edge, partial reveal, viewer completes story"
-		},
-		{
-			"ko": "실내인데 창문 너머 날씨가 이야기의 감정을 대신",
-			"en": "interior scene, weather through window mirrors emotion"
-		},
-		{
-			"ko": "인물은 한 명만, 그러나 ‘둘째’는 그림자·옷깃·반사로만",
-			"en": "one person visible, second presence via shadow reflection clothing"
-		},
-		{
-			"ko": "초점은 앞이 아니라 화면 깊이 중간 어딘가",
-			"en": "shallow depth, subject slightly soft, midground sharp"
-		},
-		{
-			"ko": "시간대는 골든 아워 단 한 컷",
-			"en": "golden hour only, warm rim light, single moment of day"
-		},
-		{
-			"ko": "의도적으로 ‘과한’ 비네팅·주변암",
-			"en": "heavy vignette, tunnel vision, claustrophobic framing"
-		},
-		{
-			"ko": "패턴(타일·망사·빗살)이 인물을 가리거나 쪼개게",
-			"en": "pattern overlay, mesh fence, blinds splitting face"
-		},
-		{
-			"ko": "먼지·스모그·연기 중 하나로 공기층을 두껍게",
-			"en": "atmospheric haze, dust or smoke, volumetric light beams"
-		},
-		{
-			"ko": "색온도는 한쪽만 따뜻하고 나머지는 차갑게",
-			"en": "split color temperature, warm vs cool in same frame"
-		},
-		{
-			"ko": "인물 높이의 절반 이하는 프레임에 안 들어오게 (크롭)",
-			"en": "crop above waist or higher, no feet, intimate fragment"
-		},
-		{
-			"ko": "‘정면’이 아닌 3/4 뒤 또는 위에서 내려다보기만",
-			"en": "no straight-on face, three-quarter back or high angle only"
-		},
-		{
-			"ko": "소품은 세 개 이하, 각각 이름 붙일 수 있을 만큼만",
-			"en": "max three named props, minimal clutter, symbolic objects"
-		},
-		{
-			"ko": "자연광이라고 가정하고 인공 조명은 암시만",
-			"en": "natural light only implied, no visible studio gear"
-		},
-		{
-			"ko": "한 장에 계절은 하나만 (눈·벚꽃·낙엽 등 혼합 금지)",
-			"en": "single season cues only, no mixed seasonal symbols"
-		},
 		{
 			"ko": "대지의 질감(종이·캔버스)이 피사체와 동등한 비중을 갖게",
 			"en": "substrate texture equal weight to subject"
 		},
 		{
-			"ko": "인물이 있더라도 ‘시선의 목표’는 항상 화면 밖",
+			"ko": "인물이 있더라도 시선의 목표는 항상 화면 밖",
 			"en": "gaze target always off-frame even if figure present"
 		},
 		{
@@ -961,7 +821,7 @@
 			"en": "soft shadows one hard edge only"
 		},
 		{
-			"ko": "원근법은 망가져도 되지만 ‘한 줄기’ 수직은 지키게",
+			"ko": "원근법은 망가져도 한 줄기 수직은 지키게",
 			"en": "broken perspective but one true vertical"
 		},
 		{
@@ -969,7 +829,7 @@
 			"en": "shallow DOF background as color mass only"
 		},
 		{
-			"ko": "프레임 안에 ‘문’이나 ‘창’은 하나만",
+			"ko": "프레임 안에 문이나 창은 하나만",
 			"en": "at most one door or window in frame"
 		},
 		{
@@ -989,7 +849,7 @@
 			"en": "broken horizon not continuous"
 		},
 		{
-			"ko": "대칭축이 있어도 ‘한 점’만 의도적으로 어긋나게",
+			"ko": "대칭축이 있어도 한 점만 의도적으로 어긋나게",
 			"en": "symmetry with one deliberate off-center point"
 		},
 		{
@@ -1006,346 +866,346 @@
 		},
 		{
 			"ko": "인물은 화면의 1/3 이하만 차지하게",
-			"en": "figure: occupies at most one third of the frame"
+			"en": "figure occupies at most one third of frame"
 		},
 		{
-			"ko": "인물은 의도적으로 과노출로 날리게",
-			"en": "figure: blown out with intentional overexposure"
+			"ko": "의도적으로 과노출로 하이라이트를 날리게",
+			"en": "intentional overexposure blowing highlights"
 		},
 		{
-			"ko": "인물은 실루엣으로만 읽히게",
-			"en": "figure: read only as silhouette"
+			"ko": "피사체를 실루엣으로만 읽히게",
+			"en": "subject read only as silhouette"
 		},
 		{
-			"ko": "인물은 단색 면으로 단순화해",
-			"en": "figure: simplified to flat color planes"
+			"ko": "형태를 단색 면으로 단순화해",
+			"en": "forms simplified to flat color planes"
 		},
 		{
-			"ko": "인물은 프레임 밖에서만 암시되게",
-			"en": "figure: implied only outside the frame"
+			"ko": "중요한 정보는 프레임 밖에서만 암시되게",
+			"en": "key story implied only outside frame"
 		},
 		{
-			"ko": "인물은 대각선으로만 배치해",
-			"en": "figure: placed only on diagonals"
+			"ko": "요소를 대각선 방향으로만 배치해",
+			"en": "elements placed along diagonals only"
 		},
 		{
-			"ko": "인물은 프레임 중심에서 비우고 가장자리에만 두게",
-			"en": "figure: emptied from center pushed to edges"
+			"ko": "프레임 중심은 비우고 가장자리에만 배치해",
+			"en": "empty center subject on edges"
 		},
 		{
-			"ko": "인물은 흐릿한 레이어로만 등장하게",
-			"en": "figure: appears only as soft layered blur"
+			"ko": "멀리 있는 것은 흐릿한 레이어로만",
+			"en": "distance as soft layered blur only"
 		},
 		{
-			"ko": "인물은 반복 패턴으로만 표현해",
-			"en": "figure: expressed only as repeating pattern"
+			"ko": "무늬는 반복 패턴으로만 표현해",
+			"en": "pattern expressed as repeating motif only"
 		},
 		{
-			"ko": "인물은 한 가지 색의 농도 변화로만 묘사해",
-			"en": "figure: rendered only by one color value steps"
+			"ko": "한 색의 명암 단계만으로 입체를 만들어",
+			"en": "volume from one hue value steps only"
 		},
 		{
-			"ko": "배경은 화면의 1/3 이하만 차지하게",
-			"en": "background: occupies at most one third of the frame"
+			"ko": "색은 최대 세 색—그중 하나는 반드시 보색 관계",
+			"en": "max three colors one complementary pair"
 		},
 		{
-			"ko": "배경은 의도적으로 과노출로 날리게",
-			"en": "background: blown out with intentional overexposure"
+			"ko": "채도는 낮게—대신 명도 대비는 크게",
+			"en": "low saturation high value contrast"
 		},
 		{
-			"ko": "배경은 실루엣으로만 읽히게",
-			"en": "background: read only as silhouette"
+			"ko": "모노크롬이 아니면 틀린 그림처럼 보이게",
+			"en": "looks wrong if not monochrome"
 		},
 		{
-			"ko": "배경은 단색 면으로 단순화해",
-			"en": "background: simplified to flat color planes"
+			"ko": "따뜻한 색 하나만 쓰고 나머지는 냉색",
+			"en": "one warm accent rest cool"
 		},
 		{
-			"ko": "배경은 프레임 밖에서만 암시되게",
-			"en": "background: implied only outside the frame"
+			"ko": "원색은 한 가지만—나머지는 중간색",
+			"en": "one primary rest muted"
 		},
 		{
-			"ko": "배경은 대각선으로만 배치해",
-			"en": "background: placed only on diagonals"
+			"ko": "금속은 반사 하나만 그리고 나머지는 무광",
+			"en": "one metallic reflection rest matte"
 		},
 		{
-			"ko": "배경은 프레임 중심에서 비우고 가장자리에만 두게",
-			"en": "background: emptied from center pushed to edges"
+			"ko": "유리는 왜곡만 보여주고 뒤는 흐리게",
+			"en": "glass shows distortion background bokeh"
 		},
 		{
-			"ko": "배경은 흐릿한 레이어로만 등장하게",
-			"en": "background: appears only as soft layered blur"
+			"ko": "물은 거울처럼—물결은 가장자리에만",
+			"en": "water mirror ripples only at edge"
 		},
 		{
-			"ko": "배경은 반복 패턴으로만 표현해",
-			"en": "background: expressed only as repeating pattern"
+			"ko": "불꽃·발광체는 프레임의 5% 이하 면적만",
+			"en": "light sources max five percent of area"
 		},
 		{
-			"ko": "배경은 한 가지 색의 농도 변화로만 묘사해",
-			"en": "background: rendered only by one color value steps"
+			"ko": "연기·안개는 필수—윤곽은 끊기게",
+			"en": "fog or smoke required broken contours"
 		},
 		{
-			"ko": "광원은 화면의 1/3 이하만 차지하게",
-			"en": "light source: occupies at most one third of the frame"
+			"ko": "렌즈 플레어는 하나의 기하학 도형으로만",
+			"en": "lens flare as one geometric shape"
 		},
 		{
-			"ko": "광원은 의도적으로 과노출로 날리게",
-			"en": "light source: blown out with intentional overexposure"
+			"ko": "어안 왜곡을 의도적으로 넣어",
+			"en": "intentional fisheye barrel distortion"
 		},
 		{
-			"ko": "광원은 실루엣으로만 읽히게",
-			"en": "light source: read only as silhouette"
+			"ko": "매크로 렌즈처럼 피사체 극단만 선명하게",
+			"en": "macro extreme foreground sharp only"
 		},
 		{
-			"ko": "광원은 단색 면으로 단순화해",
-			"en": "light source: simplified to flat color planes"
+			"ko": "틸트시프트처럼 한 띠만 초점",
+			"en": "tilt shift single focus strip"
 		},
 		{
-			"ko": "광원은 프레임 밖에서만 암시되게",
-			"en": "light source: implied only outside the frame"
+			"ko": "롱테이크 느낌—하지만 한 컷으로",
+			"en": "long take feeling in still frame"
 		},
 		{
-			"ko": "광원은 대각선으로만 배치해",
-			"en": "light source: placed only on diagonals"
+			"ko": "정지 화면인데 움직임이 있었던 흔적만",
+			"en": "still but traces of motion"
 		},
 		{
-			"ko": "광원은 프레임 중심에서 비우고 가장자리에만 두게",
-			"en": "light source: emptied from center pushed to edges"
+			"ko": "연속 사진을 겹친 듯한 잔상 허용",
+			"en": "ghosted motion allowed"
 		},
 		{
-			"ko": "광원은 흐릿한 레이어로만 등장하게",
-			"en": "light source: appears only as soft layered blur"
+			"ko": "프레임 안에 ‘문장’은 없게—기호만",
+			"en": "no sentences symbols only if any"
 		},
 		{
-			"ko": "광원은 반복 패턴으로만 표현해",
-			"en": "light source: expressed only as repeating pattern"
+			"ko": "숫자는 시계만—다른 숫자 금지",
+			"en": "numbers only on clock face"
 		},
 		{
-			"ko": "광원은 한 가지 색의 농도 변화로만 묘사해",
-			"en": "light source: rendered only by one color value steps"
+			"ko": "로고·브랜드는 가려지거나 지워진 상태로",
+			"en": "logos obscured or defaced"
 		},
 		{
-			"ko": "색은 화면의 1/3 이하만 차지하게",
-			"en": "color: occupies at most one third of the frame"
+			"ko": "텍스처는 스캔 라인이나 인쇄 망점 중 하나만",
+			"en": "one print artifact halftone or scan lines"
 		},
 		{
-			"ko": "색은 의도적으로 과노출로 날리게",
-			"en": "color: blown out with intentional overexposure"
+			"ko": "콜라주—하지만 이어지는 가장자리는 한 줄기",
+			"en": "collage but one continuous edge line"
 		},
 		{
-			"ko": "색은 실루엣으로만 읽히게",
-			"en": "color: read only as silhouette"
+			"ko": "테이프·클립으로 고정된 듯한 합성",
+			"en": "held by tape or clip look"
 		},
 		{
-			"ko": "색은 단색 면으로 단순화해",
-			"en": "color: simplified to flat color planes"
+			"ko": "여백이 말을 하게—피사체는 작게",
+			"en": "negative space speaks subject small"
 		},
 		{
-			"ko": "색은 프레임 밖에서만 암시되게",
-			"en": "color: implied only outside the frame"
+			"ko": "여백 거의 없이—숨 막히게 채우기",
+			"en": "cramped frame almost no margin"
 		},
 		{
-			"ko": "색은 대각선으로만 배치해",
-			"en": "color: placed only on diagonals"
+			"ko": "원형·사각·삼각형 중 도형 하나만 반복",
+			"en": "one geometric shape repeated"
 		},
 		{
-			"ko": "색은 프레임 중심에서 비우고 가장자리에만 두게",
-			"en": "color: emptied from center pushed to edges"
+			"ko": "곡선은 최대 세 개만",
+			"en": "max three curves total"
 		},
 		{
-			"ko": "색은 흐릿한 레이어로만 등장하게",
-			"en": "color: appears only as soft layered blur"
+			"ko": "직선만—곡선 금지",
+			"en": "straight lines only no curves"
 		},
 		{
-			"ko": "색은 반복 패턴으로만 표현해",
-			"en": "color: expressed only as repeating pattern"
+			"ko": "대각선 하나가 화면을 관통하게",
+			"en": "one diagonal pierces entire frame"
 		},
 		{
-			"ko": "색은 한 가지 색의 농도 변화로만 묘사해",
-			"en": "color: rendered only by one color value steps"
+			"ko": "그리드 위에만 배치—자유 배치 금지",
+			"en": "snap to grid only"
 		},
 		{
-			"ko": "질감은 화면의 1/3 이하만 차지하게",
-			"en": "texture: occupies at most one third of the frame"
+			"ko": "황금비 구도를 어기는 한 요소로 긴장 주기",
+			"en": "one element breaks golden ratio on purpose"
 		},
 		{
-			"ko": "질감은 의도적으로 과노출로 날리게",
-			"en": "texture: blown out with intentional overexposure"
+			"ko": "정중앙에 둘 것은 딱 하나",
+			"en": "exactly one centered subject"
 		},
 		{
-			"ko": "질감은 실루엣으로만 읽히게",
-			"en": "texture: read only as silhouette"
+			"ko": "정중앙은 비우고 코너에만 시선이 가게",
+			"en": "empty center attention to corners"
 		},
 		{
-			"ko": "질감은 단색 면으로 단순화해",
-			"en": "texture: simplified to flat color planes"
+			"ko": "위아래 반으로 색온도가 갈라지게",
+			"en": "split warm top cool bottom or reverse"
 		},
 		{
-			"ko": "질감은 프레임 밖에서만 암시되게",
-			"en": "texture: implied only outside the frame"
+			"ko": "좌우 반으로 시간대가 다르게",
+			"en": "split day left night right"
 		},
 		{
-			"ko": "질감은 대각선으로만 배치해",
-			"en": "texture: placed only on diagonals"
+			"ko": "거울·유리 반사에만 색 정보가 있게",
+			"en": "color info only in reflections"
 		},
 		{
-			"ko": "질감은 프레임 중심에서 비우고 가장자리에만 두게",
-			"en": "texture: emptied from center pushed to edges"
+			"ko": "그림자에만 채도가 있게",
+			"en": "saturation only in shadows"
 		},
 		{
-			"ko": "질감은 흐릿한 레이어로만 등장하게",
-			"en": "texture: appears only as soft layered blur"
+			"ko": "하이라이트에만 색이 있게 나머지는 무채",
+			"en": "color only in highlights rest grayscale"
 		},
 		{
-			"ko": "질감은 반복 패턴으로만 표현해",
-			"en": "texture: expressed only as repeating pattern"
+			"ko": "인물의 피부톤은 한 가지 색으로만",
+			"en": "skin one hue flat"
 		},
 		{
-			"ko": "질감은 한 가지 색의 농도 변화로만 묘사해",
-			"en": "texture: rendered only by one color value steps"
+			"ko": "하늘은 단색 그라데이션만",
+			"en": "sky single gradient only"
+		},
+		{
+			"ko": "바닥은 질감 없는 단색",
+			"en": "floor flat color no texture"
+		},
+		{
+			"ko": "벽은 패턴 하나만 반복",
+			"en": "wall one repeating pattern"
+		},
+		{
+			"ko": "천장은 프레임에 안 나오게",
+			"en": "no ceiling in frame"
+		},
+		{
+			"ko": "바닥만 보이게—수직 요소 최소화",
+			"en": "floor dominant verticals minimal"
+		},
+		{
+			"ko": "천장만 보이게—지면은 암시만",
+			"en": "ceiling shot floor implied"
+		},
+		{
+			"ko": "샷은 위에서—하지만 인물은 올려다보게",
+			"en": "high angle but subject looks up"
+		},
+		{
+			"ko": "샷은 아래에서—하지만 인물은 내려다보게",
+			"en": "low angle but subject looks down"
+		},
+		{
+			"ko": "시선은 화면 밖 같은 지점—서로 다른 높이에서",
+			"en": "gazes to same offscreen point different heights"
+		},
+		{
+			"ko": "손만 클로즈업—얼굴은 프레임 밖",
+			"en": "hands only face out of frame"
+		},
+		{
+			"ko": "발과 바닥만—신발 끈이 이야기",
+			"en": "feet and ground story in laces"
+		},
+		{
+			"ko": "뒷모습만—정체는 알 수 없게",
+			"en": "backs only identity hidden"
+		},
+		{
+			"ko": "동물·사물은 있어도 사람 얼굴은 없게",
+			"en": "objects or animals no human face"
+		},
+		{
+			"ko": "얼굴은 가려지거나 그림자만",
+			"en": "face hidden or shadow only"
+		},
+		{
+			"ko": "눈만 보이게—나머지는 마스크·머리카락",
+			"en": "eyes only rest masked or hair"
+		},
+		{
+			"ko": "입만 보이게—눈은 가림",
+			"en": "mouth only eyes covered"
+		},
+		{
+			"ko": "손이 얼굴을 가리고 있게",
+			"en": "hands covering face"
+		},
+		{
+			"ko": "유리·비닐·물 너머로만 피사체를 보게",
+			"en": "subject seen through barrier"
+		},
+		{
+			"ko": "철창·격자 너머로만",
+			"en": "through bars or grid"
+		},
+		{
+			"ko": "불·연기 사이로만 실루엣이 보이게",
+			"en": "silhouette through fire or smoke"
+		},
+		{
+			"ko": "인물은 실루엣—배경만 디테일",
+			"en": "silhouette figure detailed background"
+		},
+		{
+			"ko": "배경은 단순—인물만 디테일",
+			"en": "simple background detailed figure"
+		},
+		{
+			"ko": "전경에 방해물이 가려 시야를 제한하게",
+			"en": "foreground obstruction limiting view"
+		},
+		{
+			"ko": "깊이를 세 레이어로만 나누어",
+			"en": "exactly three depth layers"
+		},
+		{
+			"ko": "무한 원근을 막기 위해 명시적 수평선 하나",
+			"en": "one horizon to anchor space"
+		},
+		{
+			"ko": "미니어처처럼 보이게—실제는 실물",
+			"en": "tilt shift miniature fake"
+		},
+		{
+			"ko": "거대한 피사체—프레임을 벗어나게",
+			"en": "subject too large crops at edges"
+		},
+		{
+			"ko": "작은 피사체—주변 여백 압도",
+			"en": "tiny subject vast space"
+		},
+		{
+			"ko": "스케일을 알 수 있는 참조물 하나만",
+			"en": "one scale reference object"
+		},
+		{
+			"ko": "스케일을 모호하게—참조 없음",
+			"en": "ambiguous scale no reference"
+		},
+		{
+			"ko": "시간대를 알 수 있는 단서 하나만",
+			"en": "one clue to time of day"
+		},
+		{
+			"ko": "계절을 알 수 있는 단서 하나만",
+			"en": "one clue to season"
+		},
+		{
+			"ko": "날씨를 알 수 있는 단서 하나만",
+			"en": "one clue to weather"
+		},
+		{
+			"ko": "장소를 알 수 있는 단서 하나만",
+			"en": "one clue to place"
+		},
+		{
+			"ko": "이야기는 제목 없이도 느껴지게",
+			"en": "narrative without title"
+		},
+		{
+			"ko": "제목이 있다면 이미지와 어긋나게",
+			"en": "title contradicts image slightly"
 		}
 	],
 	"executions": [
-		{
-			"ko": "사진처럼 리얼한",
-			"en": "photorealistic, DSLR, natural color"
-		},
-		{
-			"ko": "애니메이션 셀",
-			"en": "anime cel shading, clean line art"
-		},
-		{
-			"ko": "수채화",
-			"en": "watercolor, soft bleed, paper texture"
-		},
-		{
-			"ko": "유화 질감",
-			"en": "oil painting, visible brushstrokes"
-		},
-		{
-			"ko": "3D 렌더",
-			"en": "3D render, octane, soft GI"
-		},
-		{
-			"ko": "다큐멘터리 스냅",
-			"en": "documentary candid, 35mm film"
-		},
-		{
-			"ko": "패션 에디토리얼",
-			"en": "fashion editorial, studio lighting"
-		},
-		{
-			"ko": "영화 스틸 한 장",
-			"en": "cinematic still, movie color grade, 2.39:1 feel"
-		},
-		{
-			"ko": "뮤직비디오 썸네일 느낌",
-			"en": "music video thumbnail, bold typography optional"
-		},
-		{
-			"ko": "웹툰 컷 한 장",
-			"en": "webtoon panel, screentone, bold blacks"
-		},
-		{
-			"ko": "픽셀 아트",
-			"en": "pixel art, limited palette"
-		},
-		{
-			"ko": "잉크 드로잉",
-			"en": "ink illustration, cross hatching"
-		},
-		{
-			"ko": "미니멀 그래픽",
-			"en": "minimal graphic, flat colors"
-		},
-		{
-			"ko": "초현실주의",
-			"en": "surrealist, dream logic"
-		},
-		{
-			"ko": "레트로 SF 표지",
-			"en": "retro sci-fi book cover, airbrush"
-		},
-		{
-			"ko": "흑백 고대비",
-			"en": "high contrast black and white, noir"
-		},
-		{
-			"ko": "파스텔 드림",
-			"en": "pastel dream, soft gradient"
-		},
-		{
-			"ko": "반실사 일러스트",
-			"en": "semi-realistic illustration, painterly skin"
-		},
-		{
-			"ko": "콜라주·잘라 붙임",
-			"en": "collage, cut paper, mixed media"
-		},
-		{
-			"ko": "네온 라인아트",
-			"en": "neon line art, black background, glow"
-		},
-		{
-			"ko": "폴라로이드 즉석사진",
-			"en": "Polaroid instant photo, white frame, faded colors, flash"
-		},
-		{
-			"ko": "필름 스캔 알갱이",
-			"en": "35mm film scan, grain, light leaks, subtle dust"
-		},
-		{
-			"ko": "목판화·우드컷",
-			"en": "woodcut print, bold carved lines, high contrast"
-		},
-		{
-			"ko": "파스텔 오일 스틱",
-			"en": "oil pastel, smudged strokes, tactile messy edges"
-		},
-		{
-			"ko": "글리치·데이터 마름",
-			"en": "glitch art, RGB split, corrupted beauty"
-		},
-		{
-			"ko": "아이소메트릭 미니어처",
-			"en": "isometric diorama, toy-like scene, clean shadows"
-		},
-		{
-			"ko": "르네상스 치아로스쿠로",
-			"en": "chiaroscuro oil, dramatic light, classical composition"
-		},
-		{
-			"ko": "우키요에 판화",
-			"en": "ukiyo-e woodblock, flat planes, bold outlines"
-		},
-		{
-			"ko": "매거진 풀블리드 광고",
-			"en": "magazine full bleed ad, bold type zone, glossy"
-		},
-		{
-			"ko": "스톱모션 느낌 한 컷",
-			"en": "stop-motion still, slight pose awkwardness, tactile set"
-		},
-		{
-			"ko": "연필 스케치 + 단색 아크릴",
-			"en": "pencil underdrawing with flat acrylic color blocks"
-		},
-		{
-			"ko": "사이버펑크 네온 시티 (인물 소형)",
-			"en": "cyberpunk neon city, tiny figure, rain reflections"
-		},
-		{
-			"ko": "미드센추리 모던 일러스트",
-			"en": "mid-century modern illustration, flat shapes, limited palette"
-		},
-		{
-			"ko": "드라이브 인 극장·네온사인 시네마",
-			"en": "drive-in cinema neon, Americana dusk, nostalgic"
-		},
-		{
-			"ko": "한국 단청·문양에서 색만 차용한 추상",
-			"en": "Korean dancheong inspired abstract color geometry, not literal temple"
-		},
 		{
 			"ko": "인상파 느슨한 붓터치 느낌으로",
 			"en": "impressionist loose brushwork, stylized execution"
@@ -1605,6 +1465,146 @@
 		{
 			"ko": "크롬 타이포 시대 느낌으로",
 			"en": "chrome typography era, stylized execution"
+		},
+		{
+			"ko": "Y2K 글로시 느낌으로",
+			"en": "Y2K glossy plastic, stylized execution"
+		},
+		{
+			"ko": "그런지 90년대 느낌으로",
+			"en": "1990s grunge print, stylized execution"
+		},
+		{
+			"ko": "이모 마이스페이스 느낌으로",
+			"en": "emo Myspace era, stylized execution"
+		},
+		{
+			"ko": "텀블러 소프트 느낌으로",
+			"en": "soft Tumblr aesthetic, stylized execution"
+		},
+		{
+			"ko": "핀터레스트 무드보드 느낌으로",
+			"en": "Pinterest mood board, stylized execution"
+		},
+		{
+			"ko": "인스타 필터 바랜 느낌으로",
+			"en": "faded Instagram filter, stylized execution"
+		},
+		{
+			"ko": "폴라로이드 SX-70 느낌으로",
+			"en": "Polaroid SX-70 instant, stylized execution"
+		},
+		{
+			"ko": "8mm 필름 프레임 느낌으로",
+			"en": "8mm film frame border, stylized execution"
+		},
+		{
+			"ko": "16mm 아카데미 느낌으로",
+			"en": "16mm academy film still, stylized execution"
+		},
+		{
+			"ko": "아이맥스 스틸 느낌으로",
+			"en": "IMAX scale still, stylized execution"
+		},
+		{
+			"ko": "아나모픽 플레어 느낌으로",
+			"en": "anamorphic lens flare, stylized execution"
+		},
+		{
+			"ko": "테크니컬러 뮤지컬 느낌으로",
+			"en": "Technicolor musical still, stylized execution"
+		},
+		{
+			"ko": "느와르 블라인드 느낌으로",
+			"en": "noir venetian blind shadows, stylized execution"
+		},
+		{
+			"ko": "무성영화 자막판 느낌으로",
+			"en": "silent film intertitle, stylized execution"
+		},
+		{
+			"ko": "우키요에 번개 느낌으로",
+			"en": "ukiyo-e thunder god homage, stylized execution"
+		},
+		{
+			"ko": "명청자 문양 느낌으로",
+			"en": "blue and white porcelain motif, stylized execution"
+		},
+		{
+			"ko": "페르시아 미니어처 느낌으로",
+			"en": "Persian miniature painting, stylized execution"
+		},
+		{
+			"ko": "비잔틴 성화 느낌으로",
+			"en": "Byzantine icon style, stylized execution"
+		},
+		{
+			"ko": "대성당 스테인드 느낌으로",
+			"en": "cathedral stained glass, stylized execution"
+		},
+		{
+			"ko": "벽화 동굴화 느낌으로",
+			"en": "cave painting mural, stylized execution"
+		},
+		{
+			"ko": "암각문 느낌으로",
+			"en": "petroglyph carving, stylized execution"
+		},
+		{
+			"ko": "타투 플래시 시트 느낌으로",
+			"en": "tattoo flash sheet, stylized execution"
+		},
+		{
+			"ko": "그래피티 스로우업 느낌으로",
+			"en": "graffiti throw-up, stylized execution"
+		},
+		{
+			"ko": "칠판 메뉴판 느낌으로",
+			"en": "chalkboard menu lettering, stylized execution"
+		},
+		{
+			"ko": "네온 벤토 UI 느낌으로",
+			"en": "neon bento UI mockup, stylized execution"
+		},
+		{
+			"ko": "플랫레이 놀링 느낌으로",
+			"en": "flat lay knolling, stylized execution"
+		},
+		{
+			"ko": "네온 사인 반사만으로 실루엣 느낌으로",
+			"en": "neon sign reflection silhouette only, stylized execution"
+		},
+		{
+			"ko": "스티커 덮인 노트북 뚜껑 클로즈업 느낌으로",
+			"en": "sticker covered laptop lid close-up, stylized execution"
+		},
+		{
+			"ko": "CRT 모니터 곡면 왜곡 느낌으로",
+			"en": "CRT screen curvature distortion, stylized execution"
+		},
+		{
+			"ko": "필름 퍼포레이션 홀 가장자리 느낌으로",
+			"en": "film perforation holes border, stylized execution"
+		},
+		{
+			"ko": "슬라이드 필름 마운트 프레임 느낌으로",
+			"en": "slide film mount frame, stylized execution"
+		},
+		{
+			"ko": "글리치 아트 디지털 느낌으로",
+			"en": "digital glitch art aesthetic, stylized execution"
+		},
+		{
+			"ko": "데이터 모시악 픽셀 느낌으로",
+			"en": "data mosaic pixelation, stylized execution"
+		},
+		{
+			"ko": "노이즈 셰이더 입자 느낌으로",
+			"en": "noise shader grain particles, stylized execution"
+		},
+		{
+			"ko": "스케치북 연필 심선 느낌으로",
+			"en": "sketchbook graphite pencil hatching, stylized execution"
 		}
 	]
 }
