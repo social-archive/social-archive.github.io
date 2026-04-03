@@ -63,11 +63,30 @@ const jsonLd = JSON.stringify({
 		<!-- End Google Tag Manager -->
 		<GoogleAnalytics id="G-QQBV4FLKC7" />
 		<meta name="viewport" content="width=device-width" />
+		<!-- Preconnect to external domains -->
+		<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+		<link rel="preconnect" href="https://www.googletagmanager.com" />
+		<!-- Pretendard 폰트: 비동기 로드 (렌더링 차단 방지) -->
+		<link
+			rel="preload"
+			as="style"
+			href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
+			crossorigin
+		/>
 		<link
 			rel="stylesheet"
-			crossorigin
 			href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
+			crossorigin
+			media="print"
+			onload="this.media='all'"
 		/>
+		<noscript>
+			<link
+				rel="stylesheet"
+				crossorigin
+				href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
+			/>
+		</noscript>
 		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 		<link
 			rel="icon"
