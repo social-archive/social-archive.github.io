@@ -17,6 +17,30 @@ const {
 const siteUrl = "https://social-archive.github.io";
 const pageUrl = new URL(Astro.url.pathname, siteUrl).href;
 const ogImage = image ? `${siteUrl}${image}` : `${siteUrl}/logo.png`;
+
+const jsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": `${siteUrl}/#website`,
+      "url": siteUrl,
+      "name": "소셜 아카이브",
+      "description": "AI 놀이터",
+      "inLanguage": "ko-KR"
+    },
+    {
+      "@type": "Organization",
+      "@id": `${siteUrl}/#organization`,
+      "name": "소셜 아카이브",
+      "url": siteUrl,
+      "logo": {
+        "@type": "ImageObject",
+        "url": `${siteUrl}/logo.png`
+      }
+    }
+  ]
+});
 ---
 
 <!doctype html>
@@ -38,7 +62,6 @@ const ogImage = image ? `${siteUrl}${image}` : `${siteUrl}/logo.png`;
 		</script>
 		<!-- End Google Tag Manager -->
 		<GoogleAnalytics id="G-QQBV4FLKC7" />
-		<!-- GA 측정 ID를 입력해 주세요 -->
 		<meta name="viewport" content="width=device-width" />
 		<link
 			rel="stylesheet"
@@ -80,6 +103,7 @@ const ogImage = image ? `${siteUrl}${image}` : `${siteUrl}/logo.png`;
 		<meta name="twitter:title" content={title} />
 		<meta name="twitter:description" content={description} />
 		<meta name="twitter:image" content={ogImage} />
+		<script type="application/ld+json" set:html={jsonLd} />
 	</head>
 	<body class="min-h-screen bg-white text-neutral-900 antialiased">
 		<!-- Google Tag Manager (noscript) -->

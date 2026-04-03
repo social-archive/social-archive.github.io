@@ -12,9 +12,36 @@ interface Props {
 }
 
 const { title, description, author, pubDate, image } = Astro.props;
+
+const siteUrl = 'https://social-archive.github.io';
+const articleJsonLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  ...(description && { description }),
+  ...(image?.url && { image: `${siteUrl}${image.url}` }),
+  ...(pubDate && { datePublished: new Date(pubDate).toISOString() }),
+  author: {
+    '@type': 'Person',
+    name: author ?? '소셜 아카이브',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: '소셜 아카이브',
+    logo: {
+      '@type': 'ImageObject',
+      url: `${siteUrl}/logo.png`,
+    },
+  },
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': `${siteUrl}${Astro.url.pathname}`,
+  },
+});
 ---
 
 <Layout title={title} description={description} image={image?.url}>
+	<script type="application/ld+json" set:html={articleJsonLd} />
 	<Header />
 
 	<main class="py-16">
