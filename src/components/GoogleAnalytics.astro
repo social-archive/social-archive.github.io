@@ -1,0 +1,13 @@
+---
+const { id } = Astro.props;
+---
+
+<!-- Google tag (gtag.js) -->
+<script type="text/partytown" is:inline src={`https://www.googletagmanager.com/gtag/js?id=${id}`}></script>
+<script type="text/partytown" is:inline define:vars={{ id }}>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', id);
+</script>

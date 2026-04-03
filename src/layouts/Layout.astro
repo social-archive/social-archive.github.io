@@ -1,5 +1,6 @@
 ---
-import '../styles/global.css';
+import "../styles/global.css";
+import GoogleAnalytics from "../components/GoogleAnalytics.astro";
 
 interface Props {
 	title?: string;
@@ -7,9 +8,13 @@ interface Props {
 	image?: string;
 }
 
-const { title = '소셜 아카이브', description = 'AI 놀이터', image } = Astro.props;
+const {
+	title = "소셜 아카이브",
+	description = "AI 놀이터",
+	image,
+} = Astro.props;
 
-const siteUrl = 'https://social-archive.github.io';
+const siteUrl = "https://social-archive.github.io";
 const pageUrl = new URL(Astro.url.pathname, siteUrl).href;
 const ogImage = image ? `${siteUrl}${image}` : `${siteUrl}/logo.png`;
 ---
@@ -18,12 +23,32 @@ const ogImage = image ? `${siteUrl}${image}` : `${siteUrl}/logo.png`;
 <html lang="ko">
 	<head>
 		<meta charset="UTF-8" />
+		<GoogleAnalytics id="G-QQBV4FLKC7" />
+		<!-- GA 측정 ID를 입력해 주세요 -->
 		<meta name="viewport" content="width=device-width" />
-		<link rel="stylesheet" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+		<link
+			rel="stylesheet"
+			crossorigin
+			href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
+		/>
 		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
-		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="/favicon-16x16.png"
+		/>
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="/apple-touch-icon.png"
+		/>
 		<link rel="manifest" href="/site.webmanifest" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
