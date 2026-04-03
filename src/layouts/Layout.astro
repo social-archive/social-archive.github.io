@@ -23,6 +23,20 @@ const ogImage = image ? `${siteUrl}${image}` : `${siteUrl}/logo.png`;
 <html lang="ko">
 	<head>
 		<meta charset="UTF-8" />
+		<!-- Google Tag Manager -->
+		<script is:inline>
+			(function (w, d, s, l, i) {
+				w[l] = w[l] || [];
+				w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+				var f = d.getElementsByTagName(s)[0],
+					j = d.createElement(s),
+					dl = l != "dataLayer" ? "&l=" + l : "";
+				j.async = true;
+				j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+				f.parentNode.insertBefore(j, f);
+			})(window, document, "script", "dataLayer", "GTM-PCT4TXVF");
+		</script>
+		<!-- End Google Tag Manager -->
 		<GoogleAnalytics id="G-QQBV4FLKC7" />
 		<!-- GA 측정 ID를 입력해 주세요 -->
 		<meta name="viewport" content="width=device-width" />
@@ -68,6 +82,15 @@ const ogImage = image ? `${siteUrl}${image}` : `${siteUrl}/logo.png`;
 		<meta name="twitter:image" content={ogImage} />
 	</head>
 	<body class="min-h-screen bg-white text-neutral-900 antialiased">
+		<!-- Google Tag Manager (noscript) -->
+		<noscript
+			><iframe
+				src="https://www.googletagmanager.com/ns.html?id=GTM-PCT4TXVF"
+				height="0"
+				width="0"
+				style="display:none;visibility:hidden"></iframe></noscript
+		>
+		<!-- End Google Tag Manager (noscript) -->
 		<div class="max-w-7xl mx-auto px-6 md:px-10">
 			<slot />
 		</div>
