@@ -3,69 +3,27 @@ import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import YouTubeChannelEmbed from "../components/YouTubeChannelEmbed.astro";
 import PortalCard from "../components/PortalCard.astro";
+import HamburgerNav from "../components/HamburgerNav.astro";
 ---
 
 <Layout
 	title="소셜아카이브 - 소셜 아카이브 링크 포털"
 	description="AI 댄스 쇼케이스 및 강의 콘텐츠 자료실"
 >
-	<div class="max-w-[640px] mx-auto px-4 pb-24">
-		<Header />
+	<!-- Floating Hamburger Nav -->
+	<HamburgerNav />
 
-		<main class="flex flex-col gap-2">
-			<!-- Showcase 1: AI Dance (social_archive) -->
-			<div
-				class="mb-6 overflow-hidden rounded-3xl border border-neutral-200/80 bg-neutral-50 p-4 shadow-sm"
-			>
-				<div class="mb-4 px-2 flex items-center justify-between">
-					<h2
-						class="text-sm font-bold text-neutral-900 flex items-center gap-2"
-					>
-						<span
-							class="flex h-2 w-2 rounded-full bg-red-600 animate-pulse"
-						></span>
-						AI 댄스 쇼케이스
-					</h2>
-					<span
-						class="text-[11px] font-bold text-neutral-400 tracking-widest"
-						>@social_archive</span
-					>
-				</div>
-				<YouTubeChannelEmbed
-					channelHandle="@social_archive"
-					buttonLabel="@social_archive 채널 보러가기"
-					title="소셜아카이브 AI 댄스 — YouTube"
-				/>
-			</div>
+	<!-- PC: 넓은 컨테이너로 쇼케이스를 나란히 / 모바일: 640px 좁은 단일 열 -->
+	<div class="max-w-[1100px] mx-auto px-4 pb-24">
 
-			<!-- Showcase 2: AI Latin (ai_latin_kr) -->
-			<div
-				class="mb-6 overflow-hidden rounded-3xl border border-neutral-200/80 bg-neutral-50 p-4 shadow-sm"
-			>
-				<div class="mb-4 px-2 flex items-center justify-between">
-					<h2
-						class="text-sm font-bold text-neutral-900 flex items-center gap-2"
-					>
-						<span
-							class="flex h-2 w-2 rounded-full bg-red-600 animate-pulse"
-						></span>
-						AI 라틴 쇼케이스
-					</h2>
-					<span
-						class="text-[11px] font-bold text-neutral-400 tracking-widest"
-						>@ai_latin_kr</span
-					>
-				</div>
-				<YouTubeChannelEmbed
-					playlistId="PLEYDioZsR_0OgKi-vHnWH9tP4_-ox7VlA"
-					channelHandle="@ai_latin_kr"
-					buttonLabel="@ai_latin_kr 채널 보러가기"
-					title="AI 라틴 — YouTube"
-				/>
-			</div>
+		<!-- 헤더는 중앙 고정 -->
+		<div class="max-w-[640px] mx-auto">
+			<Header />
+		</div>
 
-			<!-- Portal Links Stack -->
-			<div class="space-y-4">
+		<main class="flex flex-col gap-12">
+			<!-- 링크 카드: 상단 배치, 항상 좁은 중앙 정렬 -->
+			<div id="links" class="max-w-[640px] mx-auto w-full space-y-4 scroll-mt-6">
 				<PortalCard
 					href="https://inf.run/8kqFq"
 					title="100가지 프롬프트로 배우는 AI 활용법: 입문편"
@@ -83,10 +41,47 @@ import PortalCard from "../components/PortalCard.astro";
 
 				<PortalCard
 					href="https://ctee.kr/place/social_archive"
-					title="응원하고 후원하기"
+					title="후원하고 응원메시지 남기기"
 					subtitle="소셜아카이브의 AI 창작 활동을 응원해 주세요"
 					icon="❤️"
 				/>
+			</div>
+
+			<!-- PC: 2열 그리드로 쇼케이스 나란히, 모바일: 1열 -->
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+				<!-- Showcase 1: AI Dance (social_archive) -->
+				<div id="social-archive" class="overflow-hidden rounded-3xl border border-neutral-200/80 bg-neutral-50 p-4 shadow-sm scroll-mt-6">
+					<div class="mb-4 px-2 flex items-center justify-between">
+						<h2 class="text-sm font-bold text-neutral-900 flex items-center gap-2">
+							<span class="flex h-2 w-2 rounded-full bg-red-600 animate-pulse"></span>
+							AI 댄스 쇼케이스
+						</h2>
+						<span class="text-[11px] font-bold text-neutral-400 tracking-widest">@social_archive</span>
+					</div>
+					<YouTubeChannelEmbed
+						channelHandle="@social_archive"
+						buttonLabel="@social_archive 채널 보러가기"
+						title="소셜아카이브 AI 댄스 — YouTube"
+					/>
+				</div>
+
+				<!-- Showcase 2: AI Latin (ai_latin_kr) -->
+				<div id="ai-latin" class="overflow-hidden rounded-3xl border border-neutral-200/80 bg-neutral-50 p-4 shadow-sm scroll-mt-6">
+					<div class="mb-4 px-2 flex items-center justify-between">
+						<h2 class="text-sm font-bold text-neutral-900 flex items-center gap-2">
+							<span class="flex h-2 w-2 rounded-full bg-red-600 animate-pulse"></span>
+							AI 라틴 쇼케이스
+						</h2>
+						<span class="text-[11px] font-bold text-neutral-400 tracking-widest">@ai_latin_kr</span>
+					</div>
+					<YouTubeChannelEmbed
+						playlistId="PLEYDioZsR_0OgKi-vHnWH9tP4_-ox7VlA"
+						channelHandle="@ai_latin_kr"
+						buttonLabel="@ai_latin_kr 채널 보러가기"
+						title="AI 라틴 — YouTube"
+					/>
+				</div>
 			</div>
 		</main>
 	</div>
