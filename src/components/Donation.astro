@@ -11,8 +11,8 @@ const { class: className } = Astro.props;
 		<div
 			class="rounded-2xl border border-sky-100 bg-gradient-to-br from-blue-50/50 via-white to-sky-50/30 p-8 md:p-12 shadow-sm"
 		>
-			<div class="grid grid-cols-1 md:grid-cols-10 gap-10 items-center">
-				<div class="md:col-span-6">
+			<div class="flex flex-col items-center text-center">
+				<div class="flex flex-col items-center">
 					<div class="flex items-center gap-2 mb-4">
 						<span class="rounded-full bg-sky-600 px-3 py-1 text-xs font-bold uppercase tracking-wider text-white">
 							Donation
@@ -25,31 +25,15 @@ const { class: className } = Astro.props;
 					<p class="mt-4 text-base text-neutral-600 max-w-2xl leading-relaxed">
 						AI 놀이터 등 재미있는 프로젝트를 계속해서 만들 수 있도록 따뜻한 응원을 보내주세요. 보내주시는 후원금은 서비스 운영 및 콘텐츠 창작에 소중히 사용됩니다.
 					</p>
-					<div class="mt-8 flex flex-wrap items-center gap-4">
+					<div class="mt-8">
 						<a
-							href="https://toon.at/donate/social-archive"
+							href="https://ctee.kr/place/social_archive"
 							class="inline-flex items-center justify-center rounded-sm bg-neutral-900 px-7 py-3 text-sm font-semibold text-white no-underline shadow-sm transition hover:bg-neutral-800"
 							target="_blank"
 							rel="noopener noreferrer"
 						>
-							투네이션으로 후원하기 →
+							크티로 후원하기 →
 						</a>
-						<span class="text-xs text-neutral-400">
-							QR 코드를 스캔하거나 위 버튼을 클릭해 주세요.
-						</span>
-					</div>
-				</div>
-				<div class="md:col-span-4 flex justify-center">
-					<div class="relative group">
-						<div class="absolute -inset-1 rounded-2xl bg-gradient-to-r from-sky-400 to-blue-500 opacity-20 blur group-hover:opacity-30 transition duration-500"></div>
-						<div class="relative bg-white p-4 rounded-xl shadow-md border border-sky-100">
-							<img 
-								src="/images/donate-qr.png" 
-								alt="Donation QR Code" 
-								class="w-48 h-48 md:w-56 md:h-56 object-contain rounded-md"
-								onerror="this.src='https://placehold.co/400x400/f8fafc/0f172a?text=Donate+QR'"
-							/>
-						</div>
 					</div>
 				</div>
 			</div>
