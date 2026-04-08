@@ -6,7 +6,7 @@
 interface Props {
 	playlistId?: string;
 	channelId?: string;
-	/** 채널 핸들 (예: '@social_archive'). channelId 대신 버튼 URL 생성에 사용. */
+	/** 채널 핸들 (예: '@ai_dance_kr'). channelId 대신 버튼 URL 생성에 사용. */
 	channelHandle?: string;
 	/** 채널 이동 버튼의 텍스트 */
 	buttonLabel?: string;
@@ -24,23 +24,23 @@ interface Props {
 }
 
 const {
-	playlistId = 'PLNBtyV-edEDbqPcyuDNp60rs-w-wdVs61',
-	channelId = 'UCYKTneduvwZAcqQcETM0ckA',
+	playlistId = "PLNBtyV-edEDbqPcyuDNp60rs-w-wdVs61",
+	channelId = "UCYKTneduvwZAcqQcETM0ckA",
 	channelHandle,
-	buttonLabel = 'YouTube 채널 보러가기',
-	title = '이게 AI라고? — YouTube 재생목록',
-	class: className = '',
-	frameClass = '',
+	buttonLabel = "YouTube 채널 보러가기",
+	title = "이게 AI라고? — YouTube 재생목록",
+	class: className = "",
+	frameClass = "",
 	autoplay = true,
 	mutedAutoplay = true,
 } = Astro.props;
 
 const embedParams = new URLSearchParams({ list: playlistId });
 if (autoplay) {
-	embedParams.set('autoplay', '1');
-	if (mutedAutoplay) embedParams.set('mute', '1');
+	embedParams.set("autoplay", "1");
+	if (mutedAutoplay) embedParams.set("mute", "1");
 }
-embedParams.set('playsinline', '1');
+embedParams.set("playsinline", "1");
 
 const embedSrc = `https://www.youtube.com/embed/videoseries?${embedParams.toString()}`;
 const channelUrl = channelHandle
@@ -48,10 +48,10 @@ const channelUrl = channelHandle
 	: `https://www.youtube.com/channel/${channelId}/`;
 ---
 
-<div class:list={['youtube-channel-embed', className]}>
+<div class:list={["youtube-channel-embed", className]}>
 	<div
 		class:list={[
-			'relative mx-auto w-full max-w-[min(100%,420px)] aspect-[9/16] overflow-hidden rounded-2xl border border-neutral-200 bg-black shadow-[0_12px_48px_-14px_rgba(0,0,0,0.35)]',
+			"relative mx-auto w-full max-w-[min(100%,420px)] aspect-[9/16] overflow-hidden rounded-xl border-2 border-black bg-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]",
 			frameClass,
 		]}
 	>
@@ -62,16 +62,24 @@ const channelUrl = channelHandle
 			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 			referrerpolicy="strict-origin-when-cross-origin"
 			allowfullscreen
-			loading="lazy"
-		/>
+			loading="lazy"></iframe>
 	</div>
-	<div class="mt-4 flex justify-center">
+	<div class="mt-8 flex justify-center">
 		<a
 			href={channelUrl}
-			class="inline-flex items-center justify-center rounded-sm bg-[#FF0000] px-5 py-2.5 text-sm font-semibold text-white no-underline shadow-sm transition hover:bg-[#cc0000] focus:outline-none focus-visible:ring-2 focus-visible:ring-red-600 focus-visible:ring-offset-2"
+			class="neo-brutalism inline-flex items-center justify-center rounded-lg bg-white px-6 py-3 text-sm font-[900] text-black no-underline uppercase tracking-tight"
 			target="_blank"
 			rel="noopener noreferrer"
 		>
+			<svg
+				class="mr-2 h-5 w-5 text-[#FF0000]"
+				viewBox="0 0 24 24"
+				fill="currentColor"
+			>
+				<path
+					d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"
+				></path>
+			</svg>
 			{buttonLabel}
 		</a>
 	</div>

@@ -1,0 +1,119 @@
+---
+import { getGalleryImagesFromPublic } from '../lib/gallery';
+
+const items = getGalleryImagesFromPublic();
+---
+
+<section id="gallery" class="w-full py-8 mt-12 border-t-2 border-black pt-12">
+	<header class="mb-10 text-center">
+		<h2 class="text-3xl font-[900] text-black uppercase tracking-tight">갤러리</h2>
+	</header>
+	{items.length === 0 ? (
+		<div class="neo-brutalism p-10 bg-white text-black font-bold text-center rounded-xl">
+			등록된 이미지가 없습니다.
+		</div>
+	) : (
+		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 list-none p-0 m-0">
+			{items.map((item) => (
+				<li>
+					<button
+						type="button"
+						data-gallery-open
+						data-image={item.image}
+						aria-label={`이미지 확대 보기`}
+						class="neo-brutalism group w-full block cursor-zoom-in border-2 border-black bg-white p-2 rounded-xl focus:outline-none focus:ring-4 focus:ring-black/20"
+					>
+						<figure class="m-0 bg-neutral-100 overflow-hidden relative aspect-[3/4] rounded-lg border border-black">
+							<img
+								src={item.image}
+								alt=""
+								class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 ease-out group-hover:scale-105 pointer-events-none"
+								loading="lazy"
+								decoding="async"
+							/>
+						</figure>
+					</button>
+				</li>
+			))}
+		</ul>
+	)}
+</section>
+
+<dialog
+	id="gallery-lightbox"
+	class="gallery-lightbox m-0 max-h-none max-w-none h-full w-full border-0 bg-transparent p-0 text-white backdrop:bg-black/88 backdrop:backdrop-blur-[2px]"
+	aria-labelledby="gallery-lightbox-title"
+>
+	<div
+		class="gallery-lightbox__scrim fixed inset-0 flex min-h-full flex-col items-center justify-center p-4 md:p-10"
+		data-lightbox-scrim
+	>
+		<button
+			type="button"
+			class="gallery-lightbox__close absolute right-3 top-3 z-10 flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-2xl leading-none text-white transition hover:bg-white/20 md:right-6 md:top-6"
+			data-lightbox-close
+			aria-label="닫기"
+		>
+			×
+		</button>
+		<div
+			class="relative flex max-h-[min(88vh,92vw)] w-full max-w-[min(100%,1400px)] flex-col items-center"
+			data-lightbox-content
+		>
+			<img
+				data-lightbox-img
+				class="neo-brutalism max-h-[min(82vh,85vw)] w-auto max-w-full rounded-xl object-contain border-4 border-black"
+				alt=""
+			/>
+		</div>
+	</div>
+</dialog>
+
+<script>
+	function initGalleryLightbox() {
+		/** @type {HTMLDialogElement | null} */
+		const dialog = document.getElementById('gallery-lightbox') as any;
+		const scrim = dialog?.querySelector('[data-lightbox-scrim]');
+		const img = dialog?.querySelector('[data-lightbox-img]') as any;
+		const closeBtn = dialog?.querySelector('[data-lightbox-close]');
+		if (!dialog || !img || !scrim || !closeBtn) return;
+
+		function openFromButton(btn: any) {
+			const src = btn.getAttribute('data-image');
+
+			if (img) {
+				img.src = src || '';
+				img.alt = "";
+			}
+
+			if (dialog) {
+				dialog.showModal();
+				document.documentElement.style.overflow = 'hidden';
+			}
+		}
+
+		function closeLightbox() {
+			if (dialog) dialog.close();
+		}
+
+		dialog.addEventListener('close', () => {
+			document.documentElement.style.overflow = '';
+			if (img) {
+				img.removeAttribute('src');
+				img.alt = '';
+			}
+		});
+
+		document.querySelectorAll('[data-gallery-open]').forEach((btn) => {
+			btn.addEventListener('click', () => openFromButton(btn));
+		});
+
+		closeBtn.addEventListener('click', closeLightbox);
+
+		scrim.addEventListener('click', (e: any) => {
+			if (e.target === scrim) closeLightbox();
+		});
+	}
+
+	initGalleryLightbox();
+</script>

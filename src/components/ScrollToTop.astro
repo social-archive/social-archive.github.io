@@ -1,0 +1,35 @@
+---
+---
+
+<button
+	id="scroll-to-top"
+	aria-label="맨 위로 가기"
+	class="neo-brutalism fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-white opacity-0 pointer-events-none transition-all duration-300 sm:bottom-10 sm:right-10 focus:outline-none focus:ring-4 focus:ring-black/20"
+>
+	<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+		<path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+	</svg>
+</button>
+
+<script>
+	const scrollToTopBtn = document.getElementById("scroll-to-top");
+
+	if (scrollToTopBtn) {
+		window.addEventListener("scroll", () => {
+			if (window.scrollY > 300) {
+				scrollToTopBtn.classList.remove("opacity-0", "pointer-events-none");
+				scrollToTopBtn.classList.add("opacity-100", "pointer-events-auto");
+			} else {
+				scrollToTopBtn.classList.add("opacity-0", "pointer-events-none");
+				scrollToTopBtn.classList.remove("opacity-100", "pointer-events-auto");
+			}
+		});
+
+		scrollToTopBtn.addEventListener("click", () => {
+			window.scrollTo({
+				top: 0,
+				behavior: "smooth",
+			});
+		});
+	}
+</script>

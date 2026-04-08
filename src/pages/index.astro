@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import YouTubeChannelEmbed from "../components/YouTubeChannelEmbed.astro";
 import PortalCard from "../components/PortalCard.astro";
+import GallerySection from "../components/GallerySection.astro";
 import HamburgerNav from "../components/HamburgerNav.astro";
 ---
 
@@ -24,7 +25,7 @@ import HamburgerNav from "../components/HamburgerNav.astro";
 			<!-- 링크 카드: 상단 배치, 항상 좁은 중앙 정렬 -->
 			<div
 				id="links"
-				class="max-w-[640px] mx-auto w-full space-y-4 scroll-mt-6"
+				class="max-w-[640px] mx-auto w-full space-y-6 scroll-mt-6"
 			>
 				<PortalCard
 					href="https://inf.run/8kqFq"
@@ -33,46 +34,39 @@ import HamburgerNav from "../components/HamburgerNav.astro";
 					icon="🎓"
 					featured={true}
 				/>
-
-				<PortalCard
-					href="https://ctee.kr/place/social_archive"
-					title="강의 및 콘텐츠 보러가기"
-					subtitle="크티 플레이스에서 독점 자료 확인"
-					icon="📦"
-				/>
-
 				<PortalCard
 					href="https://ctee.kr/place/social_archive/donation"
 					title="후원하고 응원메시지 남기기"
 					subtitle="소셜아카이브의 AI 창작 활동을 응원해 주세요"
 					icon="❤️"
+					bgColor="bg-brutal-cyan"
 				/>
 			</div>
 
 			<!-- PC: 2열 그리드로 쇼케이스 나란히, 모바일: 1열 -->
-			<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 				<!-- Showcase 1: AI Dance (social_archive) -->
 				<div
 					id="social-archive"
-					class="overflow-hidden rounded-3xl border border-neutral-200/80 bg-neutral-50 p-4 shadow-sm scroll-mt-6"
+					class="neo-brutalism overflow-hidden rounded-xl bg-white p-4 scroll-mt-6"
 				>
 					<div class="mb-4 px-2 flex items-center justify-between">
 						<h2
-							class="text-sm font-bold text-neutral-900 flex items-center gap-2"
+							class="text-sm font-[900] text-black flex items-center gap-2 uppercase tracking-tight"
 						>
 							<span
-								class="flex h-2 w-2 rounded-full bg-red-600 animate-pulse"
+								class="flex h-3 w-3 rounded-full bg-red-600 border border-black animate-pulse"
 							></span>
-							AI 댄스 쇼케이스
+							AI 댄스
 						</h2>
 						<span
-							class="text-[11px] font-bold text-neutral-400 tracking-widest"
-							>@social_archive</span
+							class="text-[11px] font-[900] text-black/40 tracking-widest"
+							>@ai_dance_kr</span
 						>
 					</div>
 					<YouTubeChannelEmbed
-						channelHandle="@social_archive"
-						buttonLabel="@social_archive 채널 보러가기"
+						channelHandle="@ai_dance_kr"
+						buttonLabel="@ai_dance_kr 채널 보러가기"
 						title="소셜아카이브 AI 댄스 — YouTube"
 					/>
 				</div>
@@ -80,19 +74,19 @@ import HamburgerNav from "../components/HamburgerNav.astro";
 				<!-- Showcase 2: AI Latin (ai_latin_kr) -->
 				<div
 					id="ai-latin"
-					class="overflow-hidden rounded-3xl border border-neutral-200/80 bg-neutral-50 p-4 shadow-sm scroll-mt-6"
+					class="neo-brutalism overflow-hidden rounded-xl bg-white p-4 scroll-mt-6"
 				>
 					<div class="mb-4 px-2 flex items-center justify-between">
 						<h2
-							class="text-sm font-bold text-neutral-900 flex items-center gap-2"
+							class="text-sm font-[900] text-black flex items-center gap-2 uppercase tracking-tight"
 						>
 							<span
-								class="flex h-2 w-2 rounded-full bg-red-600 animate-pulse"
+								class="flex h-3 w-3 rounded-full bg-red-600 border border-black animate-pulse"
 							></span>
-							AI 라틴 쇼케이스
+							AI 라틴
 						</h2>
 						<span
-							class="text-[11px] font-bold text-neutral-400 tracking-widest"
+							class="text-[11px] font-[900] text-black/40 tracking-widest"
 							>@ai_latin_kr</span
 						>
 					</div>
@@ -104,6 +98,9 @@ import HamburgerNav from "../components/HamburgerNav.astro";
 					/>
 				</div>
 			</div>
+
+			<!-- 갤러리 섹션 -->
+			<GallerySection />
 		</main>
 	</div>
 </Layout>

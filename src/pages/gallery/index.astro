@@ -1,49 +1,44 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
 import { getGalleryImagesFromPublic } from '../../lib/gallery';
 
 const items = getGalleryImagesFromPublic();
 ---
 
 <Layout title="갤러리 - 소셜 아카이브" description="소셜 아카이브 갤러리">
-	<Header />
+	<div class="max-w-[640px] mx-auto pt-8">
+		<Header />
+	</div>
 
-	<main class="bg-neutral-50 min-h-[70vh] py-12 md:py-16 lg:py-20">
-		<div class="max-w-[1680px] mx-auto px-4 sm:px-6 lg:px-10">
-			<header class="mb-8 md:mb-12 lg:mb-14 max-w-2xl">
-				<h1 class="text-2xl md:text-3xl font-semibold text-neutral-900 tracking-tight">갤러리</h1>
+	<main class="min-h-[70vh] py-8 w-full max-w-[1200px] mx-auto px-4 pb-24">
+		<div>
+			<header class="mb-10 text-center">
+				<h1 class="text-3xl font-[900] text-black uppercase tracking-tight">갤러리</h1>
 			</header>
 			{items.length === 0 ? (
-				<div class="p-10 border border-neutral-200/80 bg-white text-neutral-600 text-center rounded-sm shadow-sm">
+				<div class="neo-brutalism p-10 bg-white text-black font-bold text-center rounded-xl">
 					등록된 이미지가 없습니다.
 				</div>
 			) : (
-				<ul class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-8 lg:gap-10 list-none p-0 m-0">
+				<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 list-none p-0 m-0">
 					{items.map((item) => (
 						<li>
 							<button
 								type="button"
 								data-gallery-open
 								data-image={item.image}
-								data-title={item.title}
-								aria-label={`${item.title} 이미지 확대 보기`}
-								class="group w-full text-left cursor-zoom-in border-0 bg-transparent p-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-50 rounded-sm"
+								aria-label={`이미지 확대 보기`}
+								class="neo-brutalism group w-full block cursor-zoom-in border-2 border-black bg-white p-2 rounded-xl focus:outline-none focus:ring-4 focus:ring-black/20"
 							>
-								<figure class="m-0 bg-white p-2 md:p-3 shadow-[0_2px_40px_-12px_rgba(0,0,0,0.12)] ring-1 ring-neutral-200/80 transition-shadow duration-300 group-hover:shadow-[0_12px_48px_-12px_rgba(0,0,0,0.18)]">
-									<div class="relative aspect-[3/4] overflow-hidden bg-neutral-100">
-										<img
-											src={item.image}
-											alt=""
-											class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04] pointer-events-none"
-											loading="lazy"
-											decoding="async"
-										/>
-										<figcaption class="absolute inset-x-0 bottom-0 flex flex-col justify-end p-4 md:p-5 pt-16 md:pt-20 bg-gradient-to-t from-black/75 via-black/25 to-transparent pointer-events-none">
-											<span class="text-[11px] md:text-xs font-medium text-white/95 tracking-wide line-clamp-2">{item.title}</span>
-										</figcaption>
-									</div>
+								<figure class="m-0 bg-neutral-100 overflow-hidden relative aspect-[3/4] rounded-lg border border-black">
+									<img
+										src={item.image}
+										alt=""
+										class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 ease-out group-hover:scale-105 pointer-events-none"
+										loading="lazy"
+										decoding="async"
+									/>
 								</figure>
 							</button>
 						</li>
@@ -76,47 +71,46 @@ const items = getGalleryImagesFromPublic();
 			>
 				<img
 					data-lightbox-img
-					class="max-h-[min(82vh,85vw)] w-auto max-w-full rounded-sm object-contain shadow-2xl"
+					class="neo-brutalism max-h-[min(82vh,85vw)] w-auto max-w-full rounded-xl object-contain border-4 border-black"
 					alt=""
 				/>
-				<div class="mt-4 w-full max-w-xl text-center md:mt-5">
-					<p id="gallery-lightbox-title" class="text-sm font-medium text-white/95 md:text-base" data-lightbox-caption></p>
-				</div>
 			</div>
 		</div>
 	</dialog>
 
-	<Footer />
-
 	<script>
 		function initGalleryLightbox() {
-			const dialog = document.getElementById('gallery-lightbox');
+			/** @type {HTMLDialogElement | null} */
+			const dialog = document.getElementById('gallery-lightbox') as any;
 			const scrim = dialog?.querySelector('[data-lightbox-scrim]');
-			const img = dialog?.querySelector('[data-lightbox-img]');
-			const caption = dialog?.querySelector('[data-lightbox-caption]');
+			const img = dialog?.querySelector('[data-lightbox-img]') as any;
 			const closeBtn = dialog?.querySelector('[data-lightbox-close]');
-			if (!dialog || !img || !caption || !scrim || !closeBtn) return;
+			if (!dialog || !img || !scrim || !closeBtn) return;
 
-			function openFromButton(btn) {
+			function openFromButton(btn: any) {
 				const src = btn.getAttribute('data-image');
-				const title = btn.getAttribute('data-title') || '';
 
-				img.src = src || '';
-				img.alt = title;
-				caption.textContent = title;
+				if (img) {
+					img.src = src || '';
+					img.alt = "";
+				}
 
-				dialog.showModal();
-				document.documentElement.style.overflow = 'hidden';
+				if (dialog) {
+					dialog.showModal();
+					document.documentElement.style.overflow = 'hidden';
+				}
 			}
 
 			function closeLightbox() {
-				dialog.close();
+				if (dialog) dialog.close();
 			}
 
 			dialog.addEventListener('close', () => {
 				document.documentElement.style.overflow = '';
-				img.removeAttribute('src');
-				img.alt = '';
+				if (img) {
+					img.removeAttribute('src');
+					img.alt = '';
+				}
 			});
 
 			document.querySelectorAll('[data-gallery-open]').forEach((btn) => {
@@ -125,7 +119,7 @@ const items = getGalleryImagesFromPublic();
 
 			closeBtn.addEventListener('click', closeLightbox);
 
-			scrim.addEventListener('click', (e) => {
+			scrim.addEventListener('click', (e: any) => {
 				if (e.target === scrim) closeLightbox();
 			});
 		}

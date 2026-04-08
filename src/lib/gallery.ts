@@ -40,7 +40,7 @@ export function getGalleryImagesFromPublic(): GalleryImageEntry[] {
 		const title = base.replace(/[_-]+/g, ' ').trim() || filename;
 		return {
 			filename,
-			image: `/images/gallery/${filename}`,
+			image: `https://pub-aa6072d0eb7442a2bd9fc962ce3e9258.r2.dev/gallery/${filename}`,
 			title,
 		};
 	});

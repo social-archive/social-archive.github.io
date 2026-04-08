@@ -1,117 +1,159 @@
 <div id="hamburger-nav">
 	<!-- Backdrop Overlay (Full Screen) -->
-	<div 
-		id="nav-backdrop" 
+	<div
+		id="nav-backdrop"
 		class="fixed inset-0 z-[90] bg-black/30 backdrop-blur-[4px] opacity-0 pointer-events-none transition-opacity duration-300"
-	></div>
+	>
+	</div>
 
 	<!-- Main FAB Container -->
-	<div class="fixed bottom-6 right-6 z-[100] sm:bottom-10 sm:right-10">
+	<div class="fixed top-6 right-6 z-[100] sm:top-10 sm:right-10">
+		<!-- Toggle Button -->
+		<button
+			id="hamburger-btn"
+			aria-label="메뉴 열기"
+			aria-expanded="false"
+			class="neo-brutalism flex h-14 w-14 flex-col items-center justify-center gap-1.5 rounded-full bg-white group focus:outline-none focus:ring-4 focus:ring-black/20"
+		>
+			<span
+				class="hamburger-bar block h-0.5 w-6 bg-black transition-all duration-300 origin-center"
+			></span>
+			<span
+				class="hamburger-bar block h-0.5 w-6 bg-black transition-all duration-300"
+			></span>
+			<span
+				class="hamburger-bar block h-0.5 w-6 bg-black transition-all duration-300 origin-center"
+			></span>
+		</button>
 
-	<!-- Toggle Button -->
-	<button
-		id="hamburger-btn"
-		aria-label="메뉴 열기"
-		aria-expanded="false"
-		class="flex h-14 w-14 flex-col items-center justify-center gap-1.5 rounded-full bg-white shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-neutral-200/80 transition-all duration-300 hover:scale-105 active:scale-95 group focus:outline-none focus:ring-4 focus:ring-blue-500/20"
-	>
-		<span class="hamburger-bar block h-0.5 w-6 bg-neutral-800 transition-all duration-300 origin-center"></span>
-		<span class="hamburger-bar block h-0.5 w-6 bg-neutral-800 transition-all duration-300"></span>
-		<span class="hamburger-bar block h-0.5 w-6 bg-neutral-800 transition-all duration-300 origin-center"></span>
-	</button>
+		<!-- Dropdown Menu (Opens Downward) -->
+		<nav
+			id="hamburger-menu"
+			role="dialog"
+			aria-label="퀵 메뉴"
+			class="absolute top-20 right-0 w-52 rounded-xl border-2 border-black bg-white shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] overflow-hidden pointer-events-none opacity-0 -translate-y-4 scale-90 transition-all duration-300 origin-top-right"
+		>
+			<div class="py-2">
+				<p
+					class="px-4 py-2 text-[11px] font-[900] uppercase tracking-widest text-black/40"
+				>
+					쇼케이스
+				</p>
+				<a
+					href="/#social-archive"
+					class="quick-link flex items-center gap-3 px-4 py-3 text-sm font-bold text-black hover:bg-brutal-pink transition-colors"
+				>
+					<span class="text-lg">📹</span> @ai_dance_kr
+				</a>
+				<a
+					href="/#ai-latin"
+					class="quick-link flex items-center gap-3 px-4 py-3 text-sm font-bold text-black hover:bg-brutal-yellow transition-colors"
+				>
+					<span class="text-lg">📹</span> @ai_latin_kr
+				</a>
+				<div class="my-1 border-t-2 border-black"></div>
+				<p
+					class="px-4 py-2 text-[11px] font-[900] uppercase tracking-widest text-black/40"
+				>
+					링크
+				</p>
+				<a
+					href="/#gallery"
+					class="quick-link flex items-center gap-3 px-4 py-3 text-sm font-bold text-black hover:bg-brutal-pink transition-colors"
+				>
+					<span class="text-lg">🖼️</span> 갤러리
+				</a>
+				<a
+					href="/#links"
+					class="quick-link flex items-center gap-3 px-4 py-3 text-sm font-bold text-black hover:bg-brutal-cyan transition-colors"
+				>
+					<span class="text-lg">🎟️</span> 이벤트 & 쿠폰
+				</a>
+				<a
+					href="/#links"
+					class="quick-link flex items-center gap-3 px-4 py-3 text-sm font-bold text-black hover:bg-brutal-lime transition-colors"
+				>
+					<span class="text-lg">📦</span> 콘텐츠 & 후원
+				</a>
+			</div>
+		</nav>
+	</div>
 
-	<!-- Dropdown Menu (Opens Upward) -->
-	<nav
-		id="hamburger-menu"
-		role="dialog"
-		aria-label="퀵 메뉴"
-		class="absolute bottom-16 right-0 w-52 rounded-2xl border border-neutral-200/80 bg-white shadow-2xl overflow-hidden pointer-events-none opacity-0 translate-y-4 scale-90 transition-all duration-300 origin-bottom-right"
-	>
-		<div class="py-2">
-			<p class="px-4 py-2 text-[11px] font-bold uppercase tracking-widest text-neutral-400">쇼케이스</p>
-			<a href="#social-archive" class="quick-link flex items-center gap-3 px-4 py-3 text-sm font-semibold text-neutral-700 hover:bg-blue-50 hover:text-blue-700 transition-colors">
-				<span class="text-lg">📹</span> @social_archive
-			</a>
-			<a href="#ai-latin" class="quick-link flex items-center gap-3 px-4 py-3 text-sm font-semibold text-neutral-700 hover:bg-blue-50 hover:text-blue-700 transition-colors">
-				<span class="text-lg">📹</span> @ai_latin_kr
-			</a>
-			<div class="my-1 border-t border-neutral-100"></div>
-			<p class="px-4 py-2 text-[11px] font-bold uppercase tracking-widest text-neutral-400">링크</p>
-			<a href="#links" class="quick-link flex items-center gap-3 px-4 py-3 text-sm font-semibold text-neutral-700 hover:bg-blue-50 hover:text-blue-700 transition-colors">
-				<span class="text-lg">🎟️</span> 이벤트 & 쿠폰
-			</a>
-			<a href="#links" class="quick-link flex items-center gap-3 px-4 py-3 text-sm font-semibold text-neutral-700 hover:bg-blue-50 hover:text-blue-700 transition-colors">
-				<span class="text-lg">📦</span> 콘텐츠 & 후원
-			</a>
-		</div>
-	</nav>
-</div>
-
-<style>
-	#hamburger-nav.open .hamburger-bar:nth-child(1) {
-		transform: translateY(8px) rotate(45deg);
-	}
-	#hamburger-nav.open .hamburger-bar:nth-child(2) {
-		opacity: 0;
-		transform: scaleX(0);
-	}
-	#hamburger-nav.open .hamburger-bar:nth-child(3) {
-		transform: translateY(-8px) rotate(-45deg);
-	}
-	#hamburger-menu.open {
-		opacity: 1 !important;
-		transform: translateY(0) scaleX(1) scaleY(1) !important;
-		pointer-events: auto !important;
-	}
-</style>
-
-<script>
-	const nav = document.getElementById('hamburger-nav')!;
-	const btn = document.getElementById('hamburger-btn')!;
-	const menu = document.getElementById('hamburger-menu')!;
-	const backdrop = document.getElementById('nav-backdrop')!;
-
-	function toggle() {
-		const isOpen = nav.classList.toggle('open');
-		btn.setAttribute('aria-expanded', String(isOpen));
-		menu.classList.toggle('open', isOpen);
-		
-		if (isOpen) {
-			backdrop.classList.replace('opacity-0', 'opacity-100');
-			backdrop.classList.replace('pointer-events-none', 'pointer-events-auto');
-		} else {
-			backdrop.classList.replace('opacity-100', 'opacity-0');
-			backdrop.classList.replace('pointer-events-auto', 'pointer-events-none');
+	<style>
+		#hamburger-nav.open .hamburger-bar:nth-child(1) {
+			transform: translateY(8px) rotate(45deg);
 		}
-	}
+		#hamburger-nav.open .hamburger-bar:nth-child(2) {
+			opacity: 0;
+			transform: scaleX(0);
+		}
+		#hamburger-nav.open .hamburger-bar:nth-child(3) {
+			transform: translateY(-8px) rotate(-45deg);
+		}
+		#hamburger-menu.open {
+			opacity: 1 !important;
+			transform: translateY(0) scaleX(1) scaleY(1) !important;
+			pointer-events: auto !important;
+		}
+	</style>
 
-	function close() {
-		nav.classList.remove('open');
-		btn.setAttribute('aria-expanded', 'false');
-		menu.classList.remove('open');
-		backdrop.classList.replace('opacity-100', 'opacity-0');
-		backdrop.classList.replace('pointer-events-auto', 'pointer-events-none');
-	}
+	<script>
+		const nav = document.getElementById("hamburger-nav")!;
+		const btn = document.getElementById("hamburger-btn")!;
+		const menu = document.getElementById("hamburger-menu")!;
+		const backdrop = document.getElementById("nav-backdrop")!;
 
-	btn.addEventListener('click', (e) => {
-		e.stopPropagation();
-		toggle();
-	});
+		function toggle() {
+			const isOpen = nav.classList.toggle("open");
+			btn.setAttribute("aria-expanded", String(isOpen));
+			menu.classList.toggle("open", isOpen);
 
-	// Close when clicking a link
-	menu.querySelectorAll('.quick-link').forEach((link) => {
-		link.addEventListener('click', () => {
+			if (isOpen) {
+				backdrop.classList.replace("opacity-0", "opacity-100");
+				backdrop.classList.replace(
+					"pointer-events-none",
+					"pointer-events-auto",
+				);
+			} else {
+				backdrop.classList.replace("opacity-100", "opacity-0");
+				backdrop.classList.replace(
+					"pointer-events-auto",
+					"pointer-events-none",
+				);
+			}
+		}
+
+		function close() {
+			nav.classList.remove("open");
+			btn.setAttribute("aria-expanded", "false");
+			menu.classList.remove("open");
+			backdrop.classList.replace("opacity-100", "opacity-0");
+			backdrop.classList.replace(
+				"pointer-events-auto",
+				"pointer-events-none",
+			);
+		}
+
+		btn.addEventListener("click", (e) => {
+			e.stopPropagation();
+			toggle();
+		});
+
+		// Close when clicking a link
+		menu.querySelectorAll(".quick-link").forEach((link) => {
+			link.addEventListener("click", () => {
+				close();
+			});
+		});
+
+		// Close when clicking outside (on backdrop)
+		backdrop.addEventListener("click", () => {
 			close();
 		});
-	});
 
-	// Close when clicking outside (on backdrop)
-	backdrop.addEventListener('click', () => {
-		close();
-	});
-
-	// Close on Escape
-	document.addEventListener('keydown', (e) => {
-		if (e.key === 'Escape') close();
-	});
-</script>
+		// Close on Escape
+		document.addEventListener("keydown", (e) => {
+			if (e.key === "Escape") close();
+		});
+	</script>
+</div>
