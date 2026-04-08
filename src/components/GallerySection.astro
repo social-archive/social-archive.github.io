@@ -1,7 +1,7 @@
 ---
-import { getGalleryImagesFromPublic } from '../lib/gallery';
+import { getGalleryImages } from '../lib/gallery';
 
-const items = getGalleryImagesFromPublic();
+const items = await getGalleryImages();
 ---
 
 <section id="gallery" class="w-full py-8 mt-12 border-t-2 border-black pt-12">
