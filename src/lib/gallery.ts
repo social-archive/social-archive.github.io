@@ -1,10 +1,27 @@
-import { S3Client, ListObjectsV2Command } from '@aws-sdk/client-s3';
+import { existsSync } from 'node:fs';
+import fs from 'node:fs/promises';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 const IMAGE_EXT = new Set(['.webp', '.jpg', '.jpeg', '.png', '.gif', '.avif', '.svg']);
 
+function getGalleryDir(): string {
+	const fromCwd = path.resolve(process.cwd(), 'public', 'images', 'gallery');
+	const fromThisFile = path.resolve(
+		path.dirname(fileURLToPath(import.meta.url)),
+		'..',
+		'..',
+		'public',
+		'images',
+		'gallery',
+	);
+	if (existsSync(fromCwd)) return fromCwd;
+	if (existsSync(fromThisFile)) return fromThisFile;
+	return fromCwd;
+}
+
 export type GalleryImageEntry = {
-	/** URL 경로 (R2 퍼블릭 도메인 기준) */
+	/** 사이트 루트 기준 URL (`public/` → `/`) */
 	image: string;
 	/** 파일명(확장자 제외) 기반 표시 제목 */
 	title: string;
@@ -14,73 +31,56 @@ export type GalleryImageEntry = {
 	lastModified?: Date;
 };
 
-// GitHub Actions 및 로컬 환경 변수로부터 설정 읽기
-const R2_ENDPOINT = import.meta.env.R2_ENDPOINT;
-const PUBLIC_DOMAIN = import.meta.env.R2_PUBLIC_URL || "https://pub-aa6072d0eb7442a2bd9fc962ce3e9258.r2.dev";
-const BUCKET_NAME = import.meta.env.R2_BUCKET_NAME || "sarc";
+function galleryPublicUrl(filename: string): string {
+	const safe = filename.split('/').map((p) => encodeURIComponent(p)).join('/');
+	return `/images/gallery/${safe}`;
+}
 
 /**
- * Cloudflare R2 스토리지에서 직접 파일 목록을 읽어옵니다. (S3 SDK 인증 방식)
+ * `public/images/gallery`에 있는 이미지 파일을 읽어 목록을 만듭니다.
+ * `astro dev`에서도 매 요청(또는 HMR 후) 시점의 디스크를 읽으므로, 빌드 없이 파일만 넣고 새로고침하면 반영됩니다.
+ * 프로덕션 정적 배포 시에는 `astro build` 한 번에 목록이 HTML에 박힙니다.
  */
 export async function getGalleryImages(): Promise<GalleryImageEntry[]> {
-	const accessKeyId = import.meta.env.R2_ACCESS_KEY_ID;
-	const secretAccessKey = import.meta.env.R2_SECRET_ACCESS_KEY;
-
-	// 인증 키가 없는 경우 빈 목록 반환 (로컬 빌드 시나 환경 변수 미설정 시 대응)
-	if (!accessKeyId || !secretAccessKey || !R2_ENDPOINT) {
-		console.warn('R2 credentials or endpoint not found. Skipping gallery fetch.');
+	const galleryDir = getGalleryDir();
+	let names: string[];
+	try {
+		names = await fs.readdir(galleryDir);
+	} catch {
 		return [];
 	}
 
-	const s3Client = new S3Client({
-		region: 'auto',
-		endpoint: R2_ENDPOINT,
-		credentials: {
-			accessKeyId,
-			secretAccessKey,
-		},
+	const items: GalleryImageEntry[] = [];
+
+	for (const name of names) {
+		const ext = path.extname(name).toLowerCase();
+		if (!IMAGE_EXT.has(ext)) continue;
+
+		const fullPath = path.join(galleryDir, name);
+		let st;
+		try {
+			st = await fs.stat(fullPath);
+		} catch {
+			continue;
+		}
+		if (!st.isFile()) continue;
+
+		const base = path.basename(name, ext);
+		const title = base.replace(/[_-]+/g, ' ').trim() || name;
+
+		items.push({
+			filename: name,
+			image: galleryPublicUrl(name),
+			title,
+			lastModified: st.mtime,
+		});
+	}
+
+	items.sort((a, b) => {
+		const dateA = a.lastModified?.getTime() ?? 0;
+		const dateB = b.lastModified?.getTime() ?? 0;
+		return dateB - dateA;
 	});
 
-	try {
-		const command = new ListObjectsV2Command({
-			Bucket: BUCKET_NAME,
-			Prefix: 'gallery/',
-		});
-
-		const response = await s3Client.send(command);
-		const contents = response.Contents || [];
-
-		const items = contents
-			.filter((obj) => {
-				const key = obj.Key || '';
-				if (key === 'gallery/') return false;
-				return IMAGE_EXT.has(path.extname(key).toLowerCase());
-			})
-			.map((obj) => {
-				const key = obj.Key || '';
-				const filename = key.replace('gallery/', '');
-				const ext = path.extname(filename);
-				const base = path.basename(filename, ext);
-				const title = base.replace(/[_-]+/g, ' ').trim() || filename;
-
-				return {
-					filename,
-					image: `${PUBLIC_DOMAIN}/gallery/${filename}`,
-					title,
-					lastModified: obj.LastModified,
-				};
-			});
-
-		/** 최신 업로드 순 정렬 */
-		items.sort((a, b) => {
-			const dateA = a.lastModified?.getTime() || 0;
-			const dateB = b.lastModified?.getTime() || 0;
-			return dateB - dateA;
-		});
-
-		return items;
-	} catch (error) {
-		console.error('Error fetching gallery list from R2:', error);
-		return [];
-	}
+	return items;
 }
