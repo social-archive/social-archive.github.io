@@ -1,0 +1,14 @@
+[
+  {
+    "id": "demo-basic",
+    "title": "Sensual Basic Flow",
+    "instagram": "https://www.instagram.com/",
+    "style": "Sensual",
+    "level": "초급",
+    "tags": ["basic", "body-movement", "connection"],
+    "frameCount": 8,
+    "framePath": "frames/demo-basic/",
+    "padding": 4,
+    "extension": "svg"
+  }
+]
