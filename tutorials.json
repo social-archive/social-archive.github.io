@@ -9,6 +9,7 @@
     "frameCount": 8,
     "framePath": "frames/demo-basic/",
     "padding": 4,
-    "extension": "svg"
+    "extension": "svg",
+    "frameInterval": 0.1
   }
 ]

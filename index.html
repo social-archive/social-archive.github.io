@@ -2,92 +2,44 @@
 <html lang="ko">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#15120f">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff">
   <title>Bachata Framebook</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="site-header">
-    <a class="brand" href="#" aria-label="처음으로">
-      <span class="brand-mark">B</span>
-      <span><strong>Bachata Framebook</strong><small>움직임을 천천히, 정확하게</small></span>
-    </a>
-  </header>
-
+  <header class="site-header"><a class="brand" href="#" aria-label="처음으로"><span class="brand-mark" aria-hidden="true">B</span><span><strong>Bachata Framebook</strong><small>움직임을 천천히, 정확하게</small></span></a></header>
   <main>
     <section class="library" aria-labelledby="library-title">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">MY LIBRARY</p>
-          <h1 id="library-title">튜토리얼</h1>
-        </div>
-        <span id="result-count" class="count"></span>
-      </div>
-
+      <div class="section-heading"><div><p class="eyebrow">MY LIBRARY</p><h1 id="library-title">튜토리얼</h1></div><span id="result-count" class="count"></span></div>
       <div class="filters">
-        <label class="search">
-          <span class="sr-only">튜토리얼 검색</span>
-          <span aria-hidden="true">⌕</span>
-          <input id="search-input" type="search" placeholder="제목이나 태그 검색" autocomplete="off">
-        </label>
+        <label class="search"><span class="sr-only">튜토리얼 검색</span><span aria-hidden="true">⌕</span><input id="search-input" type="search" placeholder="제목이나 태그 검색" autocomplete="off"></label>
         <select id="style-filter" aria-label="스타일 필터"><option value="">모든 스타일</option></select>
-        <select id="level-filter" aria-label="난이도 필터"><option value="">모든 난이도</option></select>
+        <select id="level-filter" aria-label="레벨 필터"><option value="">모든 레벨</option></select>
       </div>
-
       <div id="tutorial-list" class="tutorial-list" aria-live="polite"></div>
-      <div id="empty-state" class="empty" hidden>
-        <strong>일치하는 튜토리얼이 없습니다.</strong>
-        <span>검색어나 필터를 바꿔보세요.</span>
-      </div>
+      <div id="empty-state" class="empty" hidden><strong>일치하는 튜토리얼이 없습니다.</strong><span>검색어나 필터를 바꿔보세요.</span></div>
     </section>
-
     <section id="player-section" class="player-section" aria-labelledby="player-title">
-      <div class="player-heading">
-        <div>
-          <p id="player-meta" class="eyebrow"></p>
-          <h2 id="player-title">튜토리얼을 선택하세요</h2>
-          <div id="player-tags" class="tags"></div>
-        </div>
-        <a id="instagram-link" class="instagram-link" href="#" target="_blank" rel="noopener noreferrer" hidden>Instagram 원본 ↗</a>
-      </div>
-
-      <div id="frame-stage" class="frame-stage" tabindex="0" aria-label="프레임 플레이어">
+      <div class="player-heading"><div><p id="player-meta" class="eyebrow"></p><h2 id="player-title">튜토리얼을 선택하세요</h2><div id="player-tags" class="tags"></div></div><a id="instagram-link" class="instagram-link" href="#" target="_blank" rel="noopener noreferrer" hidden>Instagram 원본 ↗</a></div>
+      <div id="frame-stage" class="frame-stage" tabindex="0" aria-label="비디오 플레이어">
+        <video id="video-player" preload="metadata" playsinline></video>
         <img id="frame-image" alt="선택한 튜토리얼 프레임">
-        <div id="stage-placeholder" class="stage-placeholder">
-          <span>↙</span>
-          <p>왼쪽 목록에서<br>튜토리얼을 선택하세요</p>
-        </div>
+        <div id="stage-placeholder" class="stage-placeholder"><span aria-hidden="true">▶</span><p>목록에서 튜토리얼을 선택하세요.</p></div>
         <button id="fullscreen-button" class="fullscreen" type="button" aria-label="전체 화면" title="전체 화면">⛶</button>
       </div>
-
-      <div class="timeline-wrap">
-        <input id="frame-slider" type="range" min="1" max="1" value="1" disabled aria-label="프레임 이동">
-        <div class="timeline-labels"><span>1</span><strong id="frame-counter">— / —</strong><span id="last-frame">1</span></div>
-      </div>
-
+      <div class="timeline-wrap"><input id="frame-slider" type="range" min="0" max="1" value="0" step="0.1" disabled aria-label="재생 위치"><div class="timeline-labels"><span>0:00</span><strong id="frame-counter">- / -</strong><span id="last-frame">0:00</span></div></div>
       <div class="controls">
-        <div class="transport">
-          <button id="first-button" type="button" disabled aria-label="첫 프레임">|‹</button>
-          <button id="prev-button" type="button" disabled aria-label="이전 프레임">‹</button>
-          <button id="play-button" class="play" type="button" disabled aria-label="재생">▶</button>
-          <button id="next-button" type="button" disabled aria-label="다음 프레임">›</button>
-          <button id="last-button" type="button" disabled aria-label="마지막 프레임">›|</button>
+        <div class="transport"><button id="first-button" type="button" disabled aria-label="처음">|‹</button><button id="prev-button" type="button" disabled aria-label="이전 구간">−</button><button id="play-button" class="play" type="button" disabled aria-label="재생">▶</button><button id="next-button" type="button" disabled aria-label="다음 구간">+</button><button id="last-button" type="button" disabled aria-label="마지막">›|</button></div>
+        <div class="play-options">
+          <label class="speed">배속<select id="speed-select"><option value="0.1">0.1×</option><option value="0.25">0.25×</option><option value="0.5">0.5×</option><option value="0.75">0.75×</option><option value="1" selected>1×</option><option value="1.25">1.25×</option><option value="1.5">1.5×</option><option value="2">2×</option></select></label>
+          <label class="speed">이동 간격<select id="step-select"><option value="0.1" selected>0.1초</option><option value="0.2">0.2초</option><option value="0.5">0.5초</option><option value="1">1초</option></select></label>
+          <label class="speed">루프<select id="loop-select"><option value="loop">반복 재생</option><option value="once">한 번 재생</option></select></label>
         </div>
-        <label class="speed">프레임 간격
-          <select id="speed-select">
-            <option value="100">0.1초</option>
-            <option value="250" selected>0.25초</option>
-            <option value="500">0.5초</option>
-            <option value="1000">1초</option>
-          </select>
-        </label>
       </div>
-      <p class="keyboard-help">키보드 <kbd>←</kbd> <kbd>→</kbd> 프레임 이동 · <kbd>Space</kbd> 재생/정지</p>
+      <p class="keyboard-help">키보드 <kbd>←</kbd> <kbd>→</kbd> 구간 이동 · <kbd>Space</kbd> 재생/정지</p>
     </section>
   </main>
-
-  <footer>Frames stay still. You notice more.</footer>
   <script src="app.js" defer></script>
 </body>
 </html>
