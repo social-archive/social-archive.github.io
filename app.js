@@ -1,53 +1,100 @@
-const state = { tutorials: [], filtered: [], selected: null, imageTimer: null, imageFrame: 1 };
-const ids = ['tutorial-list','empty-state','result-count','search-input','style-filter','level-filter','player-section','player-title','player-meta','player-tags','instagram-link','frame-stage','frame-image','video-player','stage-placeholder','frame-slider','frame-counter','last-frame','first-button','prev-button','play-button','next-button','last-button','speed-select','step-select','loop-select','fullscreen-button'];
-const el = Object.fromEntries(ids.map(id => [id, document.getElementById(id)]));
-const escapeHtml = value => String(value).replace(/[&<>'"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
-const isVideo = item => Boolean(item?.videoPath);
-const frameInterval = item => Number(item?.frameInterval) || 0.1;
-const frameUrl = (item, n) => `${item.framePath}${String(n).padStart(item.padding ?? 4, '0')}.${item.extension ?? 'jpg'}`;
-const formatTime = seconds => { const safe = Math.max(0, Number(seconds) || 0); return `${Math.floor(safe / 60)}:${String(Math.floor(safe % 60)).padStart(2, '0')}.${Math.floor((safe % 1) * 10)}`; };
+import { createClient } from "@supabase/supabase-js";
+import { validateItems } from "./data.js";
 
-function populateFilter(select, values) { [...new Set(values.filter(Boolean))].sort().forEach(value => select.add(new Option(value, value))); }
-function filterTutorials() {
-  const query = el['search-input'].value.trim().toLocaleLowerCase('ko');
-  state.filtered = state.tutorials.filter(item => {
-    const text = [item.title,item.style,item.level,...(item.tags ?? [])].join(' ').toLocaleLowerCase('ko');
-    return (!query || text.includes(query)) && (!el['style-filter'].value || item.style === el['style-filter'].value) && (!el['level-filter'].value || item.level === el['level-filter'].value);
-  }); renderList();
-}
-function renderList() {
-  el['result-count'].textContent = `${state.filtered.length}개`; el['empty-state'].hidden = state.filtered.length !== 0;
-  el['tutorial-list'].innerHTML = state.filtered.map(item => `<button class="tutorial-card ${state.selected?.id === item.id ? 'active' : ''}" data-id="${escapeHtml(item.id)}" type="button">${item.thumbnail || item.framePath ? `<img src="${escapeHtml(item.thumbnail || frameUrl(item, 1))}" alt="" loading="lazy">` : '<span class="video-thumb" aria-hidden="true">▶</span>'}<span><span class="card-meta">${escapeHtml(item.style)} · ${escapeHtml(item.level)}</span><strong>${escapeHtml(item.title)}</strong><span class="mini-tags">${(item.tags ?? []).slice(0,3).map(tag => `<span>#${escapeHtml(tag)}</span>`).join('')}</span></span></button>`).join('');
-  el['tutorial-list'].querySelectorAll('.tutorial-card').forEach(card => card.addEventListener('click', () => selectTutorial(card.dataset.id)));
-}
-function selectTutorial(id) {
-  const item = state.tutorials.find(t => t.id === id); if (!item) return; stop(); state.selected = item; state.imageFrame = 1;
-  el['player-title'].textContent = item.title; el['player-meta'].textContent = `${item.style} · ${item.level} · ${isVideo(item) ? 'WebM 비디오' : '추출 프레임'}`;
-  el['player-tags'].innerHTML = (item.tags ?? []).map(tag => `<span>#${escapeHtml(tag)}</span>`).join(''); el['instagram-link'].hidden = !item.instagram; el['instagram-link'].href = item.instagram || '#'; el['stage-placeholder'].hidden = true;
-  el['video-player'].style.display = isVideo(item) ? 'block' : 'none'; el['frame-image'].style.display = isVideo(item) ? 'none' : 'block';
-  if (isVideo(item)) { el['video-player'].src = item.videoPath; el['video-player'].load(); }
-  else { el['video-player'].removeAttribute('src'); el['video-player'].load(); setupImageTimeline(); updateImage(); }
-  ['first-button','prev-button','play-button','next-button','last-button'].forEach(key => el[key].disabled = false); renderList();
-  if (window.innerWidth <= 840) el['player-section'].scrollIntoView({ behavior: 'smooth' });
-}
-function setupImageTimeline() { const duration = (state.selected.frameCount - 1) * frameInterval(state.selected); el['frame-slider'].max = duration; el['frame-slider'].step = frameInterval(state.selected); el['frame-slider'].disabled = false; el['last-frame'].textContent = formatTime(duration); }
-function updateImage() { const item = state.selected; state.imageFrame = Math.max(1, Math.min(item.frameCount, state.imageFrame)); el['frame-image'].src = frameUrl(item, state.imageFrame); const time = (state.imageFrame - 1) * frameInterval(item); el['frame-slider'].value = time; el['frame-counter'].textContent = `${formatTime(time)} · ${state.imageFrame}/${item.frameCount}`; }
-function syncVideoTimeline() { const video = el['video-player']; el['frame-slider'].value = video.currentTime; el['frame-counter'].textContent = `${formatTime(video.currentTime)} / ${formatTime(video.duration)}`; }
-function stop() { clearInterval(state.imageTimer); state.imageTimer = null; el['video-player'].pause(); el['play-button'].textContent = '▶'; el['play-button'].ariaLabel = '재생'; }
-function isPlaying() { return state.imageTimer || !el['video-player'].paused; }
-function move(direction) { stop(); const seconds = Number(el['step-select'].value); if (isVideo(state.selected)) { const video = el['video-player']; video.currentTime = Math.max(0, Math.min(video.duration || 0, video.currentTime + direction * seconds)); } else { state.imageFrame += direction * Math.max(1, Math.round(seconds / frameInterval(state.selected))); updateImage(); } }
-function togglePlay() {
-  if (!state.selected) return; if (isPlaying()) return stop(); el['play-button'].textContent = 'Ⅱ'; el['play-button'].ariaLabel = '일시정지';
-  if (isVideo(state.selected)) { el['video-player'].playbackRate = Number(el['speed-select'].value); el['video-player'].play().catch(stop); return; }
-  state.imageTimer = setInterval(() => { if (state.imageFrame >= state.selected.frameCount) { if (el['loop-select'].value === 'once') return stop(); state.imageFrame = 1; } else state.imageFrame++; updateImage(); }, frameInterval(state.selected) * 1000 / Number(el['speed-select'].value));
+const API = import.meta.env.VITE_API_BASE ?? "https://sarc.uaru-corn.ts.net/api/research";
+const el = Object.fromEntries(["categories", "account", "logout", "heading", "metadata", "refresh", "notice", "login", "signin", "dashboard", "search", "list", "detail"].map(id => [id, document.getElementById(id)]));
+let supabase, session, items = [], category = "", selected = "", request = 0;
+const date = value => new Date(value).toLocaleString("ko-KR", { month:"numeric", day:"numeric", hour:"2-digit", minute:"2-digit" });
+const node = (tag, text, className) => { const element = document.createElement(tag); if (text !== undefined) element.textContent = text; if (className) element.className = className; return element; };
+function notice(message = "") { el.notice.textContent = message; el.notice.hidden = !message; }
+function empty(title, body) { const box = node("div", undefined, "empty"); box.append(node("h2", title), node("p", body)); return box; }
+
+function render() {
+  if (category && !items.some(item => item.category === category)) category = "";
+  const query = el.search.value.trim().toLocaleLowerCase("ko");
+  const shown = items.filter(item => (!category || item.category === category) && `${item.title} ${item.summary} ${item.category}`.toLocaleLowerCase("ko").includes(query));
+  el.heading.textContent = category || "전체 리서치";
+  el.metadata.textContent = items.length ? `리서치 ${items.length}개 · 최신 발행 ${date(items.reduce((latest, row) => Date.parse(row.published_at) > Date.parse(latest) ? row.published_at : latest, items[0].published_at))}` : "아직 발행된 리서치가 없습니다";
+  el.categories.replaceChildren();
+  for (const label of ["", ...new Set(items.map(item => item.category))]) {
+    const button = node("button", label || "전체 리서치", `category${category === label ? " selected" : ""}`);
+    button.type = "button"; button.dataset.category = label; button.setAttribute("aria-pressed", String(category === label));
+    button.append(node("span", String(items.filter(item => !label || item.category === label).length)));
+    button.onclick = () => { category = label; selected = ""; render(); [...el.categories.children].find(button => button.dataset.category === label)?.focus(); };
+    el.categories.append(button);
+  }
+  el.list.replaceChildren();
+  for (const item of shown) {
+    const button = node("button", undefined, "rank-row"), body = node("span", undefined, "row-body");
+    button.type = "button"; button.dataset.id = item.id; button.setAttribute("aria-current", String(selected === item.id));
+    body.append(node("strong", item.title), node("p", item.summary), node("span", `${item.category} · ${date(item.published_at)}`, "row-meta"));
+    button.append(node("span", String(item.rank), "rank"), body);
+    button.onclick = () => { selected = item.id; render(); if (matchMedia("(max-width:850px)").matches) el.detail.querySelector("h2").focus(); else [...el.list.children].find(button => button.dataset.id === item.id)?.focus(); };
+    el.list.append(button);
+  }
+  if (!shown.length) el.list.append(empty(items.length ? "검색 결과가 없습니다" : "첫 브리핑을 기다리고 있습니다", items.length ? "검색어나 주제를 바꿔보세요." : "AI 워크플로우가 리서치를 발행하면 이곳에 순위와 요약이 표시됩니다."));
+  const item = shown.find(item => item.id === selected);
+  document.querySelector(".columns").classList.toggle("has-detail", Boolean(item));
+  el.detail.replaceChildren();
+  if (!item) { el.detail.append(empty("리서치를 선택하세요", "순위의 근거와 상세 브리핑, 원문 출처를 볼 수 있습니다.")); return; }
+  const back = node("button", "목록으로", "back"); back.type = "button"; back.onclick = () => { selected = ""; render(); el.list.querySelector("button")?.focus(); };
+  const title = node("h2", item.title); title.tabIndex = -1;
+  el.detail.append(back, title, node("p", `${item.rank}위 · ${item.category} · ${date(item.published_at)}`, "meta"));
+  for (const [heading, content] of [["핵심 요약", item.summary], ["브리핑", item.content], ["선정 이유", item.rationale], ["순위 기준", item.ranking_basis]]) {
+    if (!content.trim()) continue;
+    const section = node("section", undefined, "brief-section"), box = node("div", undefined, "group");
+    box.append(node("p", content)); section.append(node("h3", heading), box); el.detail.append(section);
+  }
+  const section = node("section", undefined, "brief-section"), sources = node("ul", undefined, "sources group");
+  for (const source of item.sources) { const li = node("li"), a = node("a", source.title || new URL(source.url).hostname); a.href = source.url; a.target = "_blank"; a.rel = "noopener noreferrer"; li.append(a); sources.append(li); }
+  if (!item.sources.length) sources.append(node("li", "등록된 원문 출처가 없습니다."));
+  section.append(node("h3", "원문 출처"), sources); el.detail.append(section);
 }
 
-el['video-player'].addEventListener('loadedmetadata', () => { const video = el['video-player']; el['frame-slider'].max = video.duration; el['frame-slider'].step = 0.01; el['frame-slider'].disabled = false; el['last-frame'].textContent = formatTime(video.duration); syncVideoTimeline(); });
-el['video-player'].addEventListener('timeupdate', syncVideoTimeline); el['video-player'].addEventListener('ended', () => { if (el['loop-select'].value === 'loop') { el['video-player'].currentTime = 0; el['video-player'].play(); } else stop(); });
-el['search-input'].addEventListener('input', filterTutorials); el['style-filter'].addEventListener('change', filterTutorials); el['level-filter'].addEventListener('change', filterTutorials);
-el['frame-slider'].addEventListener('input', e => { stop(); if (isVideo(state.selected)) el['video-player'].currentTime = Number(e.target.value); else { state.imageFrame = Math.round(Number(e.target.value) / frameInterval(state.selected)) + 1; updateImage(); } });
-el['first-button'].addEventListener('click', () => { stop(); if (isVideo(state.selected)) el['video-player'].currentTime = 0; else { state.imageFrame = 1; updateImage(); } }); el['prev-button'].addEventListener('click', () => move(-1)); el['play-button'].addEventListener('click', togglePlay); el['next-button'].addEventListener('click', () => move(1)); el['last-button'].addEventListener('click', () => { stop(); if (isVideo(state.selected)) el['video-player'].currentTime = el['video-player'].duration; else { state.imageFrame = state.selected.frameCount; updateImage(); } });
-el['speed-select'].addEventListener('change', () => { if (isVideo(state.selected)) el['video-player'].playbackRate = Number(el['speed-select'].value); else if (state.imageTimer) { stop(); togglePlay(); } }); el['fullscreen-button'].addEventListener('click', () => document.fullscreenElement ? document.exitFullscreen?.() : el['frame-stage'].requestFullscreen?.());
-document.addEventListener('keydown', e => { if (!state.selected || ['INPUT','SELECT'].includes(document.activeElement.tagName)) return; if (e.key === 'ArrowLeft') { e.preventDefault(); move(-1); } if (e.key === 'ArrowRight') { e.preventDefault(); move(1); } if (e.code === 'Space') { e.preventDefault(); togglePlay(); } });
-async function init() { try { const response = await fetch('tutorials.json'); if (!response.ok) throw new Error(`HTTP ${response.status}`); state.tutorials = await response.json(); state.filtered = [...state.tutorials]; populateFilter(el['style-filter'], state.tutorials.map(i => i.style)); populateFilter(el['level-filter'], state.tutorials.map(i => i.level)); renderList(); if (state.tutorials[0]) selectTutorial(state.tutorials[0].id); } catch (error) { el['tutorial-list'].innerHTML = '<div class="empty"><strong>목록을 불러오지 못했습니다.</strong><span>로컬 서버 또는 GitHub Pages에서 열어주세요.</span></div>'; console.error(error); } }
-init();
+async function load() {
+  const current = ++request;
+  el.refresh.disabled = true;
+  notice();
+  try {
+    const { data, error } = await supabase.auth.getSession();
+    if (error) throw error;
+    if (current !== request) return;
+    session = data.session;
+    el.login.hidden = Boolean(session); el.dashboard.hidden = !session; el.logout.hidden = !session;
+    el.account.textContent = session?.user.email ?? "로그인 전";
+    if (!session) { items = []; selected = ""; render(); return; }
+    el.metadata.textContent = "리서치를 불러오는 중…";
+    const response = await fetch(`${API}/briefings`, { headers: { Authorization: `Bearer ${session.access_token}` }, cache:"no-store", signal:AbortSignal.timeout(15000) });
+    const body = await response.json();
+    if (!response.ok) throw new Error(body.error ?? "리서치를 불러오지 못했습니다.");
+    const next = validateItems(body.items);
+    if (current !== request) return;
+    items = next; render();
+  } catch (error) {
+    if (current !== request) return;
+    items = []; selected = ""; render();
+    notice(error instanceof TypeError || error.name === "TimeoutError" ? "브리핑 서버에 연결하지 못했습니다. 네트워크 연결을 확인하고 새로고침해 주세요." : error.message);
+  } finally { if (current === request) el.refresh.disabled = false; }
+}
+
+el.search.addEventListener("input", render);
+el.refresh.onclick = () => supabase ? load() : start();
+el.signin.onclick = async () => {
+  el.signin.disabled = true;
+  const { error } = await supabase.auth.signInWithOAuth({ provider:"google", options:{ redirectTo:window.location.origin + "/" } });
+  if (error) { notice("로그인을 시작하지 못했습니다. 다시 시도해 주세요."); el.signin.disabled = false; }
+};
+el.logout.onclick = async () => { const { error } = await supabase.auth.signOut(); if (error) notice("로그아웃에 실패했습니다. 다시 시도해 주세요."); };
+async function start() {
+  el.refresh.disabled = true;
+  try {
+    const response = await fetch(`${API}/config`, { signal:AbortSignal.timeout(15000) });
+    if (!response.ok) throw new Error("브리핑 서버를 준비하고 있습니다. 잠시 후 새로고침해 주세요.");
+    const config = await response.json();
+    supabase = createClient(config.supabaseUrl, config.publishableKey, { auth:{ flowType:"pkce" } });
+    supabase.auth.onAuthStateChange(() => { setTimeout(load, 0); });
+    await load();
+  } catch { notice("브리핑 서버에 연결하지 못했습니다. 네트워크 연결을 확인하고 새로고침해 주세요."); }
+  finally { el.refresh.disabled = false; }
+}
+start();
