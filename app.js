@@ -1,9 +1,8 @@
-import { createClient } from "@supabase/supabase-js";
 import { validateItems } from "./data.js";
 
 const API = import.meta.env.VITE_API_BASE ?? "https://sarc.uaru-corn.ts.net/api/research";
-const el = Object.fromEntries(["categories", "account", "logout", "heading", "metadata", "refresh", "notice", "login", "signin", "dashboard", "search", "list", "detail"].map(id => [id, document.getElementById(id)]));
-let supabase, session, items = [], category = "", selected = "", request = 0;
+const el = Object.fromEntries(["categories", "heading", "metadata", "refresh", "notice", "search", "list", "detail"].map(id => [id, document.getElementById(id)]));
+let items = [], category = "", selected = "", request = 0;
 const date = value => new Date(value).toLocaleString("ko-KR", { month:"numeric", day:"numeric", hour:"2-digit", minute:"2-digit" });
 const node = (tag, text, className) => { const element = document.createElement(tag); if (text !== undefined) element.textContent = text; if (className) element.className = className; return element; };
 function notice(message = "") { el.notice.textContent = message; el.notice.hidden = !message; }
@@ -56,15 +55,8 @@ async function load() {
   el.refresh.disabled = true;
   notice();
   try {
-    const { data, error } = await supabase.auth.getSession();
-    if (error) throw error;
-    if (current !== request) return;
-    session = data.session;
-    el.login.hidden = Boolean(session); el.dashboard.hidden = !session; el.logout.hidden = !session;
-    el.account.textContent = session?.user.email ?? "로그인 전";
-    if (!session) { items = []; selected = ""; render(); return; }
     el.metadata.textContent = "리서치를 불러오는 중…";
-    const response = await fetch(`${API}/briefings`, { headers: { Authorization: `Bearer ${session.access_token}` }, cache:"no-store", signal:AbortSignal.timeout(15000) });
+    const response = await fetch(`${API}/public-briefings`, { cache:"no-store", signal:AbortSignal.timeout(15000) });
     const body = await response.json();
     if (!response.ok) throw new Error(body.error ?? "리서치를 불러오지 못했습니다.");
     const next = validateItems(body.items);
@@ -78,23 +70,6 @@ async function load() {
 }
 
 el.search.addEventListener("input", render);
-el.refresh.onclick = () => supabase ? load() : start();
-el.signin.onclick = async () => {
-  el.signin.disabled = true;
-  const { error } = await supabase.auth.signInWithOAuth({ provider:"google", options:{ redirectTo:window.location.origin + "/" } });
-  if (error) { notice("로그인을 시작하지 못했습니다. 다시 시도해 주세요."); el.signin.disabled = false; }
-};
-el.logout.onclick = async () => { const { error } = await supabase.auth.signOut(); if (error) notice("로그아웃에 실패했습니다. 다시 시도해 주세요."); };
-async function start() {
-  el.refresh.disabled = true;
-  try {
-    const response = await fetch(`${API}/config`, { signal:AbortSignal.timeout(15000) });
-    if (!response.ok) throw new Error("브리핑 서버를 준비하고 있습니다. 잠시 후 새로고침해 주세요.");
-    const config = await response.json();
-    supabase = createClient(config.supabaseUrl, config.publishableKey, { auth:{ flowType:"pkce" } });
-    supabase.auth.onAuthStateChange(() => { setTimeout(load, 0); });
-    await load();
-  } catch { notice("브리핑 서버에 연결하지 못했습니다. 네트워크 연결을 확인하고 새로고침해 주세요."); }
-  finally { el.refresh.disabled = false; }
-}
-start();
+el.refresh.onclick = load;
+render();
+load();

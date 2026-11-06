@@ -15,17 +15,12 @@
       <a class="brand" href="/">리서치 랭크</a>
       <p class="sidebar-label">리서치</p>
       <nav id="categories" aria-label="주제별 보기"><button type="button" class="category selected" aria-pressed="true">전체 리서치 <span>0</span></button></nav>
-      <div class="account"><span id="account">로그인 전</span><button type="button" id="logout" hidden>로그아웃</button></div>
     </aside>
     <div class="workspace">
       <header class="toolbar"><div><h1 id="heading">전체 리서치</h1><p id="metadata">순위와 브리핑을 한곳에서</p></div><button id="refresh" type="button">새로고침</button></header>
       <main id="main" tabindex="-1">
         <div id="notice" class="notice" role="status" hidden></div>
-        <section id="login" class="login group" aria-labelledby="login-title" hidden>
-          <h2 id="login-title">내 리서치 브리핑</h2><p>로그인하고 AI 워크플로우가 정리한 순위와 브리핑을 확인하세요.</p>
-          <button id="signin" class="primary" type="button">Google로 로그인</button>
-        </section>
-        <div id="dashboard" hidden>
+        <div id="dashboard">
           <label class="search">리서치 검색<input id="search" type="search" placeholder="제목, 요약, 주제로 검색" autocomplete="off"></label>
           <div class="columns">
             <section class="ranking" aria-labelledby="list-title"><h2 id="list-title" class="section-title">랭킹</h2><div id="list" class="group" aria-live="polite"></div></section>
